@@ -169,3 +169,5 @@ tmp/
 README*
 *.md.bak
 *.docx
+.env
+.env

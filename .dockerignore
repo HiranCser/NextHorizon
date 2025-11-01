@@ -1,0 +1,42 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Ignore virtual environments
+venv/
+.env/
+nh/
+
+# Ignore system and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ignore git and build files
+.git/
+.gitignore
+*.egg-info/
+*.tar.gz
+*.zip
+
+# Ignore local data and cache
+.cache/
+logs/
+output/
+.tmp/
+
+# Ignore model or large data files if any
+*.pt
+*.bin
+*.csv
+*.xlsx
+*.pdf
+*.docx
+
+# Streamlit specific temporary files
+.streamlit/

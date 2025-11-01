@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+openai
+requests
+python-dotenv
+PyPDF2
+docx2txt
+python-docx
+duckduckgo-search
+beautifulsoup4
+urllib3
+certifi

@@ -1,4 +1,4 @@
-# ---------- Stage 1: Build base dependencies ----------
+# ---------- Stage 1: Build base dependencies ------
 FROM python:3.12-slim AS builder
 
 # Disable bytecode and buffering for cleaner logs

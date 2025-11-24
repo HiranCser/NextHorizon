@@ -22,22 +22,41 @@ from utils.skill_clarification import (
 )
 
 def render():
+    # Hero section
+    st.markdown("""
+    <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;'>
+        <h2 style='color: white; margin: 0;'>🔍 Step 3: Identify Your Skill Gaps</h2>
+        <p style='color: rgba(255,255,255,0.9); margin-top: 0.5rem;'>
+            Discover what skills you need to develop to reach your target role.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
     # Check if we have necessary data
     if not validate_role_selected():
+        st.warning("⚠️ **Please complete Steps 1 & 2 first!**")
+        st.info("👈 Upload your resume and select a target role from previous steps.")
         return
     
     jd_df = get_jd_dataframe()
     if jd_df.empty:
+        st.error("❌ Job database not found.")
         return
     
     role_title = get_current_role()
-    st.write(f"**Analyzing skill gaps for role:** {role_title}")
+    st.markdown(f"""
+    <div style='background: #f8f9fa; padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 1.5rem;'>
+        <p style='margin: 0; color: #666;'>Analyzing skill requirements for:</p>
+        <h3 style='margin: 0.5rem 0 0 0; color: #2c3e50;'>🎯 {role_title}</h3>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Get required skills for the selected role from JD database
     required_skills = get_required_skills_for_role(role_title, jd_df)
     
     if not required_skills:
-        st.warning(f"No job descriptions found for role '{role_title}' in the database.")
+        st.warning(f"⚠️ No job descriptions found for role '{role_title}' in the database.")
         return
     
     # Get candidate's current skills
@@ -57,28 +76,85 @@ def render():
     st.session_state.skill_gaps = gaps
     st.session_state.matched_skills = matched_skills
     
-    # Display results
+    # Display results with enhanced UI
+    st.markdown("### 📊 Skill Analysis Results")
+    
+    # Summary cards
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); 
+                    padding: 1.5rem; border-radius: 10px; text-align: center; color: white;'>
+            <h2 style='margin: 0; font-size: 2.5rem;'>{len(matched_skills)}</h2>
+            <p style='margin: 0.5rem 0 0 0;'>✅ Skills Matched</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); 
+                    padding: 1.5rem; border-radius: 10px; text-align: center; color: white;'>
+            <h2 style='margin: 0; font-size: 2.5rem;'>{len(gaps)}</h2>
+            <p style='margin: 0.5rem 0 0 0;'>📈 Skills to Learn</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        total_required = len(matched_skills) + len(gaps)
+        match_percent = int((len(matched_skills) / total_required * 100)) if total_required > 0 else 0
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); 
+                    padding: 1.5rem; border-radius: 10px; text-align: center; color: white;'>
+            <h2 style='margin: 0; font-size: 2.5rem;'>{match_percent}%</h2>
+            <p style='margin: 0.5rem 0 0 0;'>🎯 Role Readiness</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Detailed breakdown
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### ✅ Skills You Have")
+        st.markdown("""
+        <div style='background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;'>
+            <h3 style='margin: 0; color: #4caf50;'>✅ Your Current Skills</h3>
+        </div>
+        """, unsafe_allow_html=True)
+        
         if matched_skills:
-            for skill in matched_skills[:10]:  # Show top 10
-                st.write(f"• {skill}")
-            if len(matched_skills) > 10:
-                st.caption(f"... and {len(matched_skills) - 10} more")
+            for skill in matched_skills[:15]:
+                st.markdown(f"""
+                <div style='background: white; padding: 0.7rem; margin: 0.3rem 0; 
+                            border-radius: 8px; border-left: 4px solid #4caf50;'>
+                    • {skill}
+                </div>
+                """, unsafe_allow_html=True)
+            if len(matched_skills) > 15:
+                st.info(f"💡 Plus {len(matched_skills) - 15} more skills!")
         else:
-            st.write("None detected from the job requirements")
+            st.info("No matching skills detected from job requirements.")
     
     with col2:
-        st.markdown("### ❌ Skill Gaps")
+        st.markdown("""
+        <div style='background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;'>
+            <h3 style='margin: 0; color: #ff9800;'>📈 Skills to Develop</h3>
+        </div>
+        """, unsafe_allow_html=True)
+        
         if gaps:
-            for skill in gaps[:15]:  # Show top 15 gaps
-                st.write(f"• {skill}")
+            for skill in gaps[:15]:
+                st.markdown(f"""
+                <div style='background: white; padding: 0.7rem; margin: 0.3rem 0; 
+                            border-radius: 8px; border-left: 4px solid #ff9800;'>
+                    • {skill}
+                </div>
+                """, unsafe_allow_html=True)
             if len(gaps) > 15:
-                st.caption(f"... and {len(gaps) - 15} more")
+                st.info(f"💡 Plus {len(gaps) - 15} more skills to explore!")
         else:
-            st.success("No major skill gaps detected!")
+            st.success("🎉 Excellent! No major skill gaps detected!")
     
     # Clarification questions (if applicable)
     if gaps:

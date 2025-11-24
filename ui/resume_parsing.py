@@ -12,26 +12,46 @@ except Exception:
     def backfill_from_text(cleaned_text, structured_json): return structured_json
 
 def render():
-    st.subheader("Upload Resume")
-    up = st.file_uploader("Upload Resume", type=["pdf","docx","txt"], key="resume_uploader", label_visibility="hidden")
+    # Hero section
+    st.markdown("""
+    <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;'>
+        <h2 style='color: white; margin: 0;'>📄 Step 1: Upload Your Resume</h2>
+        <p style='color: rgba(255,255,255,0.9); margin-top: 0.5rem;'>
+            Upload your resume in PDF, DOCX, or TXT format. Our AI will extract and structure your information.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # File upload section
+    st.markdown("### 📤 Upload Your Resume")
+    up = st.file_uploader(
+        "Choose your resume file", 
+        type=["pdf","docx","txt"], 
+        key="resume_uploader",
+        help="Supported formats: PDF, DOCX, TXT (Max 10MB)"
+    )
+    
+    # Action buttons
     c1, c2 = st.columns(2)
     with c1:
-        run = st.button("🚀 Run Extraction & Parsing", disabled=up is None)
+        run = st.button("🚀 Extract & Parse Resume", disabled=up is None, use_container_width=True)
     with c2:
-        if st.button("🧹 Clear session (profile)"):
+        if st.button("🗑️ Clear All Data", use_container_width=True):
             for k in ["structured_json","cleaned_text","validation_report","chosen_role_title"]:
                 st.session_state[k] = {} if isinstance(st.session_state.get(k), dict) else ""
-            st.success("Profile data cleared.")
+            st.success("✅ Profile data cleared successfully!")
+            st.rerun()
     if run:
         tmp = Path(".streamlit_tmp"); tmp.mkdir(exist_ok=True)
         p = tmp / up.name
         with open(p, "wb") as f: f.write(up.read())
         
-        with st.spinner("Processing resume…"):
+        with st.spinner("🔄 Processing your resume... This may take a moment."):
             out = process_resume(str(p))
         
         if not out["success"]:
-            st.error(f"Failed to process resume: {out['validation_report']}")
+            st.error(f"❌ Failed to process resume: {out['validation_report']}")
             return
             
         st.session_state.cleaned_text = out.get("extracted_text","")
@@ -41,14 +61,24 @@ def render():
         # Apply any data enhancement
         struct = backfill_from_text(st.session_state.cleaned_text, struct)
         st.session_state.structured_json = struct
+        st.success("✅ Resume processed successfully!")
 
     if st.session_state.get("validation_report"):
-        st.markdown("##### 🧪 Validation Report")
-        st.text(st.session_state.validation_report)
+        with st.expander("🔍 View Validation Report", expanded=False):
+            st.info(st.session_state.validation_report)
 
     # Display and edit parsed resume data
     if st.session_state.get("structured_json"):
-        st.subheader("📝 Review & Edit")
+        st.markdown("---")
+        st.markdown("""
+        <div style='background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;'>
+            <h3 style='margin: 0; color: #2c3e50;'>✏️ Review & Edit Your Information</h3>
+            <p style='color: #666; margin-top: 0.5rem;'>
+                Please review and update the extracted information below. You can add or remove entries as needed.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         sj = st.session_state.get("structured_json", {})
         
         # Initialize work experience and education lists if not present

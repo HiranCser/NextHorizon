@@ -129,13 +129,26 @@ def openai_rank_courses(gaps, resume_text: str, snippets: List[Dict[str, Any]], 
         title = r.get("title", "Course")
         link = r.get("link", "")
         provider = r.get("provider", "") or r.get("source", "")
+        hours = r.get("hours")
+        price = r.get("price")
+        rating = r.get("rating")
         
-        out.append({
+        course_data = {
             "title": title,
             "provider": provider,
             "link": link,
             "match_percent": round(float(sc * 100.0), 1)
-        })
+        }
+        
+        # Add optional fields if available
+        if hours is not None and not (isinstance(hours, float) and np.isnan(hours)):
+            course_data["hours"] = hours
+        if price is not None and price != 'unknown':
+            course_data["price"] = price
+        if rating is not None and not (isinstance(rating, float) and np.isnan(rating)):
+            course_data["rating"] = rating
+            
+        out.append(course_data)
     return out
 
 def openai_parse_resume(resume_text: str) -> Dict[str, Any]:

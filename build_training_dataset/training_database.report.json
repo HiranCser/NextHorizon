@@ -1,0 +1,45 @@
+{
+  "out_csv": "build_training_dataset/training_database.features.csv",
+  "artifacts": {
+    "vectorizer": "build_training_dataset/training_database.tfidf.pkl",
+    "matrix": "build_training_dataset/training_database.tfidf.npz"
+  },
+  "rows": 354,
+  "tfidf_shape": [
+    354,
+    841
+  ],
+  "missingness": {
+    "hours_missing": 315,
+    "rating_missing": 354
+  },
+  "spacy_model_available": true,
+  "tfidf_vocab_size": 841,
+  "per_column_missing": {
+    "training_id": 0,
+    "skill": 0,
+    "title": 0,
+    "description": 0,
+    "provider": 0,
+    "hours": 315,
+    "price": 0,
+    "rating": 354,
+    "link": 0,
+    "title_len": 0,
+    "description_len": 0,
+    "skill_count": 0,
+    "hours_numeric": 315,
+    "hours_bucket": 0,
+    "rating_numeric": 354,
+    "rating_bucket": 0,
+    "readability": 0,
+    "ents_total": 0,
+    "ents_person": 0,
+    "ents_org": 0,
+    "ents_gpe": 0,
+    "noun_pct": 0,
+    "verb_pct": 0,
+    "tfidf_rows": 0
+  },
+  "top_entities": []
+}

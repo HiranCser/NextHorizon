@@ -11,3 +11,9 @@ duckduckgo-search
 beautifulsoup4
 urllib3
 certifi
+pandera
+pytest
+scikit-learn
+scipy
+spacy
+textstat

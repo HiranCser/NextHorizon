@@ -1,0 +1,18 @@
+{
+  "precision_recall_at_k": {
+    "1": {
+      "precision_mean": 1.0,
+      "recall_mean": 0.25822784810126576
+    },
+    "5": {
+      "precision_mean": 0.9215189873417723,
+      "recall_mean": 1.0748945147679323
+    },
+    "10": {
+      "precision_mean": 0.9164556962025318,
+      "recall_mean": 2.0907172995780594
+    }
+  },
+  "mrr_at_k": 1.0,
+  "ndcg_at_k": 1.5575867414431455
+}

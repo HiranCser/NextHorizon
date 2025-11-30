@@ -171,3 +171,5 @@ README*
 *.docx
 .env
 .env
+
+node_modules/

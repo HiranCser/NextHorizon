@@ -1,0 +1,24 @@
+{
+  "precision_recall_at_k": {
+    "1": {
+      "precision_mean": 1.0,
+      "recall_mean": 0.25822784810126576
+    },
+    "5": {
+      "precision_mean": 0.8126582278481012,
+      "recall_mean": 0.912447257383966
+    },
+    "10": {
+      "precision_mean": 0.4063291139240506,
+      "recall_mean": 0.912447257383966
+    }
+  },
+  "mrr_at_k": 1.0,
+  "ndcg_at_k": 0.9311427291287555,
+  "embedding_health": {
+    "mean_cosine": 0.44531509280204773,
+    "std_cosine": 0.14492926001548767,
+    "zero_norm_rate": 0.0,
+    "sample_pairs": 9961
+  }
+}

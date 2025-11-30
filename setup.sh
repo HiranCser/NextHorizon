@@ -75,6 +75,20 @@ else
     echo "⚠️  requirements.txt not found"
 fi
 
+# Install spaCy model if spaCy is present
+if python3 -c "import importlib,sys
+try:
+    importlib.import_module('spacy')
+    sys.exit(0)
+except Exception:
+    sys.exit(1)
+" >/dev/null 2>&1; then
+    echo "🧠 spaCy detected; attempting to download small English model (en_core_web_sm)"
+    python3 -m spacy download en_core_web_sm || echo "⚠️ spaCy model download failed; you can run: python -m spacy download en_core_web_sm"
+else
+    echo "ℹ️ spaCy not installed; skipping model download. To enable NER/POS install spaCy and run: python -m spacy download en_core_web_sm"
+fi
+
 # Create necessary directories
 echo ""
 echo "📁 Creating necessary directories..."

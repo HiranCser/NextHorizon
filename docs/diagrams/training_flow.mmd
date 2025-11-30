@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Data as Dataset
+    participant Trainer as TrainingJob
+    participant Model as MLModel
+    participant Eval as Evaluator
+    participant Registry as ModelRegistry
+
+    Data->>Trainer: load features.csv + labels
+    Trainer->>Model: train(model_hparams)
+    Model-->>Trainer: trained_model
+    Trainer->>Eval: evaluate on validation/test sets
+    Eval-->>Trainer: metrics (accuracy, F1, NDCG)
+    Trainer->>Registry: register model + artifacts + report
+    Registry-->>Trainer: model version id
+
+    Note over Trainer,Registry: Model is now available for deployment

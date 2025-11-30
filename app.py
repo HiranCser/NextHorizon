@@ -19,6 +19,7 @@ from ui.resume_parsing import render as tab1_render
 from ui.role_recommendations import render as tab2_render  
 from ui.skill_gaps import render as tab3_render
 from ui.course_recommendations import render as tab4_render
+from ui.diagnostics import render as diagnostics_render
 
 def load_databases():
     """Pre-load databases on startup"""
@@ -34,6 +35,37 @@ def load_databases():
             st.session_state.training_df = pd.read_csv(training_path)
     except Exception as e:
         pass  # Silent fail, will show warning in UI if needed
+
+
+def get_pipeline_status():
+    """Read pipeline artifacts (report, embeddings) and return a small status dict."""
+    out = {
+        'tfidf_vocab_size': None,
+        'tfidf_rows': None,
+        'embeddings_present': False,
+        'emb_shape': None,
+        'spacy_enrichment': False,
+    }
+    try:
+        rpt_path = 'build_training_dataset/training_database.report.json'
+        if os.path.exists(rpt_path):
+            import json
+            with open(rpt_path, 'r', encoding='utf-8') as f:
+                rp = json.load(f)
+            out['tfidf_vocab_size'] = rp.get('tfidf_vocab_size')
+            out['tfidf_rows'] = rp.get('rows')
+            out['spacy_enrichment'] = rp.get('spacy_model_available', False)
+    except Exception:
+        pass
+    try:
+        if os.path.exists('build_training_dataset/training_database.emb.npy'):
+            import numpy as np
+            arr = np.load('build_training_dataset/training_database.emb.npy')
+            out['embeddings_present'] = True
+            out['emb_shape'] = list(arr.shape)
+    except Exception:
+        out['embeddings_present'] = False
+    return out
 
 def apply_custom_css():
     """Apply custom CSS for enhanced UI"""
@@ -220,18 +252,33 @@ def main():
             api_status = "✅" if os.getenv("OPENAI_API_KEY") else "⚠️"
             st.markdown(f"""
             <div style='background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
-                        padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 2rem;'>
+                        padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 0.5rem;'>
                 <span style='margin: 0 1rem;'><strong>Database:</strong> {db_status}</span>
                 <span style='margin: 0 1rem;'><strong>AI Ready:</strong> {api_status}</span>
             </div>
             """, unsafe_allow_html=True)
+
+            # Pipeline status row
+            pstat = get_pipeline_status()
+            emb_ok = '✅' if pstat.get('embeddings_present') else '⚠️'
+            tfidf_vocab = pstat.get('tfidf_vocab_size') or '—'
+            tfidf_rows = pstat.get('tfidf_rows') or '—'
+            spacy_ok = '✅' if pstat.get('spacy_enrichment') else '⚠️'
+            st.markdown(f"""
+            <div style='display:flex; gap:1rem; justify-content:center; margin-bottom:1rem;'>
+              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>TF-IDF: <strong>{tfidf_rows} rows</strong> / <strong>{tfidf_vocab} vocab</strong></div>
+              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>Embeddings: <strong>{emb_ok}</strong> {pstat.get('emb_shape') or ''}</div>
+              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>spaCy enrichment: <strong>{spacy_ok}</strong></div>
+            </div>
+            """, unsafe_allow_html=True)
     
     # Main content tabs with enhanced styling
-    tab1, tab2, tab3, tab4 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "📄 Resume Analysis",
         "🎯 Role Matching", 
         "🔍 Skill Gap Analysis",
-        "📚 Learning Path"
+        "📚 Learning Path",
+        "🧪 Diagnostics"
     ])
     
     with tab1:
@@ -242,6 +289,9 @@ def main():
         tab3_render()
     with tab4:
         tab4_render()
+    with tab5:
+        if st.session_state.get('databases_loaded', False):
+            diagnostics_render()
     
     # Footer
     st.markdown("""

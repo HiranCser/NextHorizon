@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant Runner as Precompute Runner
+    participant Cleaner as DataCleaner
+    participant Feature as FeatureEngine
+    participant TFIDF as TFIDFVectorizer
+    participant Embed as EmbeddingClient
+    participant Store as ArtifactStore
+
+    Runner->>Cleaner: read raw CSV
+    Cleaner-->>Runner: write cleaned CSV
+    Runner->>Feature: read cleaned CSV
+    Feature->>Feature: derive numeric/categorical features
+    Feature->>TFIDF: fit vectorizer on text
+    TFIDF-->>Feature: save vectorizer + sparse matrix
+    Feature->>Embed: prepare text batches
+    Embed-->>Feature: return batch embeddings
+    Feature->>Store: write features CSV, report.json
+    Feature->>Store: write tfidf.pkl, tfidf.npz
+    Feature->>Store: write emb.npy, emb.csv
+
+    Note over Runner,Store: Artifacts are now ready for model building and serving

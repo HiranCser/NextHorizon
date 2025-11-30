@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant User
+    participant App as Streamlit App
+    participant Embed as EmbeddingClient
+    participant Index as ANNIndex
+    participant DB as MetadataStore
+    participant Rank as Ranker
+
+    User->>App: submit resume or query text
+    App->>Embed: compute query embedding
+    Embed-->>App: return query embedding
+    App->>Index: query top-k by cosine similarity
+    Index-->>App: return ids + distances
+    App->>DB: fetch metadata rows for ids
+    DB-->>App: return course/job metadata
+    App->>Rank: compute final ranking (similarity + heuristics)
+    Rank-->>App: ranked recommendations
+    App-->>User: render top recommendations and skill-gap suggestions

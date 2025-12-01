@@ -64,6 +64,32 @@ Ingest process:
 - Scripts and functions read CSV files into pandas DataFrames.
 - The pipeline preserves raw copies and writes cleaned artifacts to `*.clean.csv` alongside features and reports.
 
+Detailed collection steps and examples:
+
+- Step 1 — Place raw CSVs: drop your raw exports into `build_training_dataset/` or `build_jd_dataset/` with descriptive names (include timestamp/git-sha if available).
+- Step 2 — Run an ingestion sanity check (quick script):
+
+```python
+# scripts/check_ingest.py (example snippet)
+import pandas as pd
+from pathlib import Path
+
+fp = Path('build_training_dataset/training_database.csv')
+df = pd.read_csv(fp)
+print('rows,cols', df.shape)
+print(df.dtypes.to_dict())
+print(df.head(3).to_dict(orient='records'))
+```
+
+- Step 3 — Keep a raw backup: copy `training_database.csv` -> `training_database.raw.csv` before any pipeline runs. The precompute scripts in `scripts/` follow this convention and will write `*.clean.csv` outputs.
+
+- Step 4 — Optional provider enrichment: if you use external provider APIs, run batch enrichment with `scripts/enrich_providers.py` (recommended to implement rate limiting and a local cache). Cache keys should be stable (for example `provider_name.lower()` + `id`).
+
+Storage and checkpointing best practices:
+- Always write cleaned outputs to a new filename `*.clean.csv` and preserve the original `*.csv` as immutable.
+- Version artifacts by appending an ISO timestamp or git commit: `training_database.clean.20251130.csv` or `training_database.clean.<gitsha>.csv`.
+- Keep a `reports/` directory with `*.report.json` for each precompute run (already implemented by `scripts/precompute_features.py`).
+
 Operational notes:
 - Keep original raw files as immutable checkpoints. All cleaning steps write to new paths (e.g. `training_database.clean.csv`).
 - When adding APIs for provider metadata, implement rate-limited batch enrichment and cache results locally.
@@ -86,6 +112,57 @@ Implementation details:
   - Final fallback to 0.0 if no numeric data exists for a group.
 - Numeric clamping: ratings are clamped to a specified range (for example 0–5) after imputation.
 
+Detailed cleaning steps and implementation notes
+
+- Row-level validation and removal:
+  - Drop rows where required primary keys or identifiers are missing (for example, `id`, `title`, or `description` are all empty).
+  - Remove exact duplicates using `df.drop_duplicates(subset=['id'])` or a content hash column when `id` is not present.
+
+- Provider normalization:
+  - The canonical mapping lives in `build_training_dataset/provider_map.csv` (or similar). The pipeline function `clean_training_dataframe(df, provider_map)` (in `utils/data_cleaner.py`) applies exact mappings, then falls back to fuzzy matching using `fuzzywuzzy` or `rapidfuzz`.
+  - Example normalization snippet:
+
+```python
+from utils.data_cleaner import _normalize_provider
+
+df['provider_norm'] = df['provider'].fillna('unknown').apply(_normalize_provider)
+```
+
+- Imputation and numeric handling:
+  - Use provider-specific group medians where data suffices:
+
+```python
+# provider median imputation example
+grp = df.groupby('provider_norm')['hours'].median().to_dict()
+df['hours_imputed'] = df.apply(lambda r: r['hours'] if pd.notna(r['hours'])
+                                else grp.get(r['provider_norm'], global_hours_median), axis=1)
+```
+
+  - Clamp numeric ranges after imputation:
+
+```python
+df['rating_clamped'] = df['rating_imputed'].clip(lower=0.0, upper=5.0)
+```
+
+- Schema validation (pandera):
+  - Use `validate_with_schema(df, dataset_type)` in `utils/data_cleaner.py` to assert types, nullability, and bounds. In CI, fail fast so pipeline issues are visible early.
+
+- Deduplication and canonicalization:
+  - De-duplicate on `id` or computed content hash. Keep the most recent or highest-quality row (e.g., prefer rows with non-null `description`).
+
+- Logging and observability:
+  - Emit per-run counts: rows_in, rows_out, rows_dropped, duplicates_found, imputed_counts per column. The pipeline writes these metrics into `*.report.json`.
+
+- Example full-run orchestrator (pseudo):
+
+```python
+from utils.data_cleaner import run_full_clean
+
+run_full_clean('build_training_dataset/training_database.csv',
+              dataset_type='training',
+              out_clean_path='build_training_dataset/training_database.clean.csv')
+```
+
 Why these choices:
 - Provider-specific imputation preserves per-provider biases in course length or ratings.
 - Pandera provides reproducible schema guarantees and fails fast in CI when data drift violates expectations.
@@ -103,6 +180,69 @@ Common transformations performed (in `utils/feature_engineering.py`):
   - Provider encoded via mapping; more advanced categorical features can be one-hot or embedding encodings.
 - Text cleaning:
   - Lowercasing, punctuation removal (where relevant), whitespace normalization.
+
+Detailed preprocessing and examples
+
+- Text normalization and tokenization:
+  - Trim, normalize whitespace, unify unicode normalization (NFKC), and optionally remove boilerplate HTML tags. Implementations are found in `utils/data_enhancer.py` and `utils/feature_engineering.py`.
+  - Example snippet:
+
+```python
+import unicodedata
+import re
+
+def normalize_text(s: str) -> str:
+    if not s or not isinstance(s, str):
+        return ''
+    s = unicodedata.normalize('NFKC', s)
+    s = re.sub(r"\s+", ' ', s).strip()
+    return s.lower()
+```
+
+- Categorical encoding & normalization:
+  - Small-cardinality categories (provider, level) are label-encoded or one-hot encoded. Use `sklearn.preprocessing.OneHotEncoder` for offline transforms and persist the encoder in `*.encoder.pkl`.
+  - For medium/large cardinalities, use target/mean encoding or embedding tables.
+
+- Numeric scaling and normalization:
+  - Continuous features (hours, price) are scaled with `StandardScaler` or `RobustScaler` (persist scaler objects alongside TF-IDF vectorizer). Example:
+
+```python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+df['hours_scaled'] = scaler.fit_transform(df[['hours_imputed']])
+# save: pickle.dump(scaler, open('build_training_dataset/hours.scaler.pkl','wb'))
+```
+
+- TF-IDF compute and persistence:
+  - `compute_tfidf(df, max_features=2048)` in `utils/feature_engineering.py` fits a `TfidfVectorizer` on `title + ' ' + description` by default.
+  - Persist artifacts: `*.tfidf.pkl` (the vectorizer) and `*.tfidf.npz` (sparse matrix). Use `scipy.sparse.save_npz` for the matrix.
+
+- Embedding generation (recap):
+  - The embedding runner forms batches of texts, uses caching, and writes `*.emb.npy`. Validate shapes and non-zero norms as a health check after generation.
+
+- Feature outputs and downstream compatibility:
+  - The pipeline writes `*.features.csv` with derived columns required by models (e.g., `hours_scaled`, `rating_clamped`, `num_skills_listed`, `tfidf_index_id`).
+  - Align transforms at serve time: the same vectorizer, encoder, and scaler must be loaded to transform incoming queries. The `scripts/precompute_features.py` already saves these serializers.
+
+- Example run (precompute features):
+
+```bash
+# from repo root
+PYTHONPATH=. python3 scripts/precompute_features.py \
+  --input build_training_dataset/training_database.clean.csv \
+  --out-prefix build_training_dataset/training_database
+```
+
+- Small code example: compute a TF-IDF vector for a new query using the saved vectorizer:
+
+```python
+import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vec = pickle.load(open('build_training_dataset/training_database.tfidf.pkl','rb'))
+query = 'Introduction to data science with Python'
+qvec = vec.transform([query])
+```
 
 Feature pipeline:
 - `scripts/precompute_features.py` wraps the feature pipeline and calls `run_pipeline()` which:
@@ -361,6 +501,15 @@ sequenceDiagram
 - Embedding compute: `scripts/precompute_embeddings.py`, `ai/openai_client.py`
 - Diagnostics UI: `ui/diagnostics.py`, `app.py`
 - Data: `build_training_dataset/`, `build_jd_dataset/`
+
+## Architecture (Block diagram)
+
+Below is a block-wise architecture diagram showing the main components, data flows, and artifact stores used by NextHorizon. Paste this Mermaid block into supporting viewers or use the `docs/diagrams` assets for SVG exports.
+
+![Architecture](./diagrams/architecture.svg)
+
+Place the block above inside the document where you want the architecture diagram to appear — it is intentionally descriptive and block-wise to help readers quickly understand responsibilities and artifact handoffs.
+
 
 ---
 

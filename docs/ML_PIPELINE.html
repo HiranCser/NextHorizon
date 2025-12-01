@@ -61,6 +61,34 @@
 <p>Ingest process:<br />
 - Scripts and functions read CSV files into pandas DataFrames.<br />
 - The pipeline preserves raw copies and writes cleaned artifacts to <code>*.clean.csv</code> alongside features and reports.</p>
+<p>Detailed collection steps and examples:</p>
+<ul>
+<li>Step 1 — Place raw CSVs: drop your raw exports into <code>build_training_dataset/</code> or <code>build_jd_dataset/</code> with descriptive names (include timestamp/git-sha if available).</li>
+<li>Step 2 — Run an ingestion sanity check (quick script):</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># scripts/check_ingest.py (example snippet)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">fp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;build_training_dataset/training_database.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rows,cols&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Step 3 — Keep a raw backup: copy <code>training_database.csv</code> -&gt; <code>training_database.raw.csv</code> before any pipeline runs. The precompute scripts in <code>scripts/</code> follow this convention and will write <code>*.clean.csv</code> outputs.</p>
+</li>
+<li>
+<p>Step 4 — Optional provider enrichment: if you use external provider APIs, run batch enrichment with <code>scripts/enrich_providers.py</code> (recommended to implement rate limiting and a local cache). Cache keys should be stable (for example <code>provider_name.lower()</code> + <code>id</code>).</p>
+</li>
+</ul>
+<p>Storage and checkpointing best practices:<br />
+- Always write cleaned outputs to a new filename <code>*.clean.csv</code> and preserve the original <code>*.csv</code> as immutable.<br />
+- Version artifacts by appending an ISO timestamp or git commit: <code>training_database.clean.20251130.csv</code> or <code>training_database.clean.&lt;gitsha&gt;.csv</code>.<br />
+- Keep a <code>reports/</code> directory with <code>*.report.json</code> for each precompute run (already implemented by <code>scripts/precompute_features.py</code>).</p>
 <p>Operational notes:<br />
 - Keep original raw files as immutable checkpoints. All cleaning steps write to new paths (e.g. <code>training_database.clean.csv</code>).<br />
 - When adding APIs for provider metadata, implement rate-limited batch enrichment and cache results locally.</p>
@@ -79,6 +107,68 @@
   - Fallback to global median.<br />
   - Final fallback to 0.0 if no numeric data exists for a group.<br />
 - Numeric clamping: ratings are clamped to a specified range (for example 0–5) after imputation.</p>
+<p>Detailed cleaning steps and implementation notes</p>
+<ul>
+<li>Row-level validation and removal:</li>
+<li>Drop rows where required primary keys or identifiers are missing (for example, <code>id</code>, <code>title</code>, or <code>description</code> are all empty).</li>
+<li>
+<p>Remove exact duplicates using <code>df.drop_duplicates(subset=['id'])</code> or a content hash column when <code>id</code> is not present.</p>
+</li>
+<li>
+<p>Provider normalization:</p>
+</li>
+<li>The canonical mapping lives in <code>build_training_dataset/provider_map.csv</code> (or similar). The pipeline function <code>clean_training_dataframe(df, provider_map)</code> (in <code>utils/data_cleaner.py</code>) applies exact mappings, then falls back to fuzzy matching using <code>fuzzywuzzy</code> or <code>rapidfuzz</code>.</li>
+<li>Example normalization snippet:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">utils.data_cleaner</span><span class="w"> </span><span class="kn">import</span> <span class="n">_normalize_provider</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;provider_norm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_normalize_provider</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>Imputation and numeric handling:</li>
+<li>Use provider-specific group medians where data suffices:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># provider median imputation example</span>
+<span class="n">grp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;provider_norm&#39;</span><span class="p">)[</span><span class="s1">&#39;hours&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;hours_imputed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;hours&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;hours&#39;</span><span class="p">])</span>
+                                <span class="k">else</span> <span class="n">grp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;provider_norm&#39;</span><span class="p">],</span> <span class="n">global_hours_median</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>Clamp numeric ranges after imputation:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rating_clamped&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rating_imputed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>Schema validation (pandera):</li>
+<li>
+<p>Use <code>validate_with_schema(df, dataset_type)</code> in <code>utils/data_cleaner.py</code> to assert types, nullability, and bounds. In CI, fail fast so pipeline issues are visible early.</p>
+</li>
+<li>
+<p>Deduplication and canonicalization:</p>
+</li>
+<li>
+<p>De-duplicate on <code>id</code> or computed content hash. Keep the most recent or highest-quality row (e.g., prefer rows with non-null <code>description</code>).</p>
+</li>
+<li>
+<p>Logging and observability:</p>
+</li>
+<li>
+<p>Emit per-run counts: rows_in, rows_out, rows_dropped, duplicates_found, imputed_counts per column. The pipeline writes these metrics into <code>*.report.json</code>.</p>
+</li>
+<li>
+<p>Example full-run orchestrator (pseudo):</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">utils.data_cleaner</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_full_clean</span>
+
+<span class="n">run_full_clean</span><span class="p">(</span><span class="s1">&#39;build_training_dataset/training_database.csv&#39;</span><span class="p">,</span>
+              <span class="n">dataset_type</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">,</span>
+              <span class="n">out_clean_path</span><span class="o">=</span><span class="s1">&#39;build_training_dataset/training_database.clean.csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+
 <p>Why these choices:<br />
 - Provider-specific imputation preserves per-provider biases in course length or ratings.<br />
 - Pandera provides reproducible schema guarantees and fails fast in CI when data drift violates expectations.</p>
@@ -93,6 +183,80 @@
   - Provider encoded via mapping; more advanced categorical features can be one-hot or embedding encodings.<br />
 - Text cleaning:<br />
   - Lowercasing, punctuation removal (where relevant), whitespace normalization.</p>
+<p>Detailed preprocessing and examples</p>
+<ul>
+<li>Text normalization and tokenization:</li>
+<li>Trim, normalize whitespace, unify unicode normalization (NFKC), and optionally remove boilerplate HTML tags. Implementations are found in <code>utils/data_enhancer.py</code> and <code>utils/feature_engineering.py</code>.</li>
+<li>Example snippet:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_text</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKC&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</code></pre></div>
+
+<ul>
+<li>Categorical encoding &amp; normalization:</li>
+<li>Small-cardinality categories (provider, level) are label-encoded or one-hot encoded. Use <code>sklearn.preprocessing.OneHotEncoder</code> for offline transforms and persist the encoder in <code>*.encoder.pkl</code>.</li>
+<li>
+<p>For medium/large cardinalities, use target/mean encoding or embedding tables.</p>
+</li>
+<li>
+<p>Numeric scaling and normalization:</p>
+</li>
+<li>Continuous features (hours, price) are scaled with <code>StandardScaler</code> or <code>RobustScaler</code> (persist scaler objects alongside TF-IDF vectorizer). Example:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;hours_scaled&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;hours_imputed&#39;</span><span class="p">]])</span>
+<span class="c1"># save: pickle.dump(scaler, open(&#39;build_training_dataset/hours.scaler.pkl&#39;,&#39;wb&#39;))</span>
+</code></pre></div>
+
+<ul>
+<li>TF-IDF compute and persistence:</li>
+<li><code>compute_tfidf(df, max_features=2048)</code> in <code>utils/feature_engineering.py</code> fits a <code>TfidfVectorizer</code> on <code>title + ' ' + description</code> by default.</li>
+<li>
+<p>Persist artifacts: <code>*.tfidf.pkl</code> (the vectorizer) and <code>*.tfidf.npz</code> (sparse matrix). Use <code>scipy.sparse.save_npz</code> for the matrix.</p>
+</li>
+<li>
+<p>Embedding generation (recap):</p>
+</li>
+<li>
+<p>The embedding runner forms batches of texts, uses caching, and writes <code>*.emb.npy</code>. Validate shapes and non-zero norms as a health check after generation.</p>
+</li>
+<li>
+<p>Feature outputs and downstream compatibility:</p>
+</li>
+<li>The pipeline writes <code>*.features.csv</code> with derived columns required by models (e.g., <code>hours_scaled</code>, <code>rating_clamped</code>, <code>num_skills_listed</code>, <code>tfidf_index_id</code>).</li>
+<li>
+<p>Align transforms at serve time: the same vectorizer, encoder, and scaler must be loaded to transform incoming queries. The <code>scripts/precompute_features.py</code> already saves these serializers.</p>
+</li>
+<li>
+<p>Example run (precompute features):</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># from repo root</span>
+<span class="nv">PYTHONPATH</span><span class="o">=</span>.<span class="w"> </span>python3<span class="w"> </span>scripts/precompute_features.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>build_training_dataset/training_database.clean.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-prefix<span class="w"> </span>build_training_dataset/training_database
+</code></pre></div>
+
+<ul>
+<li>Small code example: compute a TF-IDF vector for a new query using the saved vectorizer:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">vec</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;build_training_dataset/training_database.tfidf.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;Introduction to data science with Python&#39;</span>
+<span class="n">qvec</span> <span class="o">=</span> <span class="n">vec</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">query</span><span class="p">])</span>
+</code></pre></div>
+
 <p>Feature pipeline:<br />
 - <code>scripts/precompute_features.py</code> wraps the feature pipeline and calls <code>run_pipeline()</code> which:<br />
   - Reads the cleaned CSV (<code>*.clean.csv</code>).<br />
@@ -304,6 +468,10 @@
 <li>Diagnostics UI: <code>ui/diagnostics.py</code>, <code>app.py</code></li>
 <li>Data: <code>build_training_dataset/</code>, <code>build_jd_dataset/</code></li>
 </ul>
+<h2>Architecture (Block diagram)</h2>
+<p>Below is a block-wise architecture diagram showing the main components, data flows, and artifact stores used by NextHorizon. Paste this Mermaid block into supporting viewers or use the <code>docs/diagrams</code> assets for SVG exports.</p>
+<p><svg id="mermaid-1764506345762" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2412 512" style="max-width: 512px;" role="graphics-document document" aria-roledescription="error"><style>#mermaid-1764506345762{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1764506345762 .error-icon{fill:#552222;}#mermaid-1764506345762 .error-text{fill:#552222;stroke:#552222;}#mermaid-1764506345762 .edge-thickness-normal{stroke-width:2px;}#mermaid-1764506345762 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1764506345762 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1764506345762 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1764506345762 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1764506345762 .marker{fill:#333333;stroke:#333333;}#mermaid-1764506345762 .marker.cross{stroke:#333333;}#mermaid-1764506345762 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1764506345762 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g></g><g><path class="error-icon" d="m411.313,123.313c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32-9.375,9.375-20.688-20.688c-12.484-12.5-32.766-12.5-45.25,0l-16,16c-1.261,1.261-2.304,2.648-3.31,4.051-21.739-8.561-45.324-13.426-70.065-13.426-105.867,0-192,86.133-192,192s86.133,192 192,192 192-86.133 192-192c0-24.741-4.864-48.327-13.426-70.065 1.402-1.007 2.79-2.049 4.051-3.31l16-16c12.5-12.492 12.5-32.758 0-45.25l-20.688-20.688 9.375-9.375 32.001-31.999zm-219.313,100.687c-52.938,0-96,43.063-96,96 0,8.836-7.164,16-16,16s-16-7.164-16-16c0-70.578 57.422-128 128-128 8.836,0 16,7.164 16,16s-7.164,16-16,16z"></path><path class="error-icon" d="m459.02,148.98c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l16,16c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16.001-16z"></path><path class="error-icon" d="m340.395,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16-16c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l15.999,16z"></path><path class="error-icon" d="m400,64c8.844,0 16-7.164 16-16v-32c0-8.836-7.156-16-16-16-8.844,0-16,7.164-16,16v32c0,8.836 7.156,16 16,16z"></path><path class="error-icon" d="m496,96.586h-32c-8.844,0-16,7.164-16,16 0,8.836 7.156,16 16,16h32c8.844,0 16-7.164 16-16 0-8.836-7.156-16-16-16z"></path><path class="error-icon" d="m436.98,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688l32-32c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32c-6.251,6.25-6.251,16.375-0.001,22.625z"></path><text class="error-text" x="1440" y="250" font-size="150px" style="text-anchor: middle;">Syntax error in text</text><text class="error-text" x="1250" y="400" font-size="100px" style="text-anchor: middle;">mermaid version 10.9.5</text></g></svg></p>
+<p>Place the block above inside the document where you want the architecture diagram to appear — it is intentionally descriptive and block-wise to help readers quickly understand responsibilities and artifact handoffs.</p>
 <hr />
 <p>If you'd like, I can also:<br />
 - Generate PNG exports of the Mermaid diagrams and commit them to <code>docs/diagrams/</code>.<br />

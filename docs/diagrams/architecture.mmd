@@ -1,0 +1,90 @@
+flowchart TB
+  subgraph DS [Data Sources]
+    A1[Local CSVs\ntraining_database.csv, jd_database.csv]
+    A2[Provider APIs\n(enrichment & metadata)]
+    flowchart TB
+      subgraph DataSources [Data Sources]
+        A1[Local CSVs: training_database.csv, jd_database.csv]
+        A2[Provider APIs: enrichment and metadata]
+        A3[User Uploads: resumes and sample queries]
+      end
+
+      subgraph Ingest [Ingest and Checkpoint]
+        B1[Ingest Runner: scripts db runner]
+        B2[Raw Store: raw csv files pattern]
+        B3[Sanity Checks: schema preview and row counts]
+      end
+
+      subgraph Cleaning [Cleaning and Validation]
+        C1[DataCleaner: utils/data_cleaner.py]
+        C2[Provider Normalization: mapping and fuzzy match]
+        C3[Imputation and Clamping: provider medians and fallbacks]
+        C4[Schema Validation: pandera checks and reports]
+      end
+
+      subgraph Features [Preprocessing and Feature Eng]
+        D1[Text Normalization: unicode whitespace normalization]
+        D2[TFIDF Vectorizer: tfidf pickle and sparse matrix]
+        D3[NLP Enrichment: spaCy NER POS and readability]
+        D4[Numeric Scaling and Encoders: scores scaler and encoders]
+        D5[Features CSV and Report: features csv and report json]
+      end
+
+      subgraph Embeddings [Embeddings and Index]
+        E1[Embedding Client: ai openai client]
+        E2[Embedding Cache and Store: emb.npy and emb.csv]
+        E3[ANN Index Builder: FAISS Annoy Chroma]
+        E4[Vector Index: persisted index files]
+      end
+
+      subgraph Training [Training and Evaluation]
+        F1[Model Trainer: supervised and heuristic]
+        F2[Evaluator: Precision@k, MRR, NDCG, embedding health]
+        F3[Experiment Records: MLflow or CSV logs]
+      end
+
+      subgraph Serving [Serving and UI]
+        G1[Streamlit App: app.py]
+        G2[Diagnostics Panel: ui diagnostics]
+        G3[Query Path: embed then ANN then fetch then rank]
+      end
+
+      subgraph Ops [Operations and Monitoring]
+        H1[Artifact Versioning: timestamps and git sha]
+        H2[Health Checks: index, embeddings, last run]
+        H3[Scheduled Jobs: cron systemd or k8s CronJob]
+      end
+
+      A1 --> B1
+      A2 --> B1
+      A3 --> B1
+      B1 --> B2
+      B1 --> B3
+      B1 --> C1
+      C1 --> C2
+      C1 --> C3
+      C1 --> C4
+      C4 --> D1
+      D1 --> D2
+      D1 --> D3
+      D1 --> D4
+      D2 --> D5
+      D3 --> D5
+      D4 --> D5
+      D5 --> E1
+      E1 --> E2
+      E2 --> E3
+      E3 --> E4
+      E4 --> G3
+      D5 --> F1
+      E2 --> F1
+      F1 --> F2
+      F2 --> F3
+      G3 --> G1
+      G1 --> G2
+      H1 --> B2
+      H1 --> D5
+      H1 --> E2
+      H2 --> E4
+      H3 --> B1
+      H3 --> E1

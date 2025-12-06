@@ -1,0 +1,45 @@
+{
+  "metrics": {
+    "precision_recall_at_k": {
+      "1": {
+        "precision_mean": 0.017241379310344827,
+        "recall_mean": 0.004310344827586207
+      },
+      "3": {
+        "precision_mean": 0.022988505747126436,
+        "recall_mean": 0.03017241379310345
+      },
+      "5": {
+        "precision_mean": 0.013793103448275864,
+        "recall_mean": 0.03017241379310345
+      },
+      "10": {
+        "precision_mean": 0.013793103448275864,
+        "recall_mean": 0.048850574712643674
+      }
+    },
+    "mrr": 0.04339080459770115,
+    "ndcg": 0.031606798445746515,
+    "embedding_health": {
+      "mean_cosine": 0.00014013235340826213,
+      "std_cosine": 0.026495713740587234,
+      "zero_norm_rate": 0.0,
+      "sample_pairs": 1639
+    }
+  },
+  "statistics": {
+    "num_queries": 58,
+    "num_documents": 48,
+    "avg_relevant_per_query": 3.086206896551724,
+    "avg_retrieved_per_query": 20.0
+  },
+  "configuration": {
+    "k_values": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "evaluation_type": "retrieval_simulation"
+  }
+}

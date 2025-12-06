@@ -1,0 +1,144 @@
+{
+  "experiment_name": "Embedding Model Comparison",
+  "description": "Compare different OpenAI embedding models for recommendation quality",
+  "variants_tested": [
+    "text-embedding-3-small",
+    "text-embedding-3-large",
+    "text-embedding-ada-002"
+  ],
+  "successful_runs": 3,
+  "metrics_comparison": {
+    "mrr": {
+      "best_variant": "text-embedding-3-small",
+      "best_score": 0.2913095238095238,
+      "all_scores": {
+        "text-embedding-3-small": 0.2913095238095238,
+        "text-embedding-3-large": 0.2913095238095238,
+        "text-embedding-ada-002": 0.2913095238095238
+      }
+    },
+    "ndcg": {
+      "best_variant": "text-embedding-3-small",
+      "best_score": 0.1610213254451535,
+      "all_scores": {
+        "text-embedding-3-small": 0.1610213254451535,
+        "text-embedding-3-large": 0.1610213254451535,
+        "text-embedding-ada-002": 0.1610213254451535
+      }
+    }
+  },
+  "detailed_results": {
+    "text-embedding-3-small": {
+      "metrics": {
+        "mrr": 0.2913095238095238,
+        "ndcg": 0.1610213254451535,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.2,
+            "recall_mean": 0.04
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.09000000000000001,
+            "recall_mean": 0.18000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.025297867134213448,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "model_info": {
+        "model_name": "text-embedding-3-small",
+        "embedding_dim": 1536,
+        "quality_factor": 1.0
+      },
+      "execution_time": 0.039153099060058594,
+      "variant_config": {
+        "model": "text-embedding-3-small",
+        "seed": 42
+      }
+    },
+    "text-embedding-3-large": {
+      "metrics": {
+        "mrr": 0.2913095238095238,
+        "ndcg": 0.1610213254451535,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.2,
+            "recall_mean": 0.04
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.09000000000000001,
+            "recall_mean": 0.18000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0004150392778683454,
+        "std_cosine": 0.01827092655003071,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "model_info": {
+        "model_name": "text-embedding-3-large",
+        "embedding_dim": 3072,
+        "quality_factor": 1.2
+      },
+      "execution_time": 0.061432600021362305,
+      "variant_config": {
+        "model": "text-embedding-3-large",
+        "seed": 42
+      }
+    },
+    "text-embedding-ada-002": {
+      "metrics": {
+        "mrr": 0.2913095238095238,
+        "ndcg": 0.1610213254451535,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.2,
+            "recall_mean": 0.04
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.09000000000000001,
+            "recall_mean": 0.18000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.02529786340892315,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "model_info": {
+        "model_name": "text-embedding-ada-002",
+        "embedding_dim": 1536,
+        "quality_factor": 0.9
+      },
+      "execution_time": 0.03813004493713379,
+      "variant_config": {
+        "model": "text-embedding-ada-002",
+        "seed": 42
+      }
+    }
+  },
+  "recommendations": [
+    "\ud83e\udd14 Similar performance: Variants perform comparably",
+    "\u26a1 Performance: text-embedding-ada-002 is significantly faster than text-embedding-3-large"
+  ]
+}

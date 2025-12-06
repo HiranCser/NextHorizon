@@ -1,0 +1,60 @@
+{
+  "evaluation_summary": {
+    "jd_single_split": {
+      "dataset": "jd",
+      "evaluation_type": "single_split",
+      "mrr": 0.04339080459770115,
+      "ndcg": 0.031606798445746515,
+      "precision@5": 0,
+      "recall@5": 0
+    },
+    "jd_cross_validation": {
+      "dataset": "jd",
+      "evaluation_type": "cross_validation",
+      "mrr_mean": 0.0396031746031746,
+      "mrr_std": 0.013553713825200731,
+      "ndcg_mean": 0.030061161513677947,
+      "ndcg_std": 0.008726689104966592,
+      "precision@5_mean": 0.012413793103448277,
+      "recall@5_mean": 0.02097701149425287
+    },
+    "training_single_split": {
+      "dataset": "training",
+      "evaluation_type": "single_split",
+      "mrr": 0.9,
+      "ndcg": 0.6486697323844202,
+      "precision@5": 0,
+      "recall@5": 0
+    },
+    "training_cross_validation": {
+      "dataset": "training",
+      "evaluation_type": "cross_validation",
+      "mrr_mean": 0.85,
+      "mrr_std": 0.03559026084010435,
+      "ndcg_mean": 0.6615114747159829,
+      "ndcg_std": 0.037442980017641486,
+      "precision@5_mean": 0.36933333333333335,
+      "recall@5_mean": 0.605
+    }
+  },
+  "performance_comparison": {
+    "jd_vs_training": {
+      "jd_avg_mrr": 0.04149698960043788,
+      "training_avg_mrr": 0.875
+    }
+  },
+  "recommendations": [
+    "\u26a0\ufe0f  jd_single_split: MRR (0.043) indicates poor retrieval performance",
+    "\u26a0\ufe0f  jd_cross_validation: MRR (0.040) indicates poor retrieval performance",
+    "\u2705 training_single_split: Excellent MRR (0.900) - strong retrieval performance",
+    "\u2705 training_cross_validation: Excellent MRR (0.850) - strong retrieval performance",
+    "\ud83d\udd0d Consider A/B testing different embedding models (text-embedding-3-small vs larger variants)",
+    "\ud83d\udcc8 Implement continuous evaluation pipeline for production monitoring",
+    "\ud83c\udfaf Focus on improving recall metrics for better coverage of relevant results",
+    "\ud83d\udd04 Consider fine-tuning embeddings on domain-specific career data"
+  ],
+  "metadata": {
+    "evaluation_timestamp": "2025-12-07T01:12:52.236565",
+    "total_evaluations": 4
+  }
+}

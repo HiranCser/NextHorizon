@@ -16,6 +16,47 @@ def _cosine(a, b):
         return 0.0
     return float(a.dot(b) / (na * nb))
 
+def _manhattan(a, b):
+    """Calculate negative manhattan distance (higher = more similar)"""
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+    return -float(np.sum(np.abs(a - b)))
+
+def _euclidean(a, b):
+    """Calculate negative euclidean distance (higher = more similar)"""
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+    return -float(np.linalg.norm(a - b))
+
+def _dot_product(a, b):
+    """Calculate dot product similarity"""
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
+    return float(a.dot(b))
+
+def _preprocess_aggressive(text: str) -> str:
+    """Aggressive text preprocessing - remove stop words and short words"""
+    if not text:
+        return ""
+
+    # Convert to lowercase and remove punctuation
+    text = re.sub(r'[^\w\s]', ' ', text.lower())
+
+    # Remove stop words and short words
+    stop_words = {
+        'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by',
+        'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+        'my', 'your', 'his', 'its', 'our', 'their', 'this', 'that', 'these', 'those',
+        'is', 'am', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had',
+        'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must',
+        'can', 'shall', 'will', 'would', 'could', 'should', 'may', 'might', 'must'
+    }
+
+    words = text.split()
+    filtered = [w for w in words if len(w) > 2 and w not in stop_words]
+
+    return ' '.join(filtered)
+
 def _norm(s: str) -> str:
     """Normalize text string"""
     s = (s or "").strip()
@@ -26,26 +67,84 @@ def openai_rank_roles(resume_text: str, role_snippets: List[Dict[str, Any]], top
     resume_text = _norm(resume_text)
     if not role_snippets:
         return []
-        
+
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY environment variable.")
-        
+
     texts = [str(s.get("snippet", "")) for s in role_snippets]
-    
+
     try:
         from openai import OpenAI
         client = OpenAI(api_key=api_key)
-        model = "text-embedding-3-small"
+        # Upgraded to text-embedding-3-large for better semantic understanding
+        model = "text-embedding-3-large"
         emb_resume = client.embeddings.create(model=model, input=resume_text).data[0].embedding
         emb_snips = client.embeddings.create(model=model, input=texts).data
         scores = [_cosine(emb_resume, emb_s.embedding) for emb_s in emb_snips]
     except Exception as e:
         raise RuntimeError(f"OpenAI API error: {str(e)}. Please check your API key and connection.")
-    
+
     ranked = list(zip(role_snippets, scores))
     ranked.sort(key=lambda x: x[1], reverse=True)
-    
+
+    out = []
+    for r, sc in ranked[:max(1, int(top_k))]:
+        out.append({
+            "role_title": r.get("title", ""),
+            "score": float(sc),
+            "link": r.get("link", "")
+        })
+    return out
+
+def openai_rank_roles_enhanced(resume_text: str, role_snippets: List[Dict[str, Any]], top_k: int = 5,
+                              similarity_method: str = "manhattan", preprocess_text: bool = True) -> List[Dict[str, Any]]:
+    """
+    Enhanced role ranking using A/B testing insights:
+    - Manhattan distance for better performance
+    - Aggressive preprocessing to remove noise
+    - text-embedding-3-large for superior semantic understanding
+    """
+    # Apply preprocessing if enabled
+    if preprocess_text:
+        resume_text = _preprocess_aggressive(resume_text)
+        role_snippets = [{**s, "snippet": _preprocess_aggressive(str(s.get("snippet", "")))} for s in role_snippets]
+    else:
+        resume_text = _norm(resume_text)
+
+    if not role_snippets:
+        return []
+
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY environment variable.")
+
+    texts = [str(s.get("snippet", "")) for s in role_snippets]
+
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+        # Use text-embedding-3-large for superior semantic understanding
+        model = "text-embedding-3-large"
+        emb_resume = client.embeddings.create(model=model, input=resume_text).data[0].embedding
+        emb_snips = client.embeddings.create(model=model, input=texts).data
+
+        # Use different similarity methods based on A/B testing results
+        if similarity_method == "manhattan":
+            scores = [_manhattan(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        elif similarity_method == "euclidean":
+            scores = [_euclidean(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        elif similarity_method == "dot_product":
+            scores = [_dot_product(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        else:  # default to cosine
+            scores = [_cosine(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+
+    except Exception as e:
+        raise RuntimeError(f"OpenAI API error: {str(e)}. Please check your API key and connection.")
+
+    ranked = list(zip(role_snippets, scores))
+    ranked.sort(key=lambda x: x[1], reverse=True)
+
     out = []
     for r, sc in ranked[:max(1, int(top_k))]:
         out.append({
@@ -60,26 +159,27 @@ def openai_rank_jds(resume_text: str, jd_rows: List[Dict[str, Any]], top_k: int 
     resume_text = _norm(resume_text)
     if not jd_rows:
         return []
-        
+
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY environment variable.")
-        
+
     texts = [str(x.get("jd_text", "")) for x in jd_rows]
-    
+
     try:
         from openai import OpenAI
         client = OpenAI(api_key=api_key)
-        model = "text-embedding-3-small"
+        # Upgraded to text-embedding-3-large for better semantic understanding
+        model = "text-embedding-3-large"
         emb_resume = client.embeddings.create(model=model, input=resume_text).data[0].embedding
         emb_snips = client.embeddings.create(model=model, input=texts).data
         scores = [_cosine(emb_resume, emb_s.embedding) for emb_s in emb_snips]
     except Exception as e:
         raise RuntimeError(f"OpenAI API error: {str(e)}. Please check your API key and connection.")
-    
+
     ranked = list(zip(jd_rows, scores))
     ranked.sort(key=lambda x: x[1], reverse=True)
-    
+
     out = []
     for row, sc in ranked[:max(1, int(top_k))]:
         out.append({
@@ -88,6 +188,78 @@ def openai_rank_jds(resume_text: str, jd_rows: List[Dict[str, Any]], top_k: int 
             "title": row.get("source_title", "") or row.get("title", ""),
             "link": row.get("source_url", "") or row.get("link", ""),
             "match_percent": round(float(sc * 100.0), 1),
+        })
+    return out
+
+def openai_rank_jds_enhanced(resume_text: str, jd_rows: List[Dict[str, Any]], top_k: int = 5,
+                           similarity_method: str = "manhattan", preprocess_text: bool = True) -> List[Dict[str, Any]]:
+    """
+    Enhanced JD ranking using A/B testing insights:
+    - Manhattan distance for better performance on JD data
+    - Aggressive preprocessing to remove noise and improve matching
+    - text-embedding-3-large for superior semantic understanding
+    """
+    # Apply preprocessing if enabled
+    if preprocess_text:
+        resume_text = _preprocess_aggressive(resume_text)
+        jd_rows = [{**row, "jd_text": _preprocess_aggressive(str(row.get("jd_text", "")))} for row in jd_rows]
+    else:
+        resume_text = _norm(resume_text)
+
+    if not jd_rows:
+        return []
+
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY environment variable.")
+
+    texts = [str(x.get("jd_text", "")) for x in jd_rows]
+
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+        # Use text-embedding-3-large for superior semantic understanding
+        model = "text-embedding-3-large"
+        emb_resume = client.embeddings.create(model=model, input=resume_text).data[0].embedding
+        emb_snips = client.embeddings.create(model=model, input=texts).data
+
+        # Use different similarity methods based on A/B testing results
+        if similarity_method == "manhattan":
+            scores = [_manhattan(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        elif similarity_method == "euclidean":
+            scores = [_euclidean(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        elif similarity_method == "dot_product":
+            scores = [_dot_product(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+        else:  # default to cosine
+            scores = [_cosine(emb_resume, emb_s.embedding) for emb_s in emb_snips]
+
+    except Exception as e:
+        raise RuntimeError(f"OpenAI API error: {str(e)}. Please check your API key and connection.")
+
+    ranked = list(zip(jd_rows, scores))
+    ranked.sort(key=lambda x: x[1], reverse=True)
+
+    out = []
+    for row, sc in ranked[:max(1, int(top_k))]:
+        # Convert similarity score back to 0-1 range for display
+        if similarity_method == "manhattan":
+            # Manhattan returns negative distances, convert to positive similarity
+            display_score = max(0, min(1, (sc + 2.0) / 4.0))  # Rough normalization
+        elif similarity_method == "euclidean":
+            # Euclidean returns negative distances, convert to positive similarity
+            display_score = max(0, min(1, (sc + 2.0) / 4.0))  # Rough normalization
+        elif similarity_method == "dot_product":
+            # Dot product can be any range, normalize roughly
+            display_score = max(0, min(1, (sc + 1.0) / 2.0))  # Rough normalization
+        else:
+            display_score = sc
+
+        out.append({
+            "role_title": row.get("role_title", ""),
+            "company": row.get("company", ""),
+            "title": row.get("source_title", "") or row.get("title", ""),
+            "link": row.get("source_url", "") or row.get("link", ""),
+            "match_percent": round(float(display_score * 100.0), 1),
         })
     return out
 

@@ -1,0 +1,190 @@
+{
+  "experiment_name": "Text Preprocessing Comparison",
+  "description": "Compare different text preprocessing approaches",
+  "variants_tested": [
+    "basic",
+    "aggressive",
+    "minimal",
+    "stemming"
+  ],
+  "successful_runs": 4,
+  "metrics_comparison": {
+    "mrr": {
+      "best_variant": "aggressive",
+      "best_score": 0.2616666666666667,
+      "all_scores": {
+        "basic": 0.26000000000000006,
+        "aggressive": 0.2616666666666667,
+        "minimal": 0.2566666666666667,
+        "stemming": 0.2588095238095238
+      }
+    },
+    "ndcg": {
+      "best_variant": "basic",
+      "best_score": 0.14034448070941744,
+      "all_scores": {
+        "basic": 0.14034448070941744,
+        "aggressive": 0.1401367946950317,
+        "minimal": 0.12936962144090194,
+        "stemming": 0.13522519699337326
+      }
+    }
+  },
+  "detailed_results": {
+    "basic": {
+      "metrics": {
+        "mrr": 0.26000000000000006,
+        "ndcg": 0.14034448070941744,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.15,
+            "recall_mean": 0.030000000000000006
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.07500000000000001,
+            "recall_mean": 0.15000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.025297867134213448,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "preprocessing_info": {
+        "method": "basic",
+        "text_samples": {
+          "original_query": "ETL Developer...",
+          "processed_query": "etl developer..."
+        }
+      },
+      "execution_time": 0.04735755920410156,
+      "variant_config": {
+        "preprocessing": "basic",
+        "seed": 42
+      }
+    },
+    "aggressive": {
+      "metrics": {
+        "mrr": 0.2616666666666667,
+        "ndcg": 0.1401367946950317,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.15,
+            "recall_mean": 0.030000000000000006
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.07500000000000001,
+            "recall_mean": 0.15000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.025297867134213448,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "preprocessing_info": {
+        "method": "aggressive",
+        "text_samples": {
+          "original_query": "ETL Developer...",
+          "processed_query": "etl developer..."
+        }
+      },
+      "execution_time": 0.041310787200927734,
+      "variant_config": {
+        "preprocessing": "aggressive",
+        "seed": 42
+      }
+    },
+    "minimal": {
+      "metrics": {
+        "mrr": 0.2566666666666667,
+        "ndcg": 0.12936962144090194,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.15,
+            "recall_mean": 0.030000000000000006
+          },
+          "5": {
+            "precision_mean": 0.11000000000000003,
+            "recall_mean": 0.11000000000000003
+          },
+          "10": {
+            "precision_mean": 0.07,
+            "recall_mean": 0.14
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.025297867134213448,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "preprocessing_info": {
+        "method": "minimal",
+        "text_samples": {
+          "original_query": "ETL Developer...",
+          "processed_query": "etl developer..."
+        }
+      },
+      "execution_time": 0.0445561408996582,
+      "variant_config": {
+        "preprocessing": "minimal",
+        "seed": 42
+      }
+    },
+    "stemming": {
+      "metrics": {
+        "mrr": 0.2588095238095238,
+        "ndcg": 0.13522519699337326,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.15,
+            "recall_mean": 0.030000000000000006
+          },
+          "5": {
+            "precision_mean": 0.11000000000000001,
+            "recall_mean": 0.11000000000000001
+          },
+          "10": {
+            "precision_mean": 0.07500000000000001,
+            "recall_mean": 0.15000000000000002
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0006925570196472108,
+        "std_cosine": 0.025297867134213448,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 4907
+      },
+      "preprocessing_info": {
+        "method": "stemming",
+        "text_samples": {
+          "original_query": "ETL Developer...",
+          "processed_query": "etl developer..."
+        }
+      },
+      "execution_time": 0.04589128494262695,
+      "variant_config": {
+        "preprocessing": "stemming",
+        "seed": 42
+      }
+    }
+  },
+  "recommendations": [
+    "\ud83e\udd14 Similar performance: Variants perform comparably"
+  ]
+}

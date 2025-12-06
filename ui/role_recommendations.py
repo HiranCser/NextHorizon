@@ -4,7 +4,7 @@ from __future__ import annotations
 import streamlit as st
 import pandas as pd
 
-from ai.openai_client import openai_rank_roles, openai_rank_jds
+from ai.openai_client import openai_rank_roles_enhanced, openai_rank_jds_enhanced
 from utils.resume_processor import build_resume_text
 
 def _get_resume_text() -> str:
@@ -82,7 +82,8 @@ def render():
     snippets = [{"title": r, "link": "", "snippet": txt, "source": "jd_db"} for r, txt in grp.items() if r and txt]
     
     with st.spinner("🔍 Analyzing roles and matching with your profile..."):
-        ranked_roles = openai_rank_roles(resume_text, snippets, top_k=k)
+        ranked_roles = openai_rank_roles_enhanced(resume_text, snippets, top_k=k,
+                                                 similarity_method="manhattan", preprocess_text=True)
 
     st.markdown("#### 📊 Your Top Matching Roles")
     
@@ -126,7 +127,8 @@ def render():
         with st.spinner("🔍 Finding the best job matches for you..."):
             rows = jd_df[jd_df["role_title"]==sel]
             jd_rows = rows[["role_title","company","source_title","source_url","jd_text"]].to_dict(orient="records")
-            items = openai_rank_jds(resume_text, jd_rows, top_k=5)
+            items = openai_rank_jds_enhanced(resume_text, jd_rows, top_k=5,
+                                           similarity_method="manhattan", preprocess_text=True)
             
         if items:
             st.markdown(f"#### 📋 Top Job Openings for **{sel}**")

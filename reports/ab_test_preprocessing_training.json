@@ -1,0 +1,190 @@
+{
+  "experiment_name": "Text Preprocessing Comparison",
+  "description": "Compare different text preprocessing approaches",
+  "variants_tested": [
+    "basic",
+    "aggressive",
+    "minimal",
+    "stemming"
+  ],
+  "successful_runs": 4,
+  "metrics_comparison": {
+    "mrr": {
+      "best_variant": "basic",
+      "best_score": 0.8833333333333332,
+      "all_scores": {
+        "basic": 0.8833333333333332,
+        "aggressive": 0.8833333333333332,
+        "minimal": 0.8833333333333332,
+        "stemming": 0.8833333333333332
+      }
+    },
+    "ndcg": {
+      "best_variant": "basic",
+      "best_score": 0.9234148721090609,
+      "all_scores": {
+        "basic": 0.9234148721090609,
+        "aggressive": 0.9234148721090609,
+        "minimal": 0.9234148721090609,
+        "stemming": 0.9234148721090609
+      }
+    }
+  },
+  "detailed_results": {
+    "basic": {
+      "metrics": {
+        "mrr": 0.8833333333333332,
+        "ndcg": 0.9234148721090609,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.8,
+            "recall_mean": 0.16000000000000006
+          },
+          "5": {
+            "precision_mean": 0.89,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.445,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "preprocessing_info": {
+        "method": "basic",
+        "text_samples": {
+          "original_query": "unreal engine...",
+          "processed_query": "unreal engine..."
+        }
+      },
+      "execution_time": 0.0010001659393310547,
+      "variant_config": {
+        "preprocessing": "basic",
+        "seed": 42
+      }
+    },
+    "aggressive": {
+      "metrics": {
+        "mrr": 0.8833333333333332,
+        "ndcg": 0.9234148721090609,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.8,
+            "recall_mean": 0.16000000000000006
+          },
+          "5": {
+            "precision_mean": 0.89,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.445,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "preprocessing_info": {
+        "method": "aggressive",
+        "text_samples": {
+          "original_query": "unreal engine...",
+          "processed_query": "unreal engine..."
+        }
+      },
+      "execution_time": 0.0008416175842285156,
+      "variant_config": {
+        "preprocessing": "aggressive",
+        "seed": 42
+      }
+    },
+    "minimal": {
+      "metrics": {
+        "mrr": 0.8833333333333332,
+        "ndcg": 0.9234148721090609,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.8,
+            "recall_mean": 0.16000000000000006
+          },
+          "5": {
+            "precision_mean": 0.89,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.445,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "preprocessing_info": {
+        "method": "minimal",
+        "text_samples": {
+          "original_query": "unreal engine...",
+          "processed_query": "unreal engine..."
+        }
+      },
+      "execution_time": 0.0007405281066894531,
+      "variant_config": {
+        "preprocessing": "minimal",
+        "seed": 42
+      }
+    },
+    "stemming": {
+      "metrics": {
+        "mrr": 0.8833333333333332,
+        "ndcg": 0.9234148721090609,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.8,
+            "recall_mean": 0.16000000000000006
+          },
+          "5": {
+            "precision_mean": 0.89,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.445,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "preprocessing_info": {
+        "method": "stemming",
+        "text_samples": {
+          "original_query": "unreal engine...",
+          "processed_query": "unreal engine..."
+        }
+      },
+      "execution_time": 0.0008490085601806641,
+      "variant_config": {
+        "preprocessing": "stemming",
+        "seed": 42
+      }
+    }
+  },
+  "recommendations": [
+    "\ud83e\udd14 Similar performance: Variants perform comparably"
+  ]
+}

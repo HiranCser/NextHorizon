@@ -175,3 +175,5 @@ node_modules/
 test_resume.pdf
 .env.azure.example
 
+PROJECT_OVERVIEW.md
+SEQUENCE_DIAGRAMS.md

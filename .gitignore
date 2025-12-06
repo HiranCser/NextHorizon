@@ -172,3 +172,6 @@ tmp/
 .env
 
 node_modules/
+test_resume.pdf
+.env.azure.example
+

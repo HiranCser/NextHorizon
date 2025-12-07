@@ -1,0 +1,143 @@
+{
+  "experiment_name": "Embedding Model Comparison",
+  "description": "Compare different OpenAI embedding models for recommendation quality",
+  "variants_tested": [
+    "text-embedding-3-small",
+    "text-embedding-3-large",
+    "text-embedding-ada-002"
+  ],
+  "successful_runs": 3,
+  "metrics_comparison": {
+    "mrr": {
+      "best_variant": "text-embedding-3-small",
+      "best_score": 0.8583333333333334,
+      "all_scores": {
+        "text-embedding-3-small": 0.8583333333333334,
+        "text-embedding-3-large": 0.8583333333333334,
+        "text-embedding-ada-002": 0.8583333333333334
+      }
+    },
+    "ndcg": {
+      "best_variant": "text-embedding-3-small",
+      "best_score": 0.9090280254347908,
+      "all_scores": {
+        "text-embedding-3-small": 0.9090280254347908,
+        "text-embedding-3-large": 0.9090280254347908,
+        "text-embedding-ada-002": 0.9090280254347908
+      }
+    }
+  },
+  "detailed_results": {
+    "text-embedding-3-small": {
+      "metrics": {
+        "mrr": 0.8583333333333334,
+        "ndcg": 0.9090280254347908,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.75,
+            "recall_mean": 0.15000000000000005
+          },
+          "5": {
+            "precision_mean": 0.8699999999999999,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.43499999999999994,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "model_info": {
+        "model_name": "text-embedding-3-small",
+        "embedding_dim": 1536,
+        "quality_factor": 1.0
+      },
+      "execution_time": 0.0008578300476074219,
+      "variant_config": {
+        "model": "text-embedding-3-small",
+        "seed": 42
+      }
+    },
+    "text-embedding-3-large": {
+      "metrics": {
+        "mrr": 0.8583333333333334,
+        "ndcg": 0.9090280254347908,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.75,
+            "recall_mean": 0.15000000000000005
+          },
+          "5": {
+            "precision_mean": 0.8699999999999999,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.43499999999999994,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": -0.0069451951421797276,
+        "std_cosine": 0.010313918814063072,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "model_info": {
+        "model_name": "text-embedding-3-large",
+        "embedding_dim": 3072,
+        "quality_factor": 1.2
+      },
+      "execution_time": 0.0009756088256835938,
+      "variant_config": {
+        "model": "text-embedding-3-large",
+        "seed": 42
+      }
+    },
+    "text-embedding-ada-002": {
+      "metrics": {
+        "mrr": 0.8583333333333334,
+        "ndcg": 0.9090280254347908,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.75,
+            "recall_mean": 0.15000000000000005
+          },
+          "5": {
+            "precision_mean": 0.8699999999999999,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.43499999999999994,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203610062599182,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "model_info": {
+        "model_name": "text-embedding-ada-002",
+        "embedding_dim": 1536,
+        "quality_factor": 0.9
+      },
+      "execution_time": 0.0006859302520751953,
+      "variant_config": {
+        "model": "text-embedding-ada-002",
+        "seed": 42
+      }
+    }
+  },
+  "recommendations": [
+    "\ud83e\udd14 Similar performance: Variants perform comparably"
+  ]
+}

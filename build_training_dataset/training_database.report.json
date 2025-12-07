@@ -13,7 +13,7 @@
     "hours_missing": 315,
     "rating_missing": 354
   },
-  "spacy_model_available": true,
+  "spacy_model_available": false,
   "tfidf_vocab_size": 841,
   "per_column_missing": {
     "training_id": 0,

@@ -1,0 +1,130 @@
+{
+  "cross_validation": {
+    "n_splits": 3,
+    "test_size": 0.3,
+    "fold_results": [
+      {
+        "metrics": {
+          "precision_recall_at_k": {
+            "1": {
+              "precision_mean": 0.86,
+              "recall_mean": 0.3033333333333333
+            },
+            "5": {
+              "precision_mean": 0.38400000000000006,
+              "recall_mean": 0.6083333333333334
+            }
+          },
+          "mrr": 0.87,
+          "ndcg": 0.6722094752404996,
+          "embedding_health": {
+            "mean_cosine": 0.0001395769213559106,
+            "std_cosine": 0.02504551224410534,
+            "zero_norm_rate": 0.0,
+            "sample_pairs": 9929
+          }
+        },
+        "statistics": {
+          "num_queries": 50,
+          "num_documents": 103,
+          "avg_relevant_per_query": 3.14,
+          "avg_retrieved_per_query": 20.0
+        },
+        "configuration": {
+          "k_values": [
+            1,
+            5
+          ],
+          "evaluation_type": "retrieval_simulation"
+        },
+        "fold": 1
+      },
+      {
+        "metrics": {
+          "precision_recall_at_k": {
+            "1": {
+              "precision_mean": 0.78,
+              "recall_mean": 0.29833333333333334
+            },
+            "5": {
+              "precision_mean": 0.324,
+              "recall_mean": 0.5566666666666666
+            }
+          },
+          "mrr": 0.8,
+          "ndcg": 0.6112500071702929,
+          "embedding_health": {
+            "mean_cosine": -0.0001124110131058842,
+            "std_cosine": 0.025800542905926704,
+            "zero_norm_rate": 0.0,
+            "sample_pairs": 9928
+          }
+        },
+        "statistics": {
+          "num_queries": 50,
+          "num_documents": 91,
+          "avg_relevant_per_query": 3.02,
+          "avg_retrieved_per_query": 20.0
+        },
+        "configuration": {
+          "k_values": [
+            1,
+            5
+          ],
+          "evaluation_type": "retrieval_simulation"
+        },
+        "fold": 2
+      },
+      {
+        "metrics": {
+          "precision_recall_at_k": {
+            "1": {
+              "precision_mean": 0.86,
+              "recall_mean": 0.32
+            },
+            "5": {
+              "precision_mean": 0.3999999999999999,
+              "recall_mean": 0.65
+            }
+          },
+          "mrr": 0.88,
+          "ndcg": 0.7010749417371565,
+          "embedding_health": {
+            "mean_cosine": -9.52727350522764e-05,
+            "std_cosine": 0.025447966530919075,
+            "zero_norm_rate": 0.0,
+            "sample_pairs": 9935
+          }
+        },
+        "statistics": {
+          "num_queries": 50,
+          "num_documents": 108,
+          "avg_relevant_per_query": 3.1,
+          "avg_retrieved_per_query": 20.0
+        },
+        "configuration": {
+          "k_values": [
+            1,
+            5
+          ],
+          "evaluation_type": "retrieval_simulation"
+        },
+        "fold": 3
+      }
+    ]
+  },
+  "summary": {
+    "mean_mrr": 0.85,
+    "std_mrr": 0.03559026084010435,
+    "mean_ndcg": 0.6615114747159829,
+    "std_ndcg": 0.037442980017641486,
+    "precision@1_mean": 0.8333333333333334,
+    "precision@1_std": 0.03771236166328251,
+    "recall@1_mean": 0.30722222222222223,
+    "recall@1_std": 0.009262962222518377,
+    "precision@5_mean": 0.36933333333333335,
+    "precision@5_std": 0.03271425105702744,
+    "recall@5_mean": 0.605,
+    "recall@5_std": 0.03817600565024331
+  }
+}

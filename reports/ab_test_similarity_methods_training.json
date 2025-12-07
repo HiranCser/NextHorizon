@@ -1,0 +1,179 @@
+{
+  "experiment_name": "Similarity Method Comparison",
+  "description": "Compare different similarity computation methods for retrieval",
+  "variants_tested": [
+    "cosine",
+    "euclidean",
+    "dot_product",
+    "manhattan"
+  ],
+  "successful_runs": 4,
+  "metrics_comparison": {
+    "mrr": {
+      "best_variant": "cosine",
+      "best_score": 0.925,
+      "all_scores": {
+        "cosine": 0.925,
+        "euclidean": 0.925,
+        "dot_product": 0.925,
+        "manhattan": 0.925
+      }
+    },
+    "ndcg": {
+      "best_variant": "cosine",
+      "best_score": 0.9495195926789496,
+      "all_scores": {
+        "cosine": 0.9495195926789496,
+        "euclidean": 0.9495195926789496,
+        "dot_product": 0.9495195926789496,
+        "manhattan": 0.9495195926789496
+      }
+    }
+  },
+  "detailed_results": {
+    "cosine": {
+      "metrics": {
+        "mrr": 0.925,
+        "ndcg": 0.9495195926789496,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.85,
+            "recall_mean": 0.17
+          },
+          "5": {
+            "precision_mean": 0.9200000000000002,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.4600000000000001,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "method_info": {
+        "similarity_method": "cosine",
+        "embedding_dim": 1536
+      },
+      "execution_time": 0.0008745193481445312,
+      "variant_config": {
+        "method": "cosine",
+        "seed": 42
+      }
+    },
+    "euclidean": {
+      "metrics": {
+        "mrr": 0.925,
+        "ndcg": 0.9495195926789496,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.85,
+            "recall_mean": 0.17
+          },
+          "5": {
+            "precision_mean": 0.9200000000000002,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.4600000000000001,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "method_info": {
+        "similarity_method": "euclidean",
+        "embedding_dim": 1536
+      },
+      "execution_time": 0.0009768009185791016,
+      "variant_config": {
+        "method": "euclidean",
+        "seed": 42
+      }
+    },
+    "dot_product": {
+      "metrics": {
+        "mrr": 0.925,
+        "ndcg": 0.9495195926789496,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.85,
+            "recall_mean": 0.17
+          },
+          "5": {
+            "precision_mean": 0.9200000000000002,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.4600000000000001,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "method_info": {
+        "similarity_method": "dot_product",
+        "embedding_dim": 1536
+      },
+      "execution_time": 0.0006740093231201172,
+      "variant_config": {
+        "method": "dot_product",
+        "seed": 42
+      }
+    },
+    "manhattan": {
+      "metrics": {
+        "mrr": 0.925,
+        "ndcg": 0.9495195926789496,
+        "precision_recall_at_k": {
+          "1": {
+            "precision_mean": 0.85,
+            "recall_mean": 0.17
+          },
+          "5": {
+            "precision_mean": 0.9200000000000002,
+            "recall_mean": 1.0
+          },
+          "10": {
+            "precision_mean": 0.4600000000000001,
+            "recall_mean": 1.0
+          }
+        }
+      },
+      "embedding_health": {
+        "mean_cosine": 0.015203608199954033,
+        "std_cosine": 0.01885063759982586,
+        "zero_norm_rate": 0.0,
+        "sample_pairs": 9
+      },
+      "method_info": {
+        "similarity_method": "manhattan",
+        "embedding_dim": 1536
+      },
+      "execution_time": 0.0011072158813476562,
+      "variant_config": {
+        "method": "manhattan",
+        "seed": 42
+      }
+    }
+  },
+  "recommendations": [
+    "\ud83e\udd14 Similar performance: Variants perform comparably",
+    "\u26a1 Performance: dot_product is significantly faster than manhattan"
+  ]
+}

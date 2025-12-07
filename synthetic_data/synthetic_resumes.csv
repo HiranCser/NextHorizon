@@ -1,0 +1,629 @@
+id,role_type,level,years_experience,skills,resume_text,primary_role
+resume_0000,data,Junior,2,R; Excel; Power BI; Hadoop; Tableau; Pandas; Docker,"Professional Role: Junior Data Analyst
+        Years of Experience: 2
+        
+        Skills: R, Excel, Power BI, Hadoop, Tableau, Pandas, Docker
+        
+        Work Experience:
+        1 years as Senior Data Analyst at LargeScale
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Data Analyst
+resume_0001,frontend,Mid,4,REST APIs; TypeScript; Responsive Design; JavaScript; Material-UI; Pandas; Docker,"Professional Role: Mid Frontend Engineer
+        Years of Experience: 4
+        
+        Skills: REST APIs, TypeScript, Responsive Design, JavaScript, Material-UI, Pandas, Docker
+        
+        Work Experience:
+        2 years as Lead Frontend Engineer at LargeScale
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Frontend Engineer
+resume_0002,frontend,Senior,13,Angular; Responsive Design; JavaScript; Material-UI; HTML; GraphQL; Vue.js; Docker; Agile,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 13
+        
+        Skills: Angular, Responsive Design, JavaScript, Material-UI, HTML, GraphQL, Vue.js, Docker, Agile
+        
+        Work Experience:
+        4 years as Lead Frontend Engineer at Fortune500
+1 years as Frontend Engineer at BigTech
+5 years as Frontend Engineer at NextGen
+1 years as Frontend Engineer at Fortune500
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Frontend Engineer
+resume_0003,frontend,Senior,13,Angular; TypeScript; Responsive Design; JavaScript; CSS; Material-UI; HTML; Jest; TypeScript,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 13
+        
+        Skills: Angular, TypeScript, Responsive Design, JavaScript, CSS, Material-UI, HTML, Jest, TypeScript
+        
+        Work Experience:
+        3 years as Principal Frontend Engineer at InnovateCo
+1 years as Frontend Engineer at EnterpriseGlobal
+5 years as Frontend Engineer at EnterpriseGlobal
+2 years as Frontend Engineer at RisingStars
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Frontend Engineer
+resume_0004,data,Senior,9,Pandas; Statistics; SQL; Power BI; Hadoop; ETL; JavaScript; TensorFlow,"Professional Role: Senior Data Analyst
+        Years of Experience: 9
+        
+        Skills: Pandas, Statistics, SQL, Power BI, Hadoop, ETL, JavaScript, TensorFlow
+        
+        Work Experience:
+        2 years as Senior Data Analyst at BigTech
+4 years as Data Analyst at RisingStars
+1 years as Data Analyst at GrowthCo
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Data Analyst
+resume_0005,devops,Senior,9,Infrastructure; Linux; GitLab; Monitoring; Jenkins; Kubernetes; Ansible; Kubernetes; Python,"Professional Role: Senior DevOps Engineer
+        Years of Experience: 9
+        
+        Skills: Infrastructure, Linux, GitLab, Monitoring, Jenkins, Kubernetes, Ansible, Kubernetes, Python
+        
+        Work Experience:
+        1 years as Principal DevOps Engineer at TechBootstrap
+4 years as DevOps Engineer at Fortune500
+4 years as DevOps Engineer at NextGen
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",DevOps Engineer
+resume_0006,fullstack,Senior,9,Git; Node.js; PostgreSQL; JavaScript; TypeScript; PostgreSQL; MongoDB,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 9
+        
+        Skills: Git, Node.js, PostgreSQL, JavaScript, TypeScript, PostgreSQL, MongoDB
+        
+        Work Experience:
+        4 years as Principal Full Stack Developer at InnovateCo
+2 years as Full Stack Developer at Fortune500
+3 years as Full Stack Developer at NextGen
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Full Stack Developer
+resume_0007,frontend,Mid,6,REST APIs; Responsive Design; React; HTML; Redux; GraphQL; Kubernetes; JavaScript,"Professional Role: Mid Frontend Engineer
+        Years of Experience: 6
+        
+        Skills: REST APIs, Responsive Design, React, HTML, Redux, GraphQL, Kubernetes, JavaScript
+        
+        Work Experience:
+        2 years as Principal Frontend Engineer at TechBootstrap
+1 years as Frontend Engineer at RocketLabs
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Frontend Engineer
+resume_0008,qa,Mid,3,Agile; Test Planning; API Testing; Jest; SQL; Python; JIRA; Azure,"Professional Role: Mid QA Engineer
+        Years of Experience: 3
+        
+        Skills: Agile, Test Planning, API Testing, Jest, SQL, Python, JIRA, Azure
+        
+        Work Experience:
+        3 years as Principal QA Engineer at EnterpriseGlobal
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",QA Engineer
+resume_0009,data,Senior,11,Data Warehousing; Spark; R; Python; Power BI; Pandas; SQL; REST APIs; API Design,"Professional Role: Senior Data Analyst
+        Years of Experience: 11
+        
+        Skills: Data Warehousing, Spark, R, Python, Power BI, Pandas, SQL, REST APIs, API Design
+        
+        Work Experience:
+        2 years as Senior Data Analyst at EnterpriseGlobal
+1 years as Data Analyst at Fortune500
+2 years as Data Analyst at StartupXYZ
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Data Analyst
+resume_0010,devops,Mid,4,Monitoring; Terraform; Azure; Ansible; AWS; Jenkins; CI/CD; Azure; Jupyter,"Professional Role: Mid DevOps Engineer
+        Years of Experience: 4
+        
+        Skills: Monitoring, Terraform, Azure, Ansible, AWS, Jenkins, CI/CD, Azure, Jupyter
+        
+        Work Experience:
+        4 years as Senior DevOps Engineer at StartupXYZ
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",DevOps Engineer
+resume_0011,ml,Mid,7,Computer Vision; Python; TensorFlow; NLP; SQL; NumPy; PyTorch; Statistics; TypeScript; API Testing,"Professional Role: Mid Machine Learning Engineer
+        Years of Experience: 7
+        
+        Skills: Computer Vision, Python, TensorFlow, NLP, SQL, NumPy, PyTorch, Statistics, TypeScript, API Testing
+        
+        Work Experience:
+        4 years as Senior Machine Learning Engineer at RocketLabs
+2 years as Machine Learning Engineer at GrowthCo
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Machine Learning Engineer
+resume_0012,qa,Senior,14,Testing; Agile; API Testing; Python; Selenium; Jest; JavaScript,"Professional Role: Senior QA Engineer
+        Years of Experience: 14
+        
+        Skills: Testing, Agile, API Testing, Python, Selenium, Jest, JavaScript
+        
+        Work Experience:
+        4 years as Lead QA Engineer at GrowthCo
+1 years as QA Engineer at RocketLabs
+1 years as QA Engineer at ExpandNow
+4 years as QA Engineer at RisingStars
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",QA Engineer
+resume_0013,data,Senior,8,Power BI; Excel; R; SQL; Spark; Statistics; React; Microservices,"Professional Role: Senior Data Analyst
+        Years of Experience: 8
+        
+        Skills: Power BI, Excel, R, SQL, Spark, Statistics, React, Microservices
+        
+        Work Experience:
+        4 years as Senior Data Analyst at Corporate Inc
+1 years as Data Analyst at Fortune500
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Data Analyst
+resume_0014,devops,Junior,2,GitLab; Kubernetes; Linux; Azure; Docker; CI/CD; AWS; Deep Learning,"Professional Role: Junior DevOps Engineer
+        Years of Experience: 2
+        
+        Skills: GitLab, Kubernetes, Linux, Azure, Docker, CI/CD, AWS, Deep Learning
+        
+        Work Experience:
+        2 years as Principal DevOps Engineer at GrowthCo
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",DevOps Engineer
+resume_0015,fullstack,Mid,7,Git; Agile; JavaScript; Docker; TypeScript; AWS; MongoDB; Load Testing,"Professional Role: Mid Full Stack Developer
+        Years of Experience: 7
+        
+        Skills: Git, Agile, JavaScript, Docker, TypeScript, AWS, MongoDB, Load Testing
+        
+        Work Experience:
+        5 years as Principal Full Stack Developer at StartupXYZ
+1 years as Full Stack Developer at BigTech
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer
+resume_0016,backend,Senior,15,Rust; Go; Node.js; MongoDB; API Design; Docker; Ansible; SQL,"Professional Role: Senior Backend Engineer
+        Years of Experience: 15
+        
+        Skills: Rust, Go, Node.js, MongoDB, API Design, Docker, Ansible, SQL
+        
+        Work Experience:
+        5 years as Senior Backend Engineer at ScaleUp Tech
+3 years as Backend Engineer at StartupXYZ
+5 years as Backend Engineer at InnovateCo
+2 years as Backend Engineer at EnterpriseGlobal
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Backend Engineer
+resume_0017,data,Senior,11,Spark; Data Warehousing; Excel; SQL; Python; Statistics; Power BI; Testing; React,"Professional Role: Senior Data Analyst
+        Years of Experience: 11
+        
+        Skills: Spark, Data Warehousing, Excel, SQL, Python, Statistics, Power BI, Testing, React
+        
+        Work Experience:
+        3 years as Senior Data Analyst at InnovateCo
+4 years as Data Analyst at LargeScale
+1 years as Data Analyst at StartupXYZ
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Data Analyst
+resume_0018,backend,Senior,14,Microservices; API Design; Node.js; PostgreSQL; AWS; Python; Docker; TypeScript; C#,"Professional Role: Senior Backend Engineer
+        Years of Experience: 14
+        
+        Skills: Microservices, API Design, Node.js, PostgreSQL, AWS, Python, Docker, TypeScript, C#
+        
+        Work Experience:
+        2 years as Lead Backend Engineer at Fortune500
+5 years as Backend Engineer at NextGen
+2 years as Backend Engineer at TechBootstrap
+2 years as Backend Engineer at ScaleUp Tech
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Backend Engineer
+resume_0019,fullstack,Senior,13,Git; Express.js; JavaScript; MongoDB; Node.js; Agile; React; AWS; Redux; Automation,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 13
+        
+        Skills: Git, Express.js, JavaScript, MongoDB, Node.js, Agile, React, AWS, Redux, Automation
+        
+        Work Experience:
+        3 years as Senior Full Stack Developer at TechBootstrap
+2 years as Full Stack Developer at ExpandNow
+3 years as Full Stack Developer at InnovateCo
+3 years as Full Stack Developer at Corporate Inc
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Full Stack Developer
+resume_0020,qa,Senior,9,Testing; Selenium; SQL; Jest; Load Testing; Python; JIRA; Jenkins; Computer Vision,"Professional Role: Senior QA Engineer
+        Years of Experience: 9
+        
+        Skills: Testing, Selenium, SQL, Jest, Load Testing, Python, JIRA, Jenkins, Computer Vision
+        
+        Work Experience:
+        3 years as Principal QA Engineer at NextGen
+1 years as QA Engineer at NextGen
+2 years as QA Engineer at ScaleUp Tech
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",QA Engineer
+resume_0021,devops,Senior,15,Jenkins; GitLab; Kubernetes; Infrastructure; Ansible; Terraform; Python; Go,"Professional Role: Senior DevOps Engineer
+        Years of Experience: 15
+        
+        Skills: Jenkins, GitLab, Kubernetes, Infrastructure, Ansible, Terraform, Python, Go
+        
+        Work Experience:
+        5 years as Lead DevOps Engineer at RisingStars
+4 years as DevOps Engineer at BigTech
+5 years as DevOps Engineer at TechBootstrap
+1 years as DevOps Engineer at LargeScale
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",DevOps Engineer
+resume_0022,devops,Mid,5,Ansible; Docker; CI/CD; Linux; Azure; Terraform; Infrastructure; Jenkins; Data Warehousing; Docker,"Professional Role: Mid DevOps Engineer
+        Years of Experience: 5
+        
+        Skills: Ansible, Docker, CI/CD, Linux, Azure, Terraform, Infrastructure, Jenkins, Data Warehousing, Docker
+        
+        Work Experience:
+        4 years as Principal DevOps Engineer at EnterpriseGlobal
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",DevOps Engineer
+resume_0023,frontend,Senior,11,CSS; REST APIs; GraphQL; HTML; Angular; Agile; CSS,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 11
+        
+        Skills: CSS, REST APIs, GraphQL, HTML, Angular, Agile, CSS
+        
+        Work Experience:
+        2 years as Senior Frontend Engineer at TechBootstrap
+1 years as Frontend Engineer at RocketLabs
+5 years as Frontend Engineer at RocketLabs
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Frontend Engineer
+resume_0024,devops,Mid,4,Terraform; GitLab; Azure; AWS; Docker; Monitoring; Infrastructure; Linux; Responsive Design; API Testing,"Professional Role: Mid DevOps Engineer
+        Years of Experience: 4
+        
+        Skills: Terraform, GitLab, Azure, AWS, Docker, Monitoring, Infrastructure, Linux, Responsive Design, API Testing
+        
+        Work Experience:
+        4 years as Senior DevOps Engineer at QuickStart
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",DevOps Engineer
+resume_0025,frontend,Senior,13,Material-UI; REST APIs; Responsive Design; HTML; Redux; CSS; GraphQL; JavaScript; Jupyter; AWS,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 13
+        
+        Skills: Material-UI, REST APIs, Responsive Design, HTML, Redux, CSS, GraphQL, JavaScript, Jupyter, AWS
+        
+        Work Experience:
+        4 years as Senior Frontend Engineer at ExpandNow
+3 years as Frontend Engineer at LargeScale
+2 years as Frontend Engineer at RisingStars
+1 years as Frontend Engineer at BigTech
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Frontend Engineer
+resume_0026,fullstack,Mid,6,MongoDB; Agile; Express.js; AWS; Git; Python; JavaScript,"Professional Role: Mid Full Stack Developer
+        Years of Experience: 6
+        
+        Skills: MongoDB, Agile, Express.js, AWS, Git, Python, JavaScript
+        
+        Work Experience:
+        4 years as Lead Full Stack Developer at NextGen
+2 years as Full Stack Developer at TechBootstrap
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer
+resume_0027,qa,Senior,10,Load Testing; JIRA; Test Planning; Testing; Automation; AWS; Statistics,"Professional Role: Senior QA Engineer
+        Years of Experience: 10
+        
+        Skills: Load Testing, JIRA, Test Planning, Testing, Automation, AWS, Statistics
+        
+        Work Experience:
+        5 years as Lead QA Engineer at EnterpriseGlobal
+2 years as QA Engineer at RisingStars
+2 years as QA Engineer at RocketLabs
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",QA Engineer
+resume_0028,data,Senior,13,R; Tableau; Data Warehousing; Pandas; SQL; Power BI; Excel; Statistics; Python; AWS,"Professional Role: Senior Data Analyst
+        Years of Experience: 13
+        
+        Skills: R, Tableau, Data Warehousing, Pandas, SQL, Power BI, Excel, Statistics, Python, AWS
+        
+        Work Experience:
+        4 years as Senior Data Analyst at RocketLabs
+1 years as Data Analyst at RisingStars
+3 years as Data Analyst at RocketLabs
+3 years as Data Analyst at RisingStars
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Data Analyst
+resume_0029,fullstack,Senior,14,Docker; React; PostgreSQL; Git; TypeScript; Angular; Pandas,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 14
+        
+        Skills: Docker, React, PostgreSQL, Git, TypeScript, Angular, Pandas
+        
+        Work Experience:
+        1 years as Senior Full Stack Developer at TechBootstrap
+1 years as Full Stack Developer at EnterpriseGlobal
+2 years as Full Stack Developer at RocketLabs
+1 years as Full Stack Developer at EnterpriseGlobal
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Full Stack Developer
+resume_0030,fullstack,Senior,13,MongoDB; REST APIs; Git; Node.js; Agile; Docker; React; CI/CD; Microservices,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 13
+        
+        Skills: MongoDB, REST APIs, Git, Node.js, Agile, Docker, React, CI/CD, Microservices
+        
+        Work Experience:
+        4 years as Senior Full Stack Developer at GrowthCo
+5 years as Full Stack Developer at EnterpriseGlobal
+1 years as Full Stack Developer at BigTech
+3 years as Full Stack Developer at Fortune500
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Full Stack Developer
+resume_0031,fullstack,Senior,9,Git; TypeScript; Node.js; PostgreSQL; Agile; React; Express.js; Docker; Rust; NLP,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 9
+        
+        Skills: Git, TypeScript, Node.js, PostgreSQL, Agile, React, Express.js, Docker, Rust, NLP
+        
+        Work Experience:
+        4 years as Lead Full Stack Developer at EnterpriseGlobal
+2 years as Full Stack Developer at Corporate Inc
+3 years as Full Stack Developer at NextGen
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer
+resume_0032,ml,Mid,7,NumPy; Scikit-learn; TensorFlow; Pandas; Jupyter; Deep Learning; NLP; Monitoring; JIRA,"Professional Role: Mid Machine Learning Engineer
+        Years of Experience: 7
+        
+        Skills: NumPy, Scikit-learn, TensorFlow, Pandas, Jupyter, Deep Learning, NLP, Monitoring, JIRA
+        
+        Work Experience:
+        3 years as Lead Machine Learning Engineer at RocketLabs
+2 years as Machine Learning Engineer at GrowthCo
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Machine Learning Engineer
+resume_0033,fullstack,Mid,5,PostgreSQL; React; Agile; Express.js; Node.js; Docker; TypeScript; Statistics; Pytest,"Professional Role: Mid Full Stack Developer
+        Years of Experience: 5
+        
+        Skills: PostgreSQL, React, Agile, Express.js, Node.js, Docker, TypeScript, Statistics, Pytest
+        
+        Work Experience:
+        4 years as Lead Full Stack Developer at LargeScale
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Full Stack Developer
+resume_0034,fullstack,Mid,4,Agile; Express.js; JavaScript; TypeScript; Docker; REST APIs; AWS; MongoDB; Statistics; Statistics,"Professional Role: Mid Full Stack Developer
+        Years of Experience: 4
+        
+        Skills: Agile, Express.js, JavaScript, TypeScript, Docker, REST APIs, AWS, MongoDB, Statistics, Statistics
+        
+        Work Experience:
+        3 years as Lead Full Stack Developer at LargeScale
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer
+resume_0035,frontend,Junior,2,HTML; Angular; REST APIs; Vue.js; TypeScript; Material-UI; Excel; Computer Vision,"Professional Role: Junior Frontend Engineer
+        Years of Experience: 2
+        
+        Skills: HTML, Angular, REST APIs, Vue.js, TypeScript, Material-UI, Excel, Computer Vision
+        
+        Work Experience:
+        2 years as Lead Frontend Engineer at TechBootstrap
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Frontend Engineer
+resume_0036,frontend,Mid,5,Responsive Design; REST APIs; Vue.js; CSS; React; Go; Infrastructure,"Professional Role: Mid Frontend Engineer
+        Years of Experience: 5
+        
+        Skills: Responsive Design, REST APIs, Vue.js, CSS, React, Go, Infrastructure
+        
+        Work Experience:
+        2 years as Senior Frontend Engineer at LargeScale
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",Frontend Engineer
+resume_0037,fullstack,Senior,8,Docker; TypeScript; MongoDB; React; JavaScript; AWS; Express.js; PostgreSQL; JIRA; MongoDB,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 8
+        
+        Skills: Docker, TypeScript, MongoDB, React, JavaScript, AWS, Express.js, PostgreSQL, JIRA, MongoDB
+        
+        Work Experience:
+        1 years as Senior Full Stack Developer at Fortune500
+2 years as Full Stack Developer at BigTech
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Full Stack Developer
+resume_0038,backend,Senior,9,Microservices; Kubernetes; Docker; C#; API Design; PostgreSQL; AWS; MongoDB; AWS; CI/CD,"Professional Role: Senior Backend Engineer
+        Years of Experience: 9
+        
+        Skills: Microservices, Kubernetes, Docker, C#, API Design, PostgreSQL, AWS, MongoDB, AWS, CI/CD
+        
+        Work Experience:
+        5 years as Principal Backend Engineer at Fortune500
+1 years as Backend Engineer at TechBootstrap
+2 years as Backend Engineer at Fortune500
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Backend Engineer
+resume_0039,frontend,Senior,9,Vue.js; React; JavaScript; Redux; REST APIs; Express.js; Go,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 9
+        
+        Skills: Vue.js, React, JavaScript, Redux, REST APIs, Express.js, Go
+        
+        Work Experience:
+        3 years as Senior Frontend Engineer at LargeScale
+2 years as Frontend Engineer at NextGen
+2 years as Frontend Engineer at ScaleUp Tech
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Frontend Engineer
+resume_0040,data,Mid,3,Tableau; Python; SQL; R; Excel; Data Warehousing; Statistics; SQL; Terraform,"Professional Role: Mid Data Analyst
+        Years of Experience: 3
+        
+        Skills: Tableau, Python, SQL, R, Excel, Data Warehousing, Statistics, SQL, Terraform
+        
+        Work Experience:
+        1 years as Principal Data Analyst at ExpandNow
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Data Analyst
+resume_0041,devops,Senior,9,Terraform; Kubernetes; Linux; Docker; GitLab; Jenkins; AWS; CI/CD; Node.js; C#,"Professional Role: Senior DevOps Engineer
+        Years of Experience: 9
+        
+        Skills: Terraform, Kubernetes, Linux, Docker, GitLab, Jenkins, AWS, CI/CD, Node.js, C#
+        
+        Work Experience:
+        5 years as Principal DevOps Engineer at Fortune500
+3 years as DevOps Engineer at Fortune500
+1 years as DevOps Engineer at NextGen
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",DevOps Engineer
+resume_0042,frontend,Senior,10,Material-UI; Redux; Angular; Responsive Design; HTML; TypeScript; Vue.js; REST APIs; Tableau; Rust,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 10
+        
+        Skills: Material-UI, Redux, Angular, Responsive Design, HTML, TypeScript, Vue.js, REST APIs, Tableau, Rust
+        
+        Work Experience:
+        4 years as Lead Frontend Engineer at LargeScale
+4 years as Frontend Engineer at Fortune500
+2 years as Frontend Engineer at InnovateCo
+        
+        Education: BS in Engineering
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Frontend Engineer
+resume_0043,backend,Senior,13,API Design; Python; AWS; Kubernetes; MongoDB; PostgreSQL; Docker; Java; Linux; Docker,"Professional Role: Senior Backend Engineer
+        Years of Experience: 13
+        
+        Skills: API Design, Python, AWS, Kubernetes, MongoDB, PostgreSQL, Docker, Java, Linux, Docker
+        
+        Work Experience:
+        4 years as Lead Backend Engineer at TechBootstrap
+5 years as Backend Engineer at InnovateCo
+4 years as Backend Engineer at LargeScale
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Backend Engineer
+resume_0044,data,Senior,10,R; Tableau; Excel; Spark; SQL; Hadoop; Scikit-learn; Java,"Professional Role: Senior Data Analyst
+        Years of Experience: 10
+        
+        Skills: R, Tableau, Excel, Spark, SQL, Hadoop, Scikit-learn, Java
+        
+        Work Experience:
+        4 years as Lead Data Analyst at TechBootstrap
+3 years as Data Analyst at BigTech
+2 years as Data Analyst at RisingStars
+        
+        Education: MS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Data Analyst
+resume_0045,devops,Mid,3,Azure; Linux; Ansible; AWS; Kubernetes; Monitoring; Infrastructure; GitLab; SQL; Docker,"Professional Role: Mid DevOps Engineer
+        Years of Experience: 3
+        
+        Skills: Azure, Linux, Ansible, AWS, Kubernetes, Monitoring, Infrastructure, GitLab, SQL, Docker
+        
+        Work Experience:
+        2 years as Principal DevOps Engineer at BigTech
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Azure Certified",DevOps Engineer
+resume_0046,ml,Senior,14,Jupyter; Statistics; Computer Vision; NumPy; NLP; Pandas; JIRA; Terraform,"Professional Role: Senior Machine Learning Engineer
+        Years of Experience: 14
+        
+        Skills: Jupyter, Statistics, Computer Vision, NumPy, NLP, Pandas, JIRA, Terraform
+        
+        Work Experience:
+        3 years as Principal Machine Learning Engineer at TechBootstrap
+4 years as Machine Learning Engineer at RocketLabs
+1 years as Machine Learning Engineer at RisingStars
+4 years as Machine Learning Engineer at GrowthCo
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",Machine Learning Engineer
+resume_0047,frontend,Senior,9,Angular; Redux; Responsive Design; REST APIs; Material-UI; React; HTML; Material-UI; PyTorch,"Professional Role: Senior Frontend Engineer
+        Years of Experience: 9
+        
+        Skills: Angular, Redux, Responsive Design, REST APIs, Material-UI, React, HTML, Material-UI, PyTorch
+        
+        Work Experience:
+        1 years as Lead Frontend Engineer at ExpandNow
+5 years as Frontend Engineer at LargeScale
+3 years as Frontend Engineer at InnovateCo
+        
+        Education: Self-taught with online certifications
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Frontend Engineer
+resume_0048,fullstack,Senior,11,PostgreSQL; React; REST APIs; Node.js; Express.js; TypeScript; AWS; MongoDB; Angular; ETL,"Professional Role: Senior Full Stack Developer
+        Years of Experience: 11
+        
+        Skills: PostgreSQL, React, REST APIs, Node.js, Express.js, TypeScript, AWS, MongoDB, Angular, ETL
+        
+        Work Experience:
+        1 years as Lead Full Stack Developer at Fortune500
+2 years as Full Stack Developer at BigTech
+1 years as Full Stack Developer at InnovateCo
+        
+        Education: BS in Computer Science
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer
+resume_0049,fullstack,Mid,6,MongoDB; Express.js; PostgreSQL; AWS; Agile; Node.js; REST APIs; React; Linux; NLP,"Professional Role: Mid Full Stack Developer
+        Years of Experience: 6
+        
+        Skills: MongoDB, Express.js, PostgreSQL, AWS, Agile, Node.js, REST APIs, React, Linux, NLP
+        
+        Work Experience:
+        2 years as Senior Full Stack Developer at NextGen
+2 years as Full Stack Developer at ExpandNow
+        
+        Education: Bootcamp Graduate - Full Stack Development
+        
+        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",Full Stack Developer

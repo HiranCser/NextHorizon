@@ -1,0 +1,1202 @@
+[
+  {
+    "pair_id": "pair_0000",
+    "resume": {
+      "id": "resume_0000",
+      "role_type": "data",
+      "level": "Mid",
+      "years_experience": 5,
+      "skills": "API Testing; Python; Agile; Test Planning; SQL; Pytest; Testing; Git; Selenium",
+      "resume_text": "Professional Role: Mid QA Engineer\n        Years of Experience: 5\n        \n        Skills: API Testing, Python, Agile, Test Planning, SQL, Pytest, Testing, Git, Selenium\n        \n        Work Experience:\n        4 years as Principal QA Engineer at BigTech\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0000"
+    ],
+    "non_matching_jds": [
+      "jd_0050",
+      "jd_0100"
+    ],
+    "ground_truth": {
+      "jd_0000": 1,
+      "jd_0050": 0,
+      "jd_0100": 0
+    }
+  },
+  {
+    "pair_id": "pair_0001",
+    "resume": {
+      "id": "resume_0001",
+      "role_type": "fullstack",
+      "level": "Senior",
+      "years_experience": 13,
+      "skills": "Hadoop; Data Warehousing; Power BI; R; Excel; Pandas; Tableau; CSS; Agile",
+      "resume_text": "Professional Role: Senior Data Analyst\n        Years of Experience: 13\n        \n        Skills: Hadoop, Data Warehousing, Power BI, R, Excel, Pandas, Tableau, CSS, Agile\n        \n        Work Experience:\n        2 years as Lead Data Analyst at LargeScale\n4 years as Data Analyst at NextGen\n3 years as Data Analyst at ScaleUp Tech\n4 years as Data Analyst at ExpandNow\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0001"
+    ],
+    "non_matching_jds": [
+      "jd_0051",
+      "jd_0101"
+    ],
+    "ground_truth": {
+      "jd_0001": 1,
+      "jd_0051": 0,
+      "jd_0101": 0
+    }
+  },
+  {
+    "pair_id": "pair_0002",
+    "resume": {
+      "id": "resume_0002",
+      "role_type": "backend",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "API Testing; Testing; Jest; JIRA; Load Testing; Agile; Test Planning; PyTorch",
+      "resume_text": "Professional Role: Junior QA Engineer\n        Years of Experience: 2\n        \n        Skills: API Testing, Testing, Jest, JIRA, Load Testing, Agile, Test Planning, PyTorch\n        \n        Work Experience:\n        2 years as Lead QA Engineer at StartupXYZ\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0002"
+    ],
+    "non_matching_jds": [
+      "jd_0052",
+      "jd_0102"
+    ],
+    "ground_truth": {
+      "jd_0002": 1,
+      "jd_0052": 0,
+      "jd_0102": 0
+    }
+  },
+  {
+    "pair_id": "pair_0003",
+    "resume": {
+      "id": "resume_0003",
+      "role_type": "fullstack",
+      "level": "Senior",
+      "years_experience": 10,
+      "skills": "JavaScript; Git; TypeScript; Express.js; React; Data Warehousing; Go",
+      "resume_text": "Professional Role: Senior Full Stack Developer\n        Years of Experience: 10\n        \n        Skills: JavaScript, Git, TypeScript, Express.js, React, Data Warehousing, Go\n        \n        Work Experience:\n        2 years as Principal Full Stack Developer at NextGen\n3 years as Full Stack Developer at Fortune500\n3 years as Full Stack Developer at NextGen\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0003"
+    ],
+    "non_matching_jds": [
+      "jd_0053",
+      "jd_0103"
+    ],
+    "ground_truth": {
+      "jd_0003": 1,
+      "jd_0053": 0,
+      "jd_0103": 0
+    }
+  },
+  {
+    "pair_id": "pair_0004",
+    "resume": {
+      "id": "resume_0004",
+      "role_type": "qa",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "AWS; JavaScript; React; Express.js; Node.js; Rust; Computer Vision",
+      "resume_text": "Professional Role: Senior Full Stack Developer\n        Years of Experience: 12\n        \n        Skills: AWS, JavaScript, React, Express.js, Node.js, Rust, Computer Vision\n        \n        Work Experience:\n        1 years as Senior Full Stack Developer at Fortune500\n4 years as Full Stack Developer at InnovateCo\n4 years as Full Stack Developer at TechBootstrap\n3 years as Full Stack Developer at LargeScale\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0004"
+    ],
+    "non_matching_jds": [
+      "jd_0054",
+      "jd_0104"
+    ],
+    "ground_truth": {
+      "jd_0004": 1,
+      "jd_0054": 0,
+      "jd_0104": 0
+    }
+  },
+  {
+    "pair_id": "pair_0005",
+    "resume": {
+      "id": "resume_0005",
+      "role_type": "devops",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "Power BI; SQL; ETL; Data Warehousing; R; Docker; Vue.js",
+      "resume_text": "Professional Role: Senior Data Analyst\n        Years of Experience: 12\n        \n        Skills: Power BI, SQL, ETL, Data Warehousing, R, Docker, Vue.js\n        \n        Work Experience:\n        5 years as Principal Data Analyst at GrowthCo\n5 years as Data Analyst at NextGen\n2 years as Data Analyst at InnovateCo\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0005"
+    ],
+    "non_matching_jds": [
+      "jd_0055",
+      "jd_0105"
+    ],
+    "ground_truth": {
+      "jd_0005": 1,
+      "jd_0055": 0,
+      "jd_0105": 0
+    }
+  },
+  {
+    "pair_id": "pair_0006",
+    "resume": {
+      "id": "resume_0006",
+      "role_type": "fullstack",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "Statistics; Python; Spark; Power BI; SQL; Tableau; Hadoop; Excel; Kubernetes; C#",
+      "resume_text": "Professional Role: Junior Data Analyst\n        Years of Experience: 2\n        \n        Skills: Statistics, Python, Spark, Power BI, SQL, Tableau, Hadoop, Excel, Kubernetes, C#\n        \n        Work Experience:\n        1 years as Lead Data Analyst at GrowthCo\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0006"
+    ],
+    "non_matching_jds": [
+      "jd_0056",
+      "jd_0106"
+    ],
+    "ground_truth": {
+      "jd_0006": 1,
+      "jd_0056": 0,
+      "jd_0106": 0
+    }
+  },
+  {
+    "pair_id": "pair_0007",
+    "resume": {
+      "id": "resume_0007",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 10,
+      "skills": "Jupyter; Statistics; NumPy; Pandas; Computer Vision; Deep Learning; Data Warehousing; Test Planning",
+      "resume_text": "Professional Role: Senior Machine Learning Engineer\n        Years of Experience: 10\n        \n        Skills: Jupyter, Statistics, NumPy, Pandas, Computer Vision, Deep Learning, Data Warehousing, Test Planning\n        \n        Work Experience:\n        2 years as Senior Machine Learning Engineer at BigTech\n2 years as Machine Learning Engineer at Corporate Inc\n4 years as Machine Learning Engineer at QuickStart\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0007"
+    ],
+    "non_matching_jds": [
+      "jd_0057",
+      "jd_0107"
+    ],
+    "ground_truth": {
+      "jd_0007": 1,
+      "jd_0057": 0,
+      "jd_0107": 0
+    }
+  },
+  {
+    "pair_id": "pair_0008",
+    "resume": {
+      "id": "resume_0008",
+      "role_type": "qa",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "SQL; Jupyter; Deep Learning; Scikit-learn; Statistics; PyTorch; NumPy; Agile; AWS",
+      "resume_text": "Professional Role: Junior Machine Learning Engineer\n        Years of Experience: 2\n        \n        Skills: SQL, Jupyter, Deep Learning, Scikit-learn, Statistics, PyTorch, NumPy, Agile, AWS\n        \n        Work Experience:\n        1 years as Lead Machine Learning Engineer at RocketLabs\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0008"
+    ],
+    "non_matching_jds": [
+      "jd_0058",
+      "jd_0108"
+    ],
+    "ground_truth": {
+      "jd_0008": 1,
+      "jd_0058": 0,
+      "jd_0108": 0
+    }
+  },
+  {
+    "pair_id": "pair_0009",
+    "resume": {
+      "id": "resume_0009",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "API Testing; Automation; Testing; Selenium; JIRA; HTML; Microservices",
+      "resume_text": "Professional Role: Senior QA Engineer\n        Years of Experience: 12\n        \n        Skills: API Testing, Automation, Testing, Selenium, JIRA, HTML, Microservices\n        \n        Work Experience:\n        5 years as Lead QA Engineer at LargeScale\n1 years as QA Engineer at BigTech\n4 years as QA Engineer at GrowthCo\n2 years as QA Engineer at LargeScale\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0009"
+    ],
+    "non_matching_jds": [
+      "jd_0059",
+      "jd_0109"
+    ],
+    "ground_truth": {
+      "jd_0009": 1,
+      "jd_0059": 0,
+      "jd_0109": 0
+    }
+  },
+  {
+    "pair_id": "pair_0010",
+    "resume": {
+      "id": "resume_0010",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 13,
+      "skills": "Computer Vision; Statistics; Scikit-learn; NLP; PyTorch; Tableau; PyTorch",
+      "resume_text": "Professional Role: Senior Machine Learning Engineer\n        Years of Experience: 13\n        \n        Skills: Computer Vision, Statistics, Scikit-learn, NLP, PyTorch, Tableau, PyTorch\n        \n        Work Experience:\n        3 years as Lead Machine Learning Engineer at ExpandNow\n2 years as Machine Learning Engineer at TechBootstrap\n4 years as Machine Learning Engineer at RisingStars\n3 years as Machine Learning Engineer at ScaleUp Tech\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0010"
+    ],
+    "non_matching_jds": [
+      "jd_0060",
+      "jd_0110"
+    ],
+    "ground_truth": {
+      "jd_0010": 1,
+      "jd_0060": 0,
+      "jd_0110": 0
+    }
+  },
+  {
+    "pair_id": "pair_0011",
+    "resume": {
+      "id": "resume_0011",
+      "role_type": "qa",
+      "level": "Junior",
+      "years_experience": 1,
+      "skills": "Infrastructure; Azure; Terraform; CI/CD; Kubernetes; GitLab; Monitoring; Jenkins; CSS; Power BI",
+      "resume_text": "Professional Role: Junior DevOps Engineer\n        Years of Experience: 1\n        \n        Skills: Infrastructure, Azure, Terraform, CI/CD, Kubernetes, GitLab, Monitoring, Jenkins, CSS, Power BI\n        \n        Work Experience:\n        1 years as Principal DevOps Engineer at EnterpriseGlobal\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0011"
+    ],
+    "non_matching_jds": [
+      "jd_0061",
+      "jd_0111"
+    ],
+    "ground_truth": {
+      "jd_0011": 1,
+      "jd_0061": 0,
+      "jd_0111": 0
+    }
+  },
+  {
+    "pair_id": "pair_0012",
+    "resume": {
+      "id": "resume_0012",
+      "role_type": "fullstack",
+      "level": "Senior",
+      "years_experience": 8,
+      "skills": "PostgreSQL; Docker; TypeScript; Git; Node.js; Express.js; Data Warehousing; Automation",
+      "resume_text": "Professional Role: Senior Full Stack Developer\n        Years of Experience: 8\n        \n        Skills: PostgreSQL, Docker, TypeScript, Git, Node.js, Express.js, Data Warehousing, Automation\n        \n        Work Experience:\n        1 years as Principal Full Stack Developer at ScaleUp Tech\n1 years as Full Stack Developer at InnovateCo\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0012"
+    ],
+    "non_matching_jds": [
+      "jd_0062",
+      "jd_0112"
+    ],
+    "ground_truth": {
+      "jd_0012": 1,
+      "jd_0062": 0,
+      "jd_0112": 0
+    }
+  },
+  {
+    "pair_id": "pair_0013",
+    "resume": {
+      "id": "resume_0013",
+      "role_type": "backend",
+      "level": "Mid",
+      "years_experience": 6,
+      "skills": "REST APIs; MongoDB; JavaScript; Node.js; Git; Docker; React; PostgreSQL; MongoDB; Rust",
+      "resume_text": "Professional Role: Mid Full Stack Developer\n        Years of Experience: 6\n        \n        Skills: REST APIs, MongoDB, JavaScript, Node.js, Git, Docker, React, PostgreSQL, MongoDB, Rust\n        \n        Work Experience:\n        2 years as Lead Full Stack Developer at LargeScale\n2 years as Full Stack Developer at LargeScale\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0013"
+    ],
+    "non_matching_jds": [
+      "jd_0063",
+      "jd_0113"
+    ],
+    "ground_truth": {
+      "jd_0013": 1,
+      "jd_0063": 0,
+      "jd_0113": 0
+    }
+  },
+  {
+    "pair_id": "pair_0014",
+    "resume": {
+      "id": "resume_0014",
+      "role_type": "backend",
+      "level": "Senior",
+      "years_experience": 13,
+      "skills": "PostgreSQL; React; Docker; Agile; Express.js; REST APIs; Git; Power BI; SQL",
+      "resume_text": "Professional Role: Senior Full Stack Developer\n        Years of Experience: 13\n        \n        Skills: PostgreSQL, React, Docker, Agile, Express.js, REST APIs, Git, Power BI, SQL\n        \n        Work Experience:\n        1 years as Lead Full Stack Developer at ExpandNow\n1 years as Full Stack Developer at ScaleUp Tech\n2 years as Full Stack Developer at QuickStart\n3 years as Full Stack Developer at Corporate Inc\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0014"
+    ],
+    "non_matching_jds": [
+      "jd_0064",
+      "jd_0114"
+    ],
+    "ground_truth": {
+      "jd_0014": 1,
+      "jd_0064": 0,
+      "jd_0114": 0
+    }
+  },
+  {
+    "pair_id": "pair_0015",
+    "resume": {
+      "id": "resume_0015",
+      "role_type": "devops",
+      "level": "Mid",
+      "years_experience": 5,
+      "skills": "Data Warehousing; R; Statistics; SQL; Python; Hadoop; Power BI; R; Automation",
+      "resume_text": "Professional Role: Mid Data Analyst\n        Years of Experience: 5\n        \n        Skills: Data Warehousing, R, Statistics, SQL, Python, Hadoop, Power BI, R, Automation\n        \n        Work Experience:\n        1 years as Senior Data Analyst at LargeScale\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0015"
+    ],
+    "non_matching_jds": [
+      "jd_0065",
+      "jd_0115"
+    ],
+    "ground_truth": {
+      "jd_0015": 1,
+      "jd_0065": 0,
+      "jd_0115": 0
+    }
+  },
+  {
+    "pair_id": "pair_0016",
+    "resume": {
+      "id": "resume_0016",
+      "role_type": "backend",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "Power BI; Data Warehousing; Python; Tableau; R; Terraform; SQL",
+      "resume_text": "Professional Role: Junior Data Analyst\n        Years of Experience: 2\n        \n        Skills: Power BI, Data Warehousing, Python, Tableau, R, Terraform, SQL\n        \n        Work Experience:\n        1 years as Senior Data Analyst at BigTech\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0016"
+    ],
+    "non_matching_jds": [
+      "jd_0066",
+      "jd_0116"
+    ],
+    "ground_truth": {
+      "jd_0016": 1,
+      "jd_0066": 0,
+      "jd_0116": 0
+    }
+  },
+  {
+    "pair_id": "pair_0017",
+    "resume": {
+      "id": "resume_0017",
+      "role_type": "devops",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "Infrastructure; Docker; CI/CD; Azure; Ansible; Jenkins; Terraform; React; Power BI",
+      "resume_text": "Professional Role: Senior DevOps Engineer\n        Years of Experience: 12\n        \n        Skills: Infrastructure, Docker, CI/CD, Azure, Ansible, Jenkins, Terraform, React, Power BI\n        \n        Work Experience:\n        4 years as Senior DevOps Engineer at ScaleUp Tech\n4 years as DevOps Engineer at Corporate Inc\n1 years as DevOps Engineer at Fortune500\n2 years as DevOps Engineer at GrowthCo\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0017"
+    ],
+    "non_matching_jds": [
+      "jd_0067",
+      "jd_0117"
+    ],
+    "ground_truth": {
+      "jd_0017": 1,
+      "jd_0067": 0,
+      "jd_0117": 0
+    }
+  },
+  {
+    "pair_id": "pair_0018",
+    "resume": {
+      "id": "resume_0018",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 8,
+      "skills": "Go; AWS; Docker; Node.js; Java; Node.js; R",
+      "resume_text": "Professional Role: Senior Backend Engineer\n        Years of Experience: 8\n        \n        Skills: Go, AWS, Docker, Node.js, Java, Node.js, R\n        \n        Work Experience:\n        1 years as Lead Backend Engineer at RocketLabs\n5 years as Backend Engineer at BigTech\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0018"
+    ],
+    "non_matching_jds": [
+      "jd_0068",
+      "jd_0118"
+    ],
+    "ground_truth": {
+      "jd_0018": 1,
+      "jd_0068": 0,
+      "jd_0118": 0
+    }
+  },
+  {
+    "pair_id": "pair_0019",
+    "resume": {
+      "id": "resume_0019",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 15,
+      "skills": "Pandas; TensorFlow; Deep Learning; NumPy; NLP; Computer Vision; Statistics; C#; REST APIs",
+      "resume_text": "Professional Role: Senior Machine Learning Engineer\n        Years of Experience: 15\n        \n        Skills: Pandas, TensorFlow, Deep Learning, NumPy, NLP, Computer Vision, Statistics, C#, REST APIs\n        \n        Work Experience:\n        1 years as Lead Machine Learning Engineer at ScaleUp Tech\n3 years as Machine Learning Engineer at ExpandNow\n1 years as Machine Learning Engineer at LargeScale\n1 years as Machine Learning Engineer at GrowthCo\n3 years as Machine Learning Engineer at BigTech\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0019"
+    ],
+    "non_matching_jds": [
+      "jd_0069",
+      "jd_0119"
+    ],
+    "ground_truth": {
+      "jd_0019": 1,
+      "jd_0069": 0,
+      "jd_0119": 0
+    }
+  },
+  {
+    "pair_id": "pair_0020",
+    "resume": {
+      "id": "resume_0020",
+      "role_type": "qa",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "SQL; NLP; PyTorch; Scikit-learn; Pandas; AWS; Python",
+      "resume_text": "Professional Role: Junior Machine Learning Engineer\n        Years of Experience: 2\n        \n        Skills: SQL, NLP, PyTorch, Scikit-learn, Pandas, AWS, Python\n        \n        Work Experience:\n        2 years as Lead Machine Learning Engineer at RisingStars\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0020"
+    ],
+    "non_matching_jds": [
+      "jd_0070",
+      "jd_0120"
+    ],
+    "ground_truth": {
+      "jd_0020": 1,
+      "jd_0070": 0,
+      "jd_0120": 0
+    }
+  },
+  {
+    "pair_id": "pair_0021",
+    "resume": {
+      "id": "resume_0021",
+      "role_type": "backend",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "TensorFlow; Python; NLP; Scikit-learn; PyTorch; Computer Vision; Automation; NLP",
+      "resume_text": "Professional Role: Junior Machine Learning Engineer\n        Years of Experience: 2\n        \n        Skills: TensorFlow, Python, NLP, Scikit-learn, PyTorch, Computer Vision, Automation, NLP\n        \n        Work Experience:\n        1 years as Lead Machine Learning Engineer at Corporate Inc\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0021"
+    ],
+    "non_matching_jds": [
+      "jd_0071",
+      "jd_0121"
+    ],
+    "ground_truth": {
+      "jd_0021": 1,
+      "jd_0071": 0,
+      "jd_0121": 0
+    }
+  },
+  {
+    "pair_id": "pair_0022",
+    "resume": {
+      "id": "resume_0022",
+      "role_type": "data",
+      "level": "Senior",
+      "years_experience": 9,
+      "skills": "Agile; API Testing; Testing; JIRA; Automation; Pytest; Jenkins; Deep Learning",
+      "resume_text": "Professional Role: Senior QA Engineer\n        Years of Experience: 9\n        \n        Skills: Agile, API Testing, Testing, JIRA, Automation, Pytest, Jenkins, Deep Learning\n        \n        Work Experience:\n        5 years as Lead QA Engineer at RisingStars\n2 years as QA Engineer at InnovateCo\n1 years as QA Engineer at InnovateCo\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0022"
+    ],
+    "non_matching_jds": [
+      "jd_0072",
+      "jd_0122"
+    ],
+    "ground_truth": {
+      "jd_0022": 1,
+      "jd_0072": 0,
+      "jd_0122": 0
+    }
+  },
+  {
+    "pair_id": "pair_0023",
+    "resume": {
+      "id": "resume_0023",
+      "role_type": "frontend",
+      "level": "Mid",
+      "years_experience": 3,
+      "skills": "Python; Jest; Automation; Testing; API Testing; Selenium; SQL; Python; REST APIs",
+      "resume_text": "Professional Role: Mid QA Engineer\n        Years of Experience: 3\n        \n        Skills: Python, Jest, Automation, Testing, API Testing, Selenium, SQL, Python, REST APIs\n        \n        Work Experience:\n        2 years as Principal QA Engineer at InnovateCo\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0023"
+    ],
+    "non_matching_jds": [
+      "jd_0073",
+      "jd_0123"
+    ],
+    "ground_truth": {
+      "jd_0023": 1,
+      "jd_0073": 0,
+      "jd_0123": 0
+    }
+  },
+  {
+    "pair_id": "pair_0024",
+    "resume": {
+      "id": "resume_0024",
+      "role_type": "backend",
+      "level": "Mid",
+      "years_experience": 6,
+      "skills": "Vue.js; Material-UI; Angular; HTML; Redux; React; Responsive Design; Responsive Design; Selenium",
+      "resume_text": "Professional Role: Mid Frontend Engineer\n        Years of Experience: 6\n        \n        Skills: Vue.js, Material-UI, Angular, HTML, Redux, React, Responsive Design, Responsive Design, Selenium\n        \n        Work Experience:\n        3 years as Principal Frontend Engineer at ScaleUp Tech\n1 years as Frontend Engineer at RocketLabs\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Frontend Engineer"
+    },
+    "matching_jds": [
+      "jd_0024"
+    ],
+    "non_matching_jds": [
+      "jd_0074",
+      "jd_0124"
+    ],
+    "ground_truth": {
+      "jd_0024": 1,
+      "jd_0074": 0,
+      "jd_0124": 0
+    }
+  },
+  {
+    "pair_id": "pair_0025",
+    "resume": {
+      "id": "resume_0025",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 9,
+      "skills": "Pandas; Excel; R; Power BI; Python; SQL; Spark; Terraform; Jest",
+      "resume_text": "Professional Role: Senior Data Analyst\n        Years of Experience: 9\n        \n        Skills: Pandas, Excel, R, Power BI, Python, SQL, Spark, Terraform, Jest\n        \n        Work Experience:\n        1 years as Lead Data Analyst at ScaleUp Tech\n1 years as Data Analyst at NextGen\n4 years as Data Analyst at StartupXYZ\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0025"
+    ],
+    "non_matching_jds": [
+      "jd_0075",
+      "jd_0125"
+    ],
+    "ground_truth": {
+      "jd_0025": 1,
+      "jd_0075": 0,
+      "jd_0125": 0
+    }
+  },
+  {
+    "pair_id": "pair_0026",
+    "resume": {
+      "id": "resume_0026",
+      "role_type": "frontend",
+      "level": "Mid",
+      "years_experience": 5,
+      "skills": "SQL; Python; Statistics; Deep Learning; PyTorch; Node.js; PyTorch",
+      "resume_text": "Professional Role: Mid Machine Learning Engineer\n        Years of Experience: 5\n        \n        Skills: SQL, Python, Statistics, Deep Learning, PyTorch, Node.js, PyTorch\n        \n        Work Experience:\n        2 years as Senior Machine Learning Engineer at TechBootstrap\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0026"
+    ],
+    "non_matching_jds": [
+      "jd_0076",
+      "jd_0126"
+    ],
+    "ground_truth": {
+      "jd_0026": 1,
+      "jd_0076": 0,
+      "jd_0126": 0
+    }
+  },
+  {
+    "pair_id": "pair_0027",
+    "resume": {
+      "id": "resume_0027",
+      "role_type": "fullstack",
+      "level": "Mid",
+      "years_experience": 3,
+      "skills": "Python; SQL; NumPy; Scikit-learn; Computer Vision; Deep Learning; Statistics; PyTorch; TypeScript; Kubernetes",
+      "resume_text": "Professional Role: Mid Machine Learning Engineer\n        Years of Experience: 3\n        \n        Skills: Python, SQL, NumPy, Scikit-learn, Computer Vision, Deep Learning, Statistics, PyTorch, TypeScript, Kubernetes\n        \n        Work Experience:\n        2 years as Lead Machine Learning Engineer at ExpandNow\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0027"
+    ],
+    "non_matching_jds": [
+      "jd_0077",
+      "jd_0127"
+    ],
+    "ground_truth": {
+      "jd_0027": 1,
+      "jd_0077": 0,
+      "jd_0127": 0
+    }
+  },
+  {
+    "pair_id": "pair_0028",
+    "resume": {
+      "id": "resume_0028",
+      "role_type": "backend",
+      "level": "Junior",
+      "years_experience": 1,
+      "skills": "Statistics; Data Warehousing; Hadoop; Pandas; Tableau; ETL; Statistics; Jenkins",
+      "resume_text": "Professional Role: Junior Data Analyst\n        Years of Experience: 1\n        \n        Skills: Statistics, Data Warehousing, Hadoop, Pandas, Tableau, ETL, Statistics, Jenkins\n        \n        Work Experience:\n        1 years as Principal Data Analyst at InnovateCo\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0028"
+    ],
+    "non_matching_jds": [
+      "jd_0078",
+      "jd_0128"
+    ],
+    "ground_truth": {
+      "jd_0028": 1,
+      "jd_0078": 0,
+      "jd_0128": 0
+    }
+  },
+  {
+    "pair_id": "pair_0029",
+    "resume": {
+      "id": "resume_0029",
+      "role_type": "data",
+      "level": "Senior",
+      "years_experience": 10,
+      "skills": "CI/CD; Monitoring; Kubernetes; Terraform; Linux; AWS; GitLab; Excel; JavaScript",
+      "resume_text": "Professional Role: Senior DevOps Engineer\n        Years of Experience: 10\n        \n        Skills: CI/CD, Monitoring, Kubernetes, Terraform, Linux, AWS, GitLab, Excel, JavaScript\n        \n        Work Experience:\n        3 years as Principal DevOps Engineer at TechBootstrap\n2 years as DevOps Engineer at QuickStart\n4 years as DevOps Engineer at BigTech\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0029"
+    ],
+    "non_matching_jds": [
+      "jd_0079",
+      "jd_0129"
+    ],
+    "ground_truth": {
+      "jd_0029": 1,
+      "jd_0079": 0,
+      "jd_0129": 0
+    }
+  },
+  {
+    "pair_id": "pair_0030",
+    "resume": {
+      "id": "resume_0030",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 14,
+      "skills": "MongoDB; C#; API Design; Java; PostgreSQL; GitLab; React",
+      "resume_text": "Professional Role: Senior Backend Engineer\n        Years of Experience: 14\n        \n        Skills: MongoDB, C#, API Design, Java, PostgreSQL, GitLab, React\n        \n        Work Experience:\n        2 years as Lead Backend Engineer at TechBootstrap\n4 years as Backend Engineer at LargeScale\n2 years as Backend Engineer at GrowthCo\n1 years as Backend Engineer at ExpandNow\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0030"
+    ],
+    "non_matching_jds": [
+      "jd_0080",
+      "jd_0130"
+    ],
+    "ground_truth": {
+      "jd_0030": 1,
+      "jd_0080": 0,
+      "jd_0130": 0
+    }
+  },
+  {
+    "pair_id": "pair_0031",
+    "resume": {
+      "id": "resume_0031",
+      "role_type": "qa",
+      "level": "Mid",
+      "years_experience": 5,
+      "skills": "MongoDB; Docker; API Design; Microservices; AWS; Rust; C#; Statistics; Redux",
+      "resume_text": "Professional Role: Mid Backend Engineer\n        Years of Experience: 5\n        \n        Skills: MongoDB, Docker, API Design, Microservices, AWS, Rust, C#, Statistics, Redux\n        \n        Work Experience:\n        3 years as Lead Backend Engineer at TechBootstrap\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0031"
+    ],
+    "non_matching_jds": [
+      "jd_0081",
+      "jd_0131"
+    ],
+    "ground_truth": {
+      "jd_0031": 1,
+      "jd_0081": 0,
+      "jd_0131": 0
+    }
+  },
+  {
+    "pair_id": "pair_0032",
+    "resume": {
+      "id": "resume_0032",
+      "role_type": "data",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "Kubernetes; Infrastructure; Terraform; Azure; Ansible; GitLab; AWS; Pytest; Jenkins",
+      "resume_text": "Professional Role: Junior DevOps Engineer\n        Years of Experience: 2\n        \n        Skills: Kubernetes, Infrastructure, Terraform, Azure, Ansible, GitLab, AWS, Pytest, Jenkins\n        \n        Work Experience:\n        2 years as Senior DevOps Engineer at GrowthCo\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0032"
+    ],
+    "non_matching_jds": [
+      "jd_0082",
+      "jd_0132"
+    ],
+    "ground_truth": {
+      "jd_0032": 1,
+      "jd_0082": 0,
+      "jd_0132": 0
+    }
+  },
+  {
+    "pair_id": "pair_0033",
+    "resume": {
+      "id": "resume_0033",
+      "role_type": "fullstack",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "Statistics; Tableau; Python; ETL; Spark; Power BI; Pandas; Python; Jupyter",
+      "resume_text": "Professional Role: Junior Data Analyst\n        Years of Experience: 2\n        \n        Skills: Statistics, Tableau, Python, ETL, Spark, Power BI, Pandas, Python, Jupyter\n        \n        Work Experience:\n        2 years as Senior Data Analyst at EnterpriseGlobal\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0033"
+    ],
+    "non_matching_jds": [
+      "jd_0083",
+      "jd_0133"
+    ],
+    "ground_truth": {
+      "jd_0033": 1,
+      "jd_0083": 0,
+      "jd_0133": 0
+    }
+  },
+  {
+    "pair_id": "pair_0034",
+    "resume": {
+      "id": "resume_0034",
+      "role_type": "data",
+      "level": "Senior",
+      "years_experience": 9,
+      "skills": "Redux; Vue.js; Angular; Responsive Design; HTML; GraphQL; Material-UI; REST APIs; C#; Ansible",
+      "resume_text": "Professional Role: Senior Frontend Engineer\n        Years of Experience: 9\n        \n        Skills: Redux, Vue.js, Angular, Responsive Design, HTML, GraphQL, Material-UI, REST APIs, C#, Ansible\n        \n        Work Experience:\n        4 years as Senior Frontend Engineer at GrowthCo\n4 years as Frontend Engineer at NextGen\n1 years as Frontend Engineer at RocketLabs\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Frontend Engineer"
+    },
+    "matching_jds": [
+      "jd_0034"
+    ],
+    "non_matching_jds": [
+      "jd_0084",
+      "jd_0134"
+    ],
+    "ground_truth": {
+      "jd_0034": 1,
+      "jd_0084": 0,
+      "jd_0134": 0
+    }
+  },
+  {
+    "pair_id": "pair_0035",
+    "resume": {
+      "id": "resume_0035",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "Selenium; SQL; Load Testing; Pytest; API Testing; Testing; Test Planning; Python; Computer Vision; HTML",
+      "resume_text": "Professional Role: Senior QA Engineer\n        Years of Experience: 12\n        \n        Skills: Selenium, SQL, Load Testing, Pytest, API Testing, Testing, Test Planning, Python, Computer Vision, HTML\n        \n        Work Experience:\n        1 years as Principal QA Engineer at ScaleUp Tech\n5 years as QA Engineer at RocketLabs\n4 years as QA Engineer at Corporate Inc\n1 years as QA Engineer at ScaleUp Tech\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0035"
+    ],
+    "non_matching_jds": [
+      "jd_0085",
+      "jd_0135"
+    ],
+    "ground_truth": {
+      "jd_0035": 1,
+      "jd_0085": 0,
+      "jd_0135": 0
+    }
+  },
+  {
+    "pair_id": "pair_0036",
+    "resume": {
+      "id": "resume_0036",
+      "role_type": "backend",
+      "level": "Mid",
+      "years_experience": 6,
+      "skills": "Load Testing; Python; JIRA; API Testing; SQL; Agile; Pytest; Testing; Docker; PostgreSQL",
+      "resume_text": "Professional Role: Mid QA Engineer\n        Years of Experience: 6\n        \n        Skills: Load Testing, Python, JIRA, API Testing, SQL, Agile, Pytest, Testing, Docker, PostgreSQL\n        \n        Work Experience:\n        2 years as Senior QA Engineer at StartupXYZ\n3 years as QA Engineer at InnovateCo\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0036"
+    ],
+    "non_matching_jds": [
+      "jd_0086",
+      "jd_0136"
+    ],
+    "ground_truth": {
+      "jd_0036": 1,
+      "jd_0086": 0,
+      "jd_0136": 0
+    }
+  },
+  {
+    "pair_id": "pair_0037",
+    "resume": {
+      "id": "resume_0037",
+      "role_type": "devops",
+      "level": "Mid",
+      "years_experience": 7,
+      "skills": "PostgreSQL; Go; API Design; Docker; Node.js; CSS; Docker",
+      "resume_text": "Professional Role: Mid Backend Engineer\n        Years of Experience: 7\n        \n        Skills: PostgreSQL, Go, API Design, Docker, Node.js, CSS, Docker\n        \n        Work Experience:\n        3 years as Senior Backend Engineer at GrowthCo\n2 years as Backend Engineer at NextGen\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0037"
+    ],
+    "non_matching_jds": [
+      "jd_0087",
+      "jd_0137"
+    ],
+    "ground_truth": {
+      "jd_0037": 1,
+      "jd_0087": 0,
+      "jd_0137": 0
+    }
+  },
+  {
+    "pair_id": "pair_0038",
+    "resume": {
+      "id": "resume_0038",
+      "role_type": "fullstack",
+      "level": "Senior",
+      "years_experience": 12,
+      "skills": "Docker; Ansible; Jenkins; Monitoring; Terraform; Azure; Infrastructure; Express.js; Statistics",
+      "resume_text": "Professional Role: Senior DevOps Engineer\n        Years of Experience: 12\n        \n        Skills: Docker, Ansible, Jenkins, Monitoring, Terraform, Azure, Infrastructure, Express.js, Statistics\n        \n        Work Experience:\n        5 years as Senior DevOps Engineer at StartupXYZ\n5 years as DevOps Engineer at Fortune500\n1 years as DevOps Engineer at TechBootstrap\n1 years as DevOps Engineer at TechBootstrap\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0038"
+    ],
+    "non_matching_jds": [
+      "jd_0088",
+      "jd_0138"
+    ],
+    "ground_truth": {
+      "jd_0038": 1,
+      "jd_0088": 0,
+      "jd_0138": 0
+    }
+  },
+  {
+    "pair_id": "pair_0039",
+    "resume": {
+      "id": "resume_0039",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 14,
+      "skills": "Jupyter; PyTorch; Statistics; Scikit-learn; NLP; Spark; Pandas",
+      "resume_text": "Professional Role: Senior Machine Learning Engineer\n        Years of Experience: 14\n        \n        Skills: Jupyter, PyTorch, Statistics, Scikit-learn, NLP, Spark, Pandas\n        \n        Work Experience:\n        2 years as Senior Machine Learning Engineer at ExpandNow\n5 years as Machine Learning Engineer at EnterpriseGlobal\n1 years as Machine Learning Engineer at StartupXYZ\n5 years as Machine Learning Engineer at LargeScale\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0039"
+    ],
+    "non_matching_jds": [
+      "jd_0089",
+      "jd_0139"
+    ],
+    "ground_truth": {
+      "jd_0039": 1,
+      "jd_0089": 0,
+      "jd_0139": 0
+    }
+  },
+  {
+    "pair_id": "pair_0040",
+    "resume": {
+      "id": "resume_0040",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 10,
+      "skills": "Agile; REST APIs; MongoDB; TypeScript; PostgreSQL; Express.js; Node.js; C#; Express.js",
+      "resume_text": "Professional Role: Senior Full Stack Developer\n        Years of Experience: 10\n        \n        Skills: Agile, REST APIs, MongoDB, TypeScript, PostgreSQL, Express.js, Node.js, C#, Express.js\n        \n        Work Experience:\n        4 years as Senior Full Stack Developer at ExpandNow\n3 years as Full Stack Developer at RisingStars\n2 years as Full Stack Developer at ExpandNow\n        \n        Education: Bootcamp Graduate - Full Stack Development\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Full Stack Developer"
+    },
+    "matching_jds": [
+      "jd_0040"
+    ],
+    "non_matching_jds": [
+      "jd_0090",
+      "jd_0140"
+    ],
+    "ground_truth": {
+      "jd_0040": 1,
+      "jd_0090": 0,
+      "jd_0140": 0
+    }
+  },
+  {
+    "pair_id": "pair_0041",
+    "resume": {
+      "id": "resume_0041",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 10,
+      "skills": "Responsive Design; Redux; HTML; React; TypeScript; JavaScript; TensorFlow; CSS",
+      "resume_text": "Professional Role: Senior Frontend Engineer\n        Years of Experience: 10\n        \n        Skills: Responsive Design, Redux, HTML, React, TypeScript, JavaScript, TensorFlow, CSS\n        \n        Work Experience:\n        3 years as Principal Frontend Engineer at StartupXYZ\n2 years as Frontend Engineer at BigTech\n4 years as Frontend Engineer at RisingStars\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Frontend Engineer"
+    },
+    "matching_jds": [
+      "jd_0041"
+    ],
+    "non_matching_jds": [
+      "jd_0091",
+      "jd_0141"
+    ],
+    "ground_truth": {
+      "jd_0041": 1,
+      "jd_0091": 0,
+      "jd_0141": 0
+    }
+  },
+  {
+    "pair_id": "pair_0042",
+    "resume": {
+      "id": "resume_0042",
+      "role_type": "frontend",
+      "level": "Senior",
+      "years_experience": 13,
+      "skills": "Computer Vision; TensorFlow; Jupyter; Deep Learning; Statistics; NLP; Pandas; JavaScript; SQL",
+      "resume_text": "Professional Role: Senior Machine Learning Engineer\n        Years of Experience: 13\n        \n        Skills: Computer Vision, TensorFlow, Jupyter, Deep Learning, Statistics, NLP, Pandas, JavaScript, SQL\n        \n        Work Experience:\n        2 years as Principal Machine Learning Engineer at TechBootstrap\n5 years as Machine Learning Engineer at TechBootstrap\n5 years as Machine Learning Engineer at QuickStart\n1 years as Machine Learning Engineer at TechBootstrap\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Machine Learning Engineer"
+    },
+    "matching_jds": [
+      "jd_0042"
+    ],
+    "non_matching_jds": [
+      "jd_0092",
+      "jd_0142"
+    ],
+    "ground_truth": {
+      "jd_0042": 1,
+      "jd_0092": 0,
+      "jd_0142": 0
+    }
+  },
+  {
+    "pair_id": "pair_0043",
+    "resume": {
+      "id": "resume_0043",
+      "role_type": "qa",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "AWS; Node.js; Microservices; API Design; Python; PostgreSQL; Go; C#; Agile; API Design",
+      "resume_text": "Professional Role: Junior Backend Engineer\n        Years of Experience: 2\n        \n        Skills: AWS, Node.js, Microservices, API Design, Python, PostgreSQL, Go, C#, Agile, API Design\n        \n        Work Experience:\n        2 years as Lead Backend Engineer at RocketLabs\n        \n        Education: BS in Engineering\n        \n        Certifications: AWS Certified Solutions Architect, Azure Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0043"
+    ],
+    "non_matching_jds": [
+      "jd_0093",
+      "jd_0143"
+    ],
+    "ground_truth": {
+      "jd_0043": 1,
+      "jd_0093": 0,
+      "jd_0143": 0
+    }
+  },
+  {
+    "pair_id": "pair_0044",
+    "resume": {
+      "id": "resume_0044",
+      "role_type": "qa",
+      "level": "Senior",
+      "years_experience": 8,
+      "skills": "Jenkins; Ansible; Monitoring; Terraform; CI/CD; AWS; Infrastructure; AWS",
+      "resume_text": "Professional Role: Senior DevOps Engineer\n        Years of Experience: 8\n        \n        Skills: Jenkins, Ansible, Monitoring, Terraform, CI/CD, AWS, Infrastructure, AWS\n        \n        Work Experience:\n        2 years as Principal DevOps Engineer at Fortune500\n2 years as DevOps Engineer at GrowthCo\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "DevOps Engineer"
+    },
+    "matching_jds": [
+      "jd_0044"
+    ],
+    "non_matching_jds": [
+      "jd_0094",
+      "jd_0144"
+    ],
+    "ground_truth": {
+      "jd_0044": 1,
+      "jd_0094": 0,
+      "jd_0144": 0
+    }
+  },
+  {
+    "pair_id": "pair_0045",
+    "resume": {
+      "id": "resume_0045",
+      "role_type": "frontend",
+      "level": "Junior",
+      "years_experience": 1,
+      "skills": "Power BI; Pandas; SQL; Tableau; Python; Spark; R; AWS; ETL",
+      "resume_text": "Professional Role: Junior Data Analyst\n        Years of Experience: 1\n        \n        Skills: Power BI, Pandas, SQL, Tableau, Python, Spark, R, AWS, ETL\n        \n        Work Experience:\n        1 years as Principal Data Analyst at Fortune500\n        \n        Education: BS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0045"
+    ],
+    "non_matching_jds": [
+      "jd_0095",
+      "jd_0145"
+    ],
+    "ground_truth": {
+      "jd_0045": 1,
+      "jd_0095": 0,
+      "jd_0145": 0
+    }
+  },
+  {
+    "pair_id": "pair_0046",
+    "resume": {
+      "id": "resume_0046",
+      "role_type": "qa",
+      "level": "Senior",
+      "years_experience": 11,
+      "skills": "HTML; JavaScript; Responsive Design; REST APIs; React; GraphQL; Pytest; JavaScript",
+      "resume_text": "Professional Role: Senior Frontend Engineer\n        Years of Experience: 11\n        \n        Skills: HTML, JavaScript, Responsive Design, REST APIs, React, GraphQL, Pytest, JavaScript\n        \n        Work Experience:\n        1 years as Senior Frontend Engineer at ExpandNow\n5 years as Frontend Engineer at RocketLabs\n3 years as Frontend Engineer at GrowthCo\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Frontend Engineer"
+    },
+    "matching_jds": [
+      "jd_0046"
+    ],
+    "non_matching_jds": [
+      "jd_0096",
+      "jd_0146"
+    ],
+    "ground_truth": {
+      "jd_0046": 1,
+      "jd_0096": 0,
+      "jd_0146": 0
+    }
+  },
+  {
+    "pair_id": "pair_0047",
+    "resume": {
+      "id": "resume_0047",
+      "role_type": "qa",
+      "level": "Senior",
+      "years_experience": 13,
+      "skills": "Data Warehousing; Python; Spark; R; Statistics; Hadoop; AWS; Pytest",
+      "resume_text": "Professional Role: Senior Data Analyst\n        Years of Experience: 13\n        \n        Skills: Data Warehousing, Python, Spark, R, Statistics, Hadoop, AWS, Pytest\n        \n        Work Experience:\n        4 years as Lead Data Analyst at Fortune500\n3 years as Data Analyst at BigTech\n2 years as Data Analyst at BigTech\n2 years as Data Analyst at RisingStars\n        \n        Education: Self-taught with online certifications\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "Data Analyst"
+    },
+    "matching_jds": [
+      "jd_0047"
+    ],
+    "non_matching_jds": [
+      "jd_0097",
+      "jd_0147"
+    ],
+    "ground_truth": {
+      "jd_0047": 1,
+      "jd_0097": 0,
+      "jd_0147": 0
+    }
+  },
+  {
+    "pair_id": "pair_0048",
+    "resume": {
+      "id": "resume_0048",
+      "role_type": "ml",
+      "level": "Senior",
+      "years_experience": 11,
+      "skills": "Test Planning; Automation; SQL; Agile; API Testing; CI/CD; Automation",
+      "resume_text": "Professional Role: Senior QA Engineer\n        Years of Experience: 11\n        \n        Skills: Test Planning, Automation, SQL, Agile, API Testing, CI/CD, Automation\n        \n        Work Experience:\n        1 years as Lead QA Engineer at ScaleUp Tech\n5 years as QA Engineer at QuickStart\n5 years as QA Engineer at Corporate Inc\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Google Cloud Certified",
+      "primary_role": "QA Engineer"
+    },
+    "matching_jds": [
+      "jd_0048"
+    ],
+    "non_matching_jds": [
+      "jd_0098",
+      "jd_0148"
+    ],
+    "ground_truth": {
+      "jd_0048": 1,
+      "jd_0098": 0,
+      "jd_0148": 0
+    }
+  },
+  {
+    "pair_id": "pair_0049",
+    "resume": {
+      "id": "resume_0049",
+      "role_type": "ml",
+      "level": "Junior",
+      "years_experience": 2,
+      "skills": "MongoDB; API Design; Python; AWS; PostgreSQL; Kubernetes; Go",
+      "resume_text": "Professional Role: Junior Backend Engineer\n        Years of Experience: 2\n        \n        Skills: MongoDB, API Design, Python, AWS, PostgreSQL, Kubernetes, Go\n        \n        Work Experience:\n        1 years as Lead Backend Engineer at RocketLabs\n        \n        Education: MS in Computer Science\n        \n        Certifications: AWS Certified Solutions Architect, Kubernetes Certified",
+      "primary_role": "Backend Engineer"
+    },
+    "matching_jds": [
+      "jd_0049"
+    ],
+    "non_matching_jds": [
+      "jd_0099",
+      "jd_0149"
+    ],
+    "ground_truth": {
+      "jd_0049": 1,
+      "jd_0099": 0,
+      "jd_0149": 0
+    }
+  }
+]

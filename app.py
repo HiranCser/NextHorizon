@@ -244,41 +244,12 @@ def main():
     # Environment checks (silent)
     check_environment()
     
-    # Status indicator
-    with st.container():
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            db_status = "✅" if hasattr(st.session_state, 'jd_df') and not st.session_state.jd_df.empty else "⚠️"
-            api_status = "✅" if os.getenv("OPENAI_API_KEY") else "⚠️"
-            st.markdown(f"""
-            <div style='background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
-                        padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 0.5rem;'>
-                <span style='margin: 0 1rem;'><strong>Database:</strong> {db_status}</span>
-                <span style='margin: 0 1rem;'><strong>AI Ready:</strong> {api_status}</span>
-            </div>
-            """, unsafe_allow_html=True)
-
-            # Pipeline status row
-            pstat = get_pipeline_status()
-            emb_ok = '✅' if pstat.get('embeddings_present') else '⚠️'
-            tfidf_vocab = pstat.get('tfidf_vocab_size') or '—'
-            tfidf_rows = pstat.get('tfidf_rows') or '—'
-            spacy_ok = '✅' if pstat.get('spacy_enrichment') else '⚠️'
-            st.markdown(f"""
-            <div style='display:flex; gap:1rem; justify-content:center; margin-bottom:1rem;'>
-              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>TF-IDF: <strong>{tfidf_rows} rows</strong> / <strong>{tfidf_vocab} vocab</strong></div>
-              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>Embeddings: <strong>{emb_ok}</strong> {pstat.get('emb_shape') or ''}</div>
-              <div style='padding:0.5rem 0.8rem; border-radius:8px; background:#fff;'>spaCy enrichment: <strong>{spacy_ok}</strong></div>
-            </div>
-            """, unsafe_allow_html=True)
-    
     # Main content tabs with enhanced styling
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📄 Resume Analysis",
-        "🎯 Role Matching", 
-        "🔍 Skill Gap Analysis",
-        "📚 Learning Path",
-        "🧪 Diagnostics"
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "📄 1-Resume Analysis",
+        "🎯 2-Role Matching", 
+        "🔍 3-Skill Gap Analysis",
+        "📚 4-Learning Path"
     ])
     
     with tab1:
@@ -289,9 +260,6 @@ def main():
         tab3_render()
     with tab4:
         tab4_render()
-    with tab5:
-        if st.session_state.get('databases_loaded', False):
-            diagnostics_render()
     
     # Footer
     st.markdown("""

@@ -1,6 +1,7 @@
 
 # FILE: ui/role_recommendations.py
 from __future__ import annotations
+from typing import Any, cast
 import streamlit as st
 import pandas as pd
 
@@ -51,7 +52,7 @@ def render():
     resume_text = _get_resume_text()
     
     # Include user aspirations in the resume text for matching
-    if user_aspirations.strip():
+    if user_aspirations and user_aspirations.strip():
         resume_text += f" Career Aspirations: {user_aspirations}"
     
     jd_df = _get_jd_df()
@@ -81,9 +82,11 @@ def render():
     grp = jd_df.groupby("role_title")["jd_text"].apply(lambda s: " ".join(s.astype(str).fillna("").tolist()[:20]))
     snippets = [{"title": r, "link": "", "snippet": txt, "source": "jd_db"} for r, txt in grp.items() if r and txt]
     
+
+
     with st.spinner("🔍 Analyzing roles and matching with your profile..."):
         ranked_roles = openai_rank_roles_enhanced(resume_text, snippets, top_k=k,
-                                                 similarity_method="manhattan", preprocess_text=True)
+                                                 similarity_method="cosine", preprocess_text=True)
 
     st.markdown("#### 📊 Your Top Matching Roles")
     
@@ -124,12 +127,11 @@ def render():
     sel = st.selectbox("Choose a role", roles, key="asp_sel_role_openai")
     
     if st.button("🔎 Find Job Openings", use_container_width=True):
-        with st.spinner("🔍 Finding the best job matches for you..."):
-            rows = jd_df[jd_df["role_title"]==sel]
-            jd_rows = rows[["role_title","company","source_title","source_url","jd_text"]].to_dict(orient="records")
-            items = openai_rank_jds_enhanced(resume_text, jd_rows, top_k=5,
-                                           similarity_method="manhattan", preprocess_text=True)
-            
+        rows = jd_df[jd_df["role_title"]==sel]
+        jd_rows: list[dict[str, Any]] = cast(list[dict[str, Any]], rows[["role_title","company","source_title","source_url","jd_text"]].to_dict(orient="records"))
+        items = openai_rank_jds_enhanced(resume_text, jd_rows, top_k=5,
+                                       similarity_method="cosine", preprocess_text=True)
+        
         if items:
             st.markdown(f"#### 📋 Top Job Openings for **{sel}**")
             for idx, it in enumerate(items, 1):

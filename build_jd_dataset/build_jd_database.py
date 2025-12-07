@@ -2,7 +2,7 @@
 # FILE: build_jd_database.py
 
 """
-Hardened JD collector + metadata extraction (experience & seniority).
+Hardened JD collector + metadata extraction (experience & seniority) with quality filters.
 
 New columns added:
 - exp_min_years        (float | None)   # minimum years of experience required (parsed/inferred)
@@ -10,6 +10,13 @@ New columns added:
 - exp_evidence         (str)            # short text span that triggered extraction
 - seniority_level      (str)            # Intern | Junior | Mid | Senior | Staff | Principal | Lead | Director | Executive | Unspecified
 - seniority_evidence   (str)            # matched phrase (usually from the title)
+- matched_skills       (str)            # comma-separated list of matched technical skills
+
+Quality filters:
+- JD text must be minimum 2000 characters
+- Must contain technical skills, soft skills, and required experience in years
+- Must contain at least one skill from the required technical skills list
+- Minimum 5 valid JDs per role
 
 Other features:
 - Search engine: SerpAPI (if SERPAPI_API_KEY) or ddgs (DuckDuckGo, no key). Force with --engine.
@@ -47,6 +54,81 @@ GOOD_DOMAINS = [
     "boards.greenhouse.io", "jobs.lever.co", "smartrecruiters.com",
     "ashbyhq.com", "myworkdayjobs.com", "jobs.ashbyhq.com"
 ]
+
+# Technical skills list for filtering
+REQUIRED_TECHNICAL_SKILLS = {
+    "Python": [r"\bpython\b"],
+    "SQL": [r"\bsql\b", r"\bsql\s+database\b"],
+    "Machine Learning": [r"\bmachine\s+learning\b", r"\bml\b", r"\bscikit\s*-?\s*learn\b", r"\bxgboost\b"],
+    "Deep Learning": [r"\bdeep\s+learning\b", r"\bpytorch\b", r"\btensorflow\b", r"\btf\b"],
+    "Cloud Platforms": [r"\baws\b", r"\bamazon\s+web\s+services\b", r"\bazure\b", r"\bgcp\b", r"\bgoogle\s+cloud\b"],
+    "MLOps Tools": [r"\bmlflow\b", r"\bkubeflow\b", r"\bsagemaker\b"],
+    "Docker": [r"\bdocker\b", r"\bcontainers?\b"],
+    "Kubernetes": [r"\bkubernetes\b", r"\bk8s\b"],
+    "Data Engineering": [r"\bspark\b", r"\bapache\s+spark\b", r"\bkafka\b", r"\bairflow\b"],
+    "APIs & Microservices": [r"\bapi\b", r"\brest\b", r"\brestful\b", r"\bfastapi\b", r"\bflask\b", r"\bgrpc\b", r"\bmicroservices?\b"],
+    "Linux / Bash": [r"\blinux\b", r"\bbash\b", r"\bshell\s+script\b"],
+    "Version Control": [r"\bgit\b", r"\bgithub\b", r"\bgitlab\b"],
+    "Databases": [r"\bpostgresql\b", r"\bpostgres\b", r"\bmongodb\b", r"\bmongo\b", r"\bsql\s+database\b", r"\bnosql\b"],
+    "Computer Vision": [r"\bcomputer\s+vision\b", r"\bopencv\b", r"\byolo\b", r"\bvision\s+transformer\b"],
+    "NLP": [r"\bnlp\b", r"\bnatural\s+language\b", r"\btransformers?\b", r"\bhuggingface\b", r"\bllm\b", r"\blarge\s+language\s+model\b"],
+    "CI/CD": [r"\bci\s*/?\s*cd\b", r"\bcicd\b", r"\bjenkins\b", r"\bgithub\s+actions?\b", r"\bgitlab\s+ci\b"],
+    "Data Visualization": [r"\bdata\s+visualization\b", r"\btableau\b", r"\bpower\s+bi\b", r"\bplotly\b", r"\bmatplotlib\b"],
+    "Distributed Systems": [r"\bdistributed\s+systems?\b", r"\bscalability\b", r"\bcaching\b", r"\bmessage\s+queue\b"],
+    "Generative AI": [r"\bgenerative\s+ai\b", r"\bllm\b", r"\bembedding\b", r"\brag\b", r"\bvector\s+db\b", r"\bvector\s+database\b"],
+    "System Design": [r"\bsystem\s+design\b", r"\bscalability\b", r"\bcaching\b", r"\bload\s+balanc\b"],
+}
+
+# Soft skills patterns
+SOFT_SKILLS_PATTERNS = [
+    r"\bcommunication\b", r"\bteamwork\b", r"\bproblem\s+solving\b",
+    r"\bleadership\b", r"\badaptability\b", r"\bcritical\s+thinking\b",
+    r"\banalytical\b", r"\bcollaboration\b"
+]
+
+# Role-specific high-priority technical skills mapping
+ROLE_SPECIFIC_SKILLS = {
+    "Machine Learning Engineer": [
+        "Python", "Machine Learning", "Deep Learning", "Cloud Platforms",
+        "MLOps Tools", "Kubernetes", "APIs & Microservices", "Generative AI"
+    ],
+    "Data Scientist": [
+        "Python", "SQL", "Machine Learning", "Deep Learning",
+        "Data Visualization", "Generative AI"
+    ],
+    "Data Engineer": [
+        "Python", "SQL", "Cloud Platforms", "Data Engineering",
+        "Linux / Bash", "Databases", "Distributed Systems"
+    ],
+    "Cloud Engineer": [
+        "Cloud Platforms", "Docker", "Kubernetes", "APIs & Microservices",
+        "Linux / Bash", "CI/CD", "Distributed Systems"
+    ],
+    "DevOps Engineer": [
+        "Docker", "Kubernetes", "Linux / Bash", "Version Control",
+        "CI/CD", "Distributed Systems"
+    ],
+    "MLOps Engineer": [
+        "Cloud Platforms", "MLOps Tools", "Docker", "Kubernetes",
+        "Version Control", "CI/CD", "Generative AI"
+    ],
+    "Computer Vision Engineer": [
+        "Python", "Deep Learning", "APIs & Microservices",
+        "Computer Vision", "Generative AI"
+    ],
+    "NLP Engineer": [
+        "Python", "Deep Learning", "APIs & Microservices",
+        "NLP", "Generative AI"
+    ],
+    "AI Product Manager": [
+        "Python", "Machine Learning", "Cloud Platforms",
+        "Data Visualization", "Generative AI", "System Design"
+    ],
+    "Backend Software Engineer": [
+        "Python", "APIs & Microservices", "Linux / Bash",
+        "Version Control", "Distributed Systems", "System Design"
+    ],
+}
 
 # ----------------- Search backends -----------------
 def _import_ddg():
@@ -243,13 +325,79 @@ def infer_seniority(title: str, text: str) -> Tuple[str, str]:
                 return level, m.group(0)
     return "Unspecified", ""
 
-def visible_text_from_html(html_text: str, limit_chars: int = 12000) -> str:
+def visible_text_from_html(html_text: str, limit_chars: int = 50000) -> str:
+    """Extract visible text from HTML, preserving more content for validation."""
     soup = BeautifulSoup(html_text or "", "html5lib")
     for t in soup(["script", "style", "noscript"]):
         t.extract()
     text = soup.get_text(" ", strip=True)
     text = re.sub(r"\s+", " ", text)
     return text[:limit_chars]
+
+def has_soft_skills(text: str) -> bool:
+    """Check if text contains soft skills."""
+    for pattern in SOFT_SKILLS_PATTERNS:
+        if re.search(pattern, text, re.IGNORECASE):
+            return True
+    return False
+
+def extract_matched_skills(text: str) -> List[str]:
+    """Extract and return matched technical skills from text."""
+    matched = []
+    for skill_name, patterns in REQUIRED_TECHNICAL_SKILLS.items():
+        for pattern in patterns:
+            if re.search(pattern, text, re.IGNORECASE):
+                matched.append(skill_name)
+                break  # Don't duplicate same skill name
+    return matched
+
+def has_required_technical_skills(text: str) -> bool:
+    """Check if text contains at least one required technical skill."""
+    return len(extract_matched_skills(text)) > 0
+
+def is_valid_jd(text: str, role: str, exp_min: Optional[float], exp_max: Optional[float], exp_evidence: str) -> Tuple[bool, List[str]]:
+    """
+    Validate if JD meets quality criteria:
+    a) jd_text minimum 2000 characters
+    b) Contains technical skills, soft skills, and required experience in years
+    c) Contains at least one skill from role-specific high-priority technical skills
+    
+    Returns (is_valid, matched_skills)
+    """
+    # Check a) - minimum 2000 characters
+    if len(text) < 2000:
+        return False, []
+    
+    # Check for experience in years
+    has_experience = (exp_min is not None or exp_max is not None) and exp_evidence
+    if not has_experience:
+        return False, []
+    
+    # Check for soft skills
+    if not has_soft_skills(text):
+        return False, []
+    
+    # Check c) - role-specific required technical skills
+    all_matched_skills = extract_matched_skills(text)
+    
+    # Get role-specific required skills
+    role_key = None
+    for rkey in ROLE_SPECIFIC_SKILLS.keys():
+        if rkey.lower() in role.lower() or role.lower() in rkey.lower():
+            role_key = rkey
+            break
+    
+    if role_key:
+        required_skills = ROLE_SPECIFIC_SKILLS[role_key]
+        matched_role_skills = [s for s in all_matched_skills if s in required_skills]
+        if not matched_role_skills:
+            return False, []
+        return True, matched_role_skills
+    else:
+        # Fallback: if role not in mapping, require at least one skill from general list
+        if not all_matched_skills:
+            return False, []
+        return True, all_matched_skills
 
 # ----------------- Main logic -----------------
 def main():
@@ -280,80 +428,111 @@ def main():
     session = make_session(args.http_proxy, args.https_proxy, args.verify, args.ca_bundle)
 
     base_fields = ["jd_id","role_title","company","source_title","source_url","source_domain","jd_text","date_scraped"]
-    extra_fields = ["exp_min_years","exp_max_years","exp_evidence","seniority_level","seniority_evidence"]
+    extra_fields = ["exp_min_years","exp_max_years","exp_evidence","seniority_level","seniority_evidence","matched_skills"]
     fieldnames = base_fields + extra_fields
     rows_all = []
 
     for ridx, role in enumerate(roles, 1):
         logging.info(f"[{ridx}/{len(roles)}] Searching postings for role: {role}")
         needed = int(args.per_role)
+        valid_count = 0
         q = f'site:({ " OR ".join(GOOD_DOMAINS) }) "{role}"'
-        results = search_web(q, k=30, engine=args.engine)
+        
+        attempt = 0
+        max_attempts = 3
+        all_candidates = []
 
-        cand_urls = []
-        seen = set()
-        for r in results:
-            url = r.get("link","")
-            if not url or not is_good(url): continue
-            if url in seen: continue
-            seen.add(url)
-            cand_urls.append((r.get("title",""), url))
+        # Keep searching until we have enough valid JDs or exhaust attempts
+        while valid_count < needed and attempt < max_attempts:
+            attempt += 1
+            logging.info(f"  Attempt {attempt}/{max_attempts} to find {needed - valid_count} more valid JDs")
+            
+            results = search_web(q, k=40, engine=args.engine)
+            
+            cand_urls = []
+            seen = set()
+            for r in results:
+                url = r.get("link","")
+                if not url or not is_good(url): continue
+                if url in seen or url in [c[1] for c in all_candidates]: continue
+                seen.add(url)
+                cand_urls.append((r.get("title",""), url))
 
-        def work(item):
-            title, url = item
-            html_raw = fetch(session, url, args.connect_timeout, args.read_timeout)
-            return (title, url, html_raw)
+            if not cand_urls:
+                logging.warning(f"  No more candidates found for {role}")
+                break
 
-        fetched = []
-        with ThreadPoolExecutor(max_workers=max(1, int(args.max_workers))) as ex:
-            futs = [ex.submit(work, it) for it in cand_urls]
-            for fut in as_completed(futs):
-                try:
-                    title, url, html_raw = fut.result()
-                except Exception as e:
-                    logging.debug(f"worker error: {e}")
+            def work(item):
+                title, url = item
+                html_raw = fetch(session, url, args.connect_timeout, args.read_timeout)
+                return (title, url, html_raw)
+
+            fetched = []
+            with ThreadPoolExecutor(max_workers=max(1, int(args.max_workers))) as ex:
+                futs = [ex.submit(work, it) for it in cand_urls]
+                for fut in as_completed(futs):
+                    try:
+                        title, url, html_raw = fut.result()
+                    except Exception as e:
+                        logging.debug(f"worker error: {e}")
+                        continue
+                    if not html_raw:
+                        continue
+                    fetched.append((title, url, html_raw))
+
+            # Process fetched pages and validate
+            for (title, url, html_raw) in fetched:
+                vis = visible_text_from_html(html_raw, limit_chars=50000)
+                
+                # Extract metadata
+                exp_min, exp_max, exp_ev = extract_experience(f"{title} {vis}")
+                level, level_ev = infer_seniority(title, vis)
+                
+                # Validate JD quality (including role-specific skills)
+                is_valid, matched_skills = is_valid_jd(vis, role, exp_min, exp_max, exp_ev)
+                
+                if not is_valid:
+                    all_candidates.append((title, url, html_raw, None))
                     continue
-                if not html_raw:
-                    continue
-                fetched.append((title, url, html_raw))
-                if len(fetched) >= needed:
+
+                # Create JD summary from meta or page content
+                soup = BeautifulSoup(html_raw, "html5lib")
+                meta = soup.find("meta", attrs={"name":"description"})
+                if meta and meta.get("content"):
+                    jd_summary = meta["content"]
+                else:
+                    jd_summary = " ".join([t.get_text(" ", strip=True) for t in soup.find_all(["p","li"])][:50])
+                jd_summary = re.sub(r"\s+", " ", jd_summary).strip()
+
+                company = extract_company(url, title)
+                dom = tldextract.extract(url)
+                
+                rows_all.append({
+                    "jd_id": str(uuid.uuid4()),
+                    "role_title": role,
+                    "company": company,
+                    "source_title": (title or "").strip(),
+                    "source_url": url,
+                    "source_domain": f"{dom.subdomain}.{dom.domain}.{dom.suffix}".strip("."),
+                    "jd_text": vis[:5000],  # Use first 5000 chars as summary
+                    "date_scraped": time.strftime("%Y-%m-%d"),
+                    "exp_min_years": exp_min,
+                    "exp_max_years": exp_max,
+                    "exp_evidence": exp_ev,
+                    "seniority_level": level,
+                    "seniority_evidence": level_ev,
+                    "matched_skills": "; ".join(matched_skills),
+                })
+                valid_count += 1
+                
+                if valid_count >= needed:
                     break
+            
+            time.sleep(max(0.1, float(args.sleep)))
 
-        count_added = 0
-        for (title, url, html_raw) in fetched[:needed]:
-            vis = visible_text_from_html(html_raw, limit_chars=12000)
-            soup = BeautifulSoup(html_raw, "html5lib")
-            meta = soup.find("meta", attrs={"name":"description"})
-            if meta and meta.get("content"):
-                jd_summary = meta["content"]
-            else:
-                jd_summary = " ".join([t.get_text(" ", strip=True) for t in soup.find_all(["p","li"])][:30])
-            jd_summary = re.sub(r"\s+", " ", jd_summary).strip()[:700]
-
-            exp_min, exp_max, exp_ev = extract_experience(f"{title} {vis}")
-            level, level_ev = infer_seniority(title, vis)
-
-            company = extract_company(url, title)
-            dom = tldextract.extract(url)
-            rows_all.append({
-                "jd_id": str(uuid.uuid4()),
-                "role_title": role,
-                "company": company,
-                "source_title": (title or "").strip(),
-                "source_url": url,
-                "source_domain": f"{dom.subdomain}.{dom.domain}.{dom.suffix}".strip("."),
-                "jd_text": jd_summary,
-                "date_scraped": time.strftime("%Y-%m-%d"),
-                "exp_min_years": exp_min,
-                "exp_max_years": exp_max,
-                "exp_evidence": exp_ev,
-                "seniority_level": level,
-                "seniority_evidence": level_ev,
-            })
-            count_added += 1
-
-        logging.info(f"Collected {count_added}/{needed} for role: {role}")
-        time.sleep(max(0.1, float(args.sleep)))
+        logging.info(f"Successfully collected {valid_count}/{needed} valid JDs for role: {role}")
+        if valid_count < needed:
+            logging.warning(f"Warning: Only {valid_count} valid JDs found for {role} (required {needed})")
 
     with open(args.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)

@@ -240,7 +240,9 @@ def openai_rank_jds_enhanced(resume_text: str, jd_rows: List[Dict[str, Any]], to
     ranked.sort(key=lambda x: x[1], reverse=True)
 
     out = []
-    for row, sc in ranked[:max(1, int(top_k))]:
+    seen_titles = set()  # Track titles we've already added to avoid duplicates
+    
+    for row, sc in ranked[:max(1, int(top_k * 2))]:  # Get 2x items to account for duplicates
         # Convert similarity score back to 0-1 range for display
         if similarity_method == "manhattan":
             # Manhattan returns negative distances, convert to positive similarity
@@ -254,13 +256,26 @@ def openai_rank_jds_enhanced(resume_text: str, jd_rows: List[Dict[str, Any]], to
         else:
             display_score = sc
 
+        title = row.get("source_title", "") or row.get("title", "")
+        
+        # Skip if we've already seen this title
+        if title in seen_titles:
+            continue
+        
+        seen_titles.add(title)
+        
         out.append({
             "role_title": row.get("role_title", ""),
             "company": row.get("company", ""),
-            "title": row.get("source_title", "") or row.get("title", ""),
+            "title": title,
             "link": row.get("source_url", "") or row.get("link", ""),
             "match_percent": round(float(display_score * 100.0), 1),
         })
+        
+        # Stop once we have enough unique items
+        if len(out) >= top_k:
+            break
+    
     return out
 
 def openai_rank_courses(gaps, resume_text: str, snippets: List[Dict[str, Any]], top_k: int = 5) -> List[Dict[str, Any]]:

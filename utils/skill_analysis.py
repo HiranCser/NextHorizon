@@ -126,6 +126,44 @@ def get_required_skills_for_role(role_title: str, jd_df: pd.DataFrame, min_frequ
     
     return sorted(common_skills)
 
+def get_required_skills_from_selected_jds(selected_jd_items: list, min_frequency: float = 0.3) -> List[str]:
+    """Extract required skills from selected job description items
+    
+    Args:
+        selected_jd_items: List of selected job opening dictionaries containing 'jd_text', 'text', or 'description'
+        min_frequency: Minimum frequency threshold for skill inclusion (0.0-1.0)
+    
+    Returns:
+        List of required skills sorted by frequency
+    """
+    if not selected_jd_items:
+        return []
+    
+    # Extract skills from all selected JDs
+    all_skills = []
+    for item in selected_jd_items:
+        # Handle different possible keys for job description text - check in order of preference
+        jd_text = None
+        if isinstance(item, dict):
+            jd_text = item.get('jd_text') or item.get('text') or item.get('description')
+        
+        if jd_text:
+            skills = extract_skills_from_jd_text(str(jd_text))
+            all_skills.extend(skills)
+    
+    # Count skill frequency
+    skill_counts = Counter(all_skills)
+    
+    # Return skills that appear frequently
+    min_count = max(1, len(selected_jd_items) * min_frequency)
+    common_skills = [skill for skill, count in skill_counts.items() if count >= min_count]
+    
+    # If too few skills, take top 20 most frequent
+    if len(common_skills) < 10:
+        common_skills = [skill for skill, count in skill_counts.most_common(20)]
+    
+    return sorted(common_skills)
+
 def calculate_skill_gaps(candidate_skills: List[str], required_skills: List[str]) -> tuple[List[str], List[str]]:
     """Calculate skill gaps and matches between candidate and required skills
     

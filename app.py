@@ -274,11 +274,11 @@ def main():
     
     # Main content tabs with enhanced styling
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📄 Resume Analysis",
-        "🎯 Role Matching", 
-        "🔍 Skill Gap Analysis",
-        "📚 Learning Path",
-        "🧪 Diagnostics"
+        "📄 1-Resume Analysis",
+        "🎯 2-Role Matching", 
+        "🔍 3-Skill Gap Analysis",
+        "📚 4-Learning Path",
+        "🧪 5-Diagnostics"
     ])
     
     with tab1:

@@ -6,7 +6,8 @@ import pandas as pd
 from utils.skill_analysis import (
     extract_skills_from_jd_text, 
     extract_skills_from_aspirations, 
-    get_required_skills_for_role, 
+    get_required_skills_for_role,
+    get_required_skills_from_selected_jds,
     calculate_skill_gaps
 )
 from utils.session_helpers import (
@@ -53,7 +54,18 @@ def render():
     """, unsafe_allow_html=True)
     
     # Get required skills for the selected role from JD database
-    required_skills = get_required_skills_for_role(role_title, jd_df)
+    # Prioritize selected job openings if available, otherwise use all JDs for the role
+    selected_jd_items = st.session_state.get("selected_jd_items")
+    selected_jd_count = st.session_state.get("selected_jd_count", 0)
+    
+    if selected_jd_items and len(selected_jd_items) > 0:
+        # Use selected job openings for skill gap analysis
+        required_skills = get_required_skills_from_selected_jds(selected_jd_items)
+        st.info(f"📌 Analyzing skill requirements from {selected_jd_count} selected job opening(s)")
+    else:
+        # Fall back to all JDs for the role if no selection was made
+        required_skills = get_required_skills_for_role(role_title, jd_df)
+        st.info(f"📌 Analyzing skill requirements from all job descriptions for {role_title}")
     
     if not required_skills:
         st.warning(f"⚠️ No job descriptions found for role '{role_title}' in the database.")

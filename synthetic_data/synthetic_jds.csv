@@ -1,0 +1,851 @@
+id,role_title,company,role_type,seniority_level,years_required,jd_text,skills_required
+jd_0000,Analytics Engineer - Google,Google,data,Staff,6,"Job Title: Analytics Engineer - Google
+        
+        Company: Google
+        
+        Description:
+        Analyze data with Spark, Tableau, Python. Build dashboards and reports. 10-20 data team.
+        
+        Requirements:
+        - 6+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Staff
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Statistics; Hadoop; Excel; ETL; Pandas
+jd_0001,ML/AI Engineer - Shopify,Shopify,ml,Mid,8,"Job Title: ML/AI Engineer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Build ML models and AI systems. Work with TensorFlow, Scikit-learn, SQL stack. 20+ ML/AI team.
+        
+        Requirements:
+        - 8+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Mid
+Years Required: 8+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",NumPy; Deep Learning; Pandas; NLP; Python
+jd_0002,Analytics Engineer - GitHub,GitHub,data,Senior,2,"Job Title: Analytics Engineer - GitHub
+        
+        Company: GitHub
+        
+        Description:
+        Analyze data with Pandas, SQL, Hadoop. Build dashboards and reports. 20+ data team.
+        
+        Requirements:
+        - 2+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Senior
+Years Required: 2+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Data Warehousing; Excel; Power BI; Statistics; Hadoop
+jd_0003,Analytics Engineer - Uber,Uber,data,Senior,4,"Job Title: Analytics Engineer - Uber
+        
+        Company: Uber
+        
+        Description:
+        Analyze data with Python, Pandas, SQL. Build dashboards and reports. 10-20 data team.
+        
+        Requirements:
+        - 4+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Senior
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Data Warehousing; SQL; Hadoop; Statistics; Tableau
+jd_0004,Backend Software Engineer - Shopify,Shopify,backend,Senior,8,"Job Title: Backend Software Engineer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Design and build scalable backend systems. Work with C#, Node.js, API Design technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 8+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Senior
+Years Required: 8+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",API Design; Kubernetes; Go; Node.js; AWS
+jd_0005,ML/AI Engineer - Shopify,Shopify,ml,Senior,3,"Job Title: ML/AI Engineer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Build ML models and AI systems. Work with TensorFlow, PyTorch, Scikit-learn stack. 20+ ML/AI team.
+        
+        Requirements:
+        - 3+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Senior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Computer Vision; NLP; SQL; Statistics; NumPy
+jd_0006,Senior Backend Engineer - GitHub,GitHub,backend,Junior,6,"Job Title: Senior Backend Engineer - GitHub
+        
+        Company: GitHub
+        
+        Description:
+        Design and build scalable backend systems. Work with MongoDB, Rust, AWS technologies. 20+ engineer team.
+        
+        Requirements:
+        - 6+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Junior
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",AWS; Go; Microservices; PostgreSQL; Rust
+jd_0007,Python/Go Backend Developer - Airbnb,Airbnb,backend,Staff,2,"Job Title: Python/Go Backend Developer - Airbnb
+        
+        Company: Airbnb
+        
+        Description:
+        Design and build scalable backend systems. Work with Microservices, C#, AWS technologies. 5-10 engineer team.
+        
+        Requirements:
+        - 2+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Staff
+Years Required: 2+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",AWS; MongoDB; Go; PostgreSQL; Java
+jd_0008,JavaScript Engineer - Amazon,Amazon,frontend,Junior,6,"Job Title: JavaScript Engineer - Amazon
+        
+        Company: Amazon
+        
+        Description:
+        Build beautiful user interfaces with Angular, Responsive Design, TypeScript. Work on high-traffic web applications. 20+ engineer team.
+        
+        Requirements:
+        - 6+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Junior
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Vue.js; JavaScript; Redux; HTML; Material-UI
+jd_0009,Senior DevOps Engineer - Microsoft,Microsoft,devops,Staff,3,"Job Title: Senior DevOps Engineer - Microsoft
+        
+        Company: Microsoft
+        
+        Description:
+        Manage cloud infrastructure with Linux, GitLab, CI/CD. Build CI/CD pipelines. 5-10 infrastructure team.
+        
+        Requirements:
+        - 3+ years devops development
+- Kubernetes expertise
+- Infrastructure as Code
+- AWS/Azure/GCP
+        
+Seniority Level: Staff
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Infrastructure; Jenkins; Azure; Terraform; Ansible
+jd_0010,UI/UX Frontend Developer - Discord,Discord,frontend,Junior,7,"Job Title: UI/UX Frontend Developer - Discord
+        
+        Company: Discord
+        
+        Description:
+        Build beautiful user interfaces with React, JavaScript, CSS. Work on high-traffic web applications. 5-10 engineer team.
+        
+        Requirements:
+        - 7+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Junior
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Angular; Redux; Responsive Design; TypeScript; React
+jd_0011,Backend Software Engineer - Slack,Slack,backend,Mid,4,"Job Title: Backend Software Engineer - Slack
+        
+        Company: Slack
+        
+        Description:
+        Design and build scalable backend systems. Work with Java, API Design, C# technologies. 20+ engineer team.
+        
+        Requirements:
+        - 4+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",C#; Kubernetes; Rust; Node.js; Python
+jd_0012,Full Stack Developer - Microsoft,Microsoft,fullstack,Mid,10,"Job Title: Full Stack Developer - Microsoft
+        
+        Company: Microsoft
+        
+        Description:
+        Own features end-to-end with MongoDB, Node.js, React. Build scalable applications. 5-10 engineer team.
+        
+        Requirements:
+        - 10+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Mid
+Years Required: 10+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",React; TypeScript; Express.js; Git; Agile
+jd_0013,JavaScript Engineer - Stripe,Stripe,frontend,Junior,4,"Job Title: JavaScript Engineer - Stripe
+        
+        Company: Stripe
+        
+        Description:
+        Build beautiful user interfaces with REST APIs, Angular, Material-UI. Work on high-traffic web applications. 10-20 engineer team.
+        
+        Requirements:
+        - 4+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Junior
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Redux; HTML; REST APIs; Angular; Responsive Design
+jd_0014,Senior DevOps Engineer - Airbnb,Airbnb,devops,Junior,10,"Job Title: Senior DevOps Engineer - Airbnb
+        
+        Company: Airbnb
+        
+        Description:
+        Manage cloud infrastructure with Terraform, Monitoring, Docker. Build CI/CD pipelines. 5-10 infrastructure team.
+        
+        Requirements:
+        - 10+ years devops development
+- Kubernetes expertise
+- Infrastructure as Code
+- AWS/Azure/GCP
+        
+Seniority Level: Junior
+Years Required: 10+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Terraform; GitLab; Monitoring; Kubernetes; Infrastructure
+jd_0015,Senior Data Analyst - Figma,Figma,data,Junior,3,"Job Title: Senior Data Analyst - Figma
+        
+        Company: Figma
+        
+        Description:
+        Analyze data with Hadoop, Tableau, Python. Build dashboards and reports. 5-10 data team.
+        
+        Requirements:
+        - 3+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Junior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Excel; Hadoop; Pandas; Spark; Statistics
+jd_0016,Senior ML Engineer - FintechXYZ,FintechXYZ,ml,Senior,9,"Job Title: Senior ML Engineer - FintechXYZ
+        
+        Company: FintechXYZ
+        
+        Description:
+        Build ML models and AI systems. Work with Deep Learning, SQL, TensorFlow stack. 20+ ML/AI team.
+        
+        Requirements:
+        - 9+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Senior
+Years Required: 9+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",TensorFlow; NLP; Statistics; Scikit-learn; SQL
+jd_0017,ML/AI Engineer - Airbnb,Airbnb,ml,Staff,7,"Job Title: ML/AI Engineer - Airbnb
+        
+        Company: Airbnb
+        
+        Description:
+        Build ML models and AI systems. Work with SQL, Computer Vision, TensorFlow stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 7+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Staff
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",SQL; NumPy; Pandas; NLP; PyTorch
+jd_0018,Data Analyst - Notion,Notion,data,Junior,3,"Job Title: Data Analyst - Notion
+        
+        Company: Notion
+        
+        Description:
+        Analyze data with Python, ETL, R. Build dashboards and reports. 20+ data team.
+        
+        Requirements:
+        - 3+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Junior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",R; Statistics; Tableau; Spark; SQL
+jd_0019,Senior DevOps Engineer - DataSystems,DataSystems,devops,Senior,3,"Job Title: Senior DevOps Engineer - DataSystems
+        
+        Company: DataSystems
+        
+        Description:
+        Manage cloud infrastructure with Jenkins, Monitoring, GitLab. Build CI/CD pipelines. 20+ infrastructure team.
+        
+        Requirements:
+        - 3+ years devops development
+- Kubernetes expertise
+- Infrastructure as Code
+- AWS/Azure/GCP
+        
+Seniority Level: Senior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Docker; CI/CD; Linux; Monitoring; Jenkins
+jd_0020,API & Microservices Engineer - CloudLabs,CloudLabs,backend,Mid,4,"Job Title: API & Microservices Engineer - CloudLabs
+        
+        Company: CloudLabs
+        
+        Description:
+        Design and build scalable backend systems. Work with C#, Java, Rust technologies. 20+ engineer team.
+        
+        Requirements:
+        - 4+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Rust; Java; Go; Microservices; C#
+jd_0021,Machine Learning Engineer - DataSystems,DataSystems,ml,Junior,6,"Job Title: Machine Learning Engineer - DataSystems
+        
+        Company: DataSystems
+        
+        Description:
+        Build ML models and AI systems. Work with PyTorch, Pandas, NLP stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 6+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Junior
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",NumPy; Python; PyTorch; Deep Learning; SQL
+jd_0022,Backend Software Engineer - Microsoft,Microsoft,backend,Junior,3,"Job Title: Backend Software Engineer - Microsoft
+        
+        Company: Microsoft
+        
+        Description:
+        Design and build scalable backend systems. Work with PostgreSQL, Kubernetes, MongoDB technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 3+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Junior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Node.js; Rust; Go; Docker; Java
+jd_0023,Senior Backend Engineer - Microsoft,Microsoft,backend,Mid,2,"Job Title: Senior Backend Engineer - Microsoft
+        
+        Company: Microsoft
+        
+        Description:
+        Design and build scalable backend systems. Work with Go, MongoDB, AWS technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 2+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 2+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",MongoDB; Microservices; Kubernetes; PostgreSQL; Go
+jd_0024,JavaScript Engineer - TechCorp,TechCorp,frontend,Junior,7,"Job Title: JavaScript Engineer - TechCorp
+        
+        Company: TechCorp
+        
+        Description:
+        Build beautiful user interfaces with Angular, CSS, GraphQL. Work on high-traffic web applications. 10-20 engineer team.
+        
+        Requirements:
+        - 7+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Junior
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",REST APIs; Material-UI; CSS; React; TypeScript
+jd_0025,Machine Learning Engineer - FintechXYZ,FintechXYZ,ml,Junior,2,"Job Title: Machine Learning Engineer - FintechXYZ
+        
+        Company: FintechXYZ
+        
+        Description:
+        Build ML models and AI systems. Work with Pandas, Scikit-learn, PyTorch stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 2+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Junior
+Years Required: 2+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Pandas; NumPy; TensorFlow; Python; Jupyter
+jd_0026,Senior Data Analyst - GitLab,GitLab,data,Mid,4,"Job Title: Senior Data Analyst - GitLab
+        
+        Company: GitLab
+        
+        Description:
+        Analyze data with Spark, Power BI, R. Build dashboards and reports. 20+ data team.
+        
+        Requirements:
+        - 4+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Mid
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Pandas; Statistics; Python; ETL; SQL
+jd_0027,ML/AI Engineer - Google,Google,ml,Staff,3,"Job Title: ML/AI Engineer - Google
+        
+        Company: Google
+        
+        Description:
+        Build ML models and AI systems. Work with Deep Learning, SQL, Computer Vision stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 3+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Staff
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Computer Vision; NLP; SQL; Pandas; TensorFlow
+jd_0028,Senior ML Engineer - Google,Google,ml,Senior,4,"Job Title: Senior ML Engineer - Google
+        
+        Company: Google
+        
+        Description:
+        Build ML models and AI systems. Work with Jupyter, NumPy, TensorFlow stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 4+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Senior
+Years Required: 4+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",TensorFlow; Scikit-learn; SQL; Deep Learning; Computer Vision
+jd_0029,ML/AI Engineer - Shopify,Shopify,ml,Senior,5,"Job Title: ML/AI Engineer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Build ML models and AI systems. Work with PyTorch, TensorFlow, Statistics stack. 20+ ML/AI team.
+        
+        Requirements:
+        - 5+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Senior
+Years Required: 5+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",TensorFlow; Statistics; NLP; Scikit-learn; NumPy
+jd_0030,Full Stack Engineer - MedTech Inc,MedTech Inc,fullstack,Mid,5,"Job Title: Full Stack Engineer - MedTech Inc
+        
+        Company: MedTech Inc
+        
+        Description:
+        Own features end-to-end with MongoDB, JavaScript, Express.js. Build scalable applications. 5-10 engineer team.
+        
+        Requirements:
+        - 5+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Mid
+Years Required: 5+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",REST APIs; MongoDB; Node.js; Git; Docker
+jd_0031,Senior ML Engineer - CloudLabs,CloudLabs,ml,Staff,7,"Job Title: Senior ML Engineer - CloudLabs
+        
+        Company: CloudLabs
+        
+        Description:
+        Build ML models and AI systems. Work with NumPy, PyTorch, Jupyter stack. 5-10 ML/AI team.
+        
+        Requirements:
+        - 7+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Staff
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Jupyter; Computer Vision; Pandas; Deep Learning; Python
+jd_0032,Full Stack Developer - TechCorp,TechCorp,fullstack,Junior,6,"Job Title: Full Stack Developer - TechCorp
+        
+        Company: TechCorp
+        
+        Description:
+        Own features end-to-end with Docker, React, Git. Build scalable applications. 10-20 engineer team.
+        
+        Requirements:
+        - 6+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Junior
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",JavaScript; Node.js; Git; PostgreSQL; AWS
+jd_0033,Senior ML Engineer - CloudLabs,CloudLabs,ml,Junior,9,"Job Title: Senior ML Engineer - CloudLabs
+        
+        Company: CloudLabs
+        
+        Description:
+        Build ML models and AI systems. Work with NLP, Scikit-learn, NumPy stack. 20+ ML/AI team.
+        
+        Requirements:
+        - 9+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Junior
+Years Required: 9+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Jupyter; Statistics; PyTorch; Python; Computer Vision
+jd_0034,Backend Software Engineer - Slack,Slack,backend,Junior,10,"Job Title: Backend Software Engineer - Slack
+        
+        Company: Slack
+        
+        Description:
+        Design and build scalable backend systems. Work with Python, C#, MongoDB technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 10+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Junior
+Years Required: 10+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",API Design; Kubernetes; Microservices; Node.js; Rust
+jd_0035,Full Stack Developer - Shopify,Shopify,fullstack,Staff,8,"Job Title: Full Stack Developer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Own features end-to-end with Git, REST APIs, React. Build scalable applications. 20+ engineer team.
+        
+        Requirements:
+        - 8+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Staff
+Years Required: 8+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Git; TypeScript; Node.js; Agile; REST APIs
+jd_0036,Infrastructure Engineer - GitHub,GitHub,devops,Senior,6,"Job Title: Infrastructure Engineer - GitHub
+        
+        Company: GitHub
+        
+        Description:
+        Manage cloud infrastructure with Monitoring, Linux, AWS. Build CI/CD pipelines. 10-20 infrastructure team.
+        
+        Requirements:
+        - 6+ years devops development
+- Kubernetes expertise
+- Infrastructure as Code
+- AWS/Azure/GCP
+        
+Seniority Level: Senior
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Kubernetes; Linux; AWS; Jenkins; CI/CD
+jd_0037,Senior Data Analyst - GitHub,GitHub,data,Mid,3,"Job Title: Senior Data Analyst - GitHub
+        
+        Company: GitHub
+        
+        Description:
+        Analyze data with Spark, ETL, Statistics. Build dashboards and reports. 5-10 data team.
+        
+        Requirements:
+        - 3+ years data development
+- SQL mastery
+- Tableau/Power BI
+- Statistical analysis
+        
+Seniority Level: Mid
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Pandas; R; Spark; Python; ETL
+jd_0038,Senior DevOps Engineer - Discord,Discord,devops,Junior,7,"Job Title: Senior DevOps Engineer - Discord
+        
+        Company: Discord
+        
+        Description:
+        Manage cloud infrastructure with AWS, Azure, Jenkins. Build CI/CD pipelines. 10-20 infrastructure team.
+        
+        Requirements:
+        - 7+ years devops development
+- Kubernetes expertise
+- Infrastructure as Code
+- AWS/Azure/GCP
+        
+Seniority Level: Junior
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Azure; Infrastructure; AWS; Linux; Kubernetes
+jd_0039,Senior Full Stack Engineer - Apple,Apple,fullstack,Junior,7,"Job Title: Senior Full Stack Engineer - Apple
+        
+        Company: Apple
+        
+        Description:
+        Own features end-to-end with MongoDB, REST APIs, AWS. Build scalable applications. 5-10 engineer team.
+        
+        Requirements:
+        - 7+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Junior
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",MongoDB; Agile; REST APIs; Git; Docker
+jd_0040,API & Microservices Engineer - GitLab,GitLab,backend,Senior,5,"Job Title: API & Microservices Engineer - GitLab
+        
+        Company: GitLab
+        
+        Description:
+        Design and build scalable backend systems. Work with Microservices, Go, MongoDB technologies. 5-10 engineer team.
+        
+        Requirements:
+        - 5+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Senior
+Years Required: 5+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",API Design; C#; Go; MongoDB; Docker
+jd_0041,Full Stack Developer - CloudLabs,CloudLabs,fullstack,Staff,9,"Job Title: Full Stack Developer - CloudLabs
+        
+        Company: CloudLabs
+        
+        Description:
+        Own features end-to-end with AWS, PostgreSQL, Git. Build scalable applications. 10-20 engineer team.
+        
+        Requirements:
+        - 9+ years fullstack development
+- Full stack expertise
+- Database design
+- DevOps fundamentals
+        
+Seniority Level: Staff
+Years Required: 9+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",MongoDB; Express.js; REST APIs; Agile; JavaScript
+jd_0042,Senior Backend Engineer - MedTech Inc,MedTech Inc,backend,Staff,7,"Job Title: Senior Backend Engineer - MedTech Inc
+        
+        Company: MedTech Inc
+        
+        Description:
+        Design and build scalable backend systems. Work with Docker, API Design, Java technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 7+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Staff
+Years Required: 7+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Java; Node.js; Go; MongoDB; API Design
+jd_0043,JavaScript Engineer - GitLab,GitLab,frontend,Junior,5,"Job Title: JavaScript Engineer - GitLab
+        
+        Company: GitLab
+        
+        Description:
+        Build beautiful user interfaces with HTML, React, JavaScript. Work on high-traffic web applications. 5-10 engineer team.
+        
+        Requirements:
+        - 5+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Junior
+Years Required: 5+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",JavaScript; REST APIs; HTML; TypeScript; Responsive Design
+jd_0044,Python/Go Backend Developer - Discord,Discord,backend,Mid,2,"Job Title: Python/Go Backend Developer - Discord
+        
+        Company: Discord
+        
+        Description:
+        Design and build scalable backend systems. Work with Java, Docker, AWS technologies. 10-20 engineer team.
+        
+        Requirements:
+        - 2+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 2+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Kubernetes; Node.js; Docker; Python; Go
+jd_0045,Senior ML Engineer - Microsoft,Microsoft,ml,Staff,9,"Job Title: Senior ML Engineer - Microsoft
+        
+        Company: Microsoft
+        
+        Description:
+        Build ML models and AI systems. Work with Python, TensorFlow, Computer Vision stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 9+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Staff
+Years Required: 9+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Scikit-learn; PyTorch; Statistics; Deep Learning; SQL
+jd_0046,Senior Backend Engineer - Shopify,Shopify,backend,Mid,6,"Job Title: Senior Backend Engineer - Shopify
+        
+        Company: Shopify
+        
+        Description:
+        Design and build scalable backend systems. Work with Python, C#, PostgreSQL technologies. 20+ engineer team.
+        
+        Requirements:
+        - 6+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 6+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Kubernetes; Microservices; MongoDB; Java; Docker
+jd_0047,Senior ML Engineer - FintechXYZ,FintechXYZ,ml,Junior,10,"Job Title: Senior ML Engineer - FintechXYZ
+        
+        Company: FintechXYZ
+        
+        Description:
+        Build ML models and AI systems. Work with Scikit-learn, PyTorch, Pandas stack. 10-20 ML/AI team.
+        
+        Requirements:
+        - 10+ years ml development
+- Python + TensorFlow
+- Statistics knowledge
+- Deep learning experience
+        
+Seniority Level: Junior
+Years Required: 10+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Python; Deep Learning; NumPy; Scikit-learn; SQL
+jd_0048,Senior Frontend Engineer - Meta,Meta,frontend,Senior,3,"Job Title: Senior Frontend Engineer - Meta
+        
+        Company: Meta
+        
+        Description:
+        Build beautiful user interfaces with JavaScript, Redux, React. Work on high-traffic web applications. 20+ engineer team.
+        
+        Requirements:
+        - 3+ years frontend development
+- Expert in {framework}
+- CSS/HTML proficiency
+- Performance optimization
+        
+Seniority Level: Senior
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",JavaScript; HTML; CSS; React; Material-UI
+jd_0049,Python/Go Backend Developer - Discord,Discord,backend,Mid,3,"Job Title: Python/Go Backend Developer - Discord
+        
+        Company: Discord
+        
+        Description:
+        Design and build scalable backend systems. Work with Node.js, Python, Rust technologies. 20+ engineer team.
+        
+        Requirements:
+        - 3+ years backend development
+- Proficiency in {language}
+- Experience with microservices
+- Strong database knowledge
+        
+Seniority Level: Mid
+Years Required: 3+
+        
+        Benefits: Competitive salary, health insurance, remote work, professional development",Rust; AWS; Node.js; MongoDB; Microservices

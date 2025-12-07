@@ -1,0 +1,651 @@
+id,title,skill,skill_category,provider,level,hours,rating,price,description,url
+course_0000,Intermediate Tableau Course - Codecademy,Tableau,data,Codecademy,Intermediate,13,4.6,199,"Learn Tableau with this comprehensive intermediate course on Codecademy.
+        
+        This course covers:
+        - Tableau fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 13 hours
+        Level: Intermediate
+        Rating: 4.6/5.0
+        Price: $199",https://codecademy.com/courses/tableau
+course_0001,Beginner Go Course - Udemy,Go,backend,Udemy,Beginner,30,4.8,99,"Learn Go with this comprehensive beginner course on Udemy.
+        
+        This course covers:
+        - Go fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 30 hours
+        Level: Beginner
+        Rating: 4.8/5.0
+        Price: $99",https://udemy.com/courses/go
+course_0002,Expert PostgreSQL Course - LinkedIn Learning,PostgreSQL,fullstack,LinkedIn Learning,Expert,37,3.6,49,"Learn PostgreSQL with this comprehensive expert course on LinkedIn Learning.
+        
+        This course covers:
+        - PostgreSQL fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 37 hours
+        Level: Expert
+        Rating: 3.6/5.0
+        Price: $49",https://linkedinlearning.com/courses/postgresql
+course_0003,Beginner TypeScript Course - Codecademy,TypeScript,fullstack,Codecademy,Beginner,88,4.0,0,"Learn TypeScript with this comprehensive beginner course on Codecademy.
+        
+        This course covers:
+        - TypeScript fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 88 hours
+        Level: Beginner
+        Rating: 4.0/5.0
+        Price: $0",https://codecademy.com/courses/typescript
+course_0004,Expert Automation Course - LinkedIn Learning,Automation,qa,LinkedIn Learning,Expert,100,4.2,199,"Learn Automation with this comprehensive expert course on LinkedIn Learning.
+        
+        This course covers:
+        - Automation fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 100 hours
+        Level: Expert
+        Rating: 4.2/5.0
+        Price: $199",https://linkedinlearning.com/courses/automation
+course_0005,Expert MongoDB Course - LinkedIn Learning,MongoDB,fullstack,LinkedIn Learning,Expert,52,4.9,299,"Learn MongoDB with this comprehensive expert course on LinkedIn Learning.
+        
+        This course covers:
+        - MongoDB fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 52 hours
+        Level: Expert
+        Rating: 4.9/5.0
+        Price: $299",https://linkedinlearning.com/courses/mongodb
+course_0006,Expert Node.js Course - DataCamp,Node.js,fullstack,DataCamp,Expert,15,4.1,49,"Learn Node.js with this comprehensive expert course on DataCamp.
+        
+        This course covers:
+        - Node.js fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 15 hours
+        Level: Expert
+        Rating: 4.1/5.0
+        Price: $49",https://datacamp.com/courses/node.js
+course_0007,Beginner CI/CD Course - edX,CI/CD,devops,edX,Beginner,15,4.0,99,"Learn CI/CD with this comprehensive beginner course on edX.
+        
+        This course covers:
+        - CI/CD fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 15 hours
+        Level: Beginner
+        Rating: 4.0/5.0
+        Price: $99",https://edx.com/courses/ci/cd
+course_0008,Expert Docker Course - Pluralsight,Docker,fullstack,Pluralsight,Expert,26,4.5,99,"Learn Docker with this comprehensive expert course on Pluralsight.
+        
+        This course covers:
+        - Docker fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 26 hours
+        Level: Expert
+        Rating: 4.5/5.0
+        Price: $99",https://pluralsight.com/courses/docker
+course_0009,Advanced Python Course - DataCamp,Python,ml,DataCamp,Advanced,83,5.0,99,"Learn Python with this comprehensive advanced course on DataCamp.
+        
+        This course covers:
+        - Python fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 83 hours
+        Level: Advanced
+        Rating: 5.0/5.0
+        Price: $99",https://datacamp.com/courses/python
+course_0010,Expert SQL Course - Coursera,SQL,data,Coursera,Expert,51,4.3,49,"Learn SQL with this comprehensive expert course on Coursera.
+        
+        This course covers:
+        - SQL fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 51 hours
+        Level: Expert
+        Rating: 4.3/5.0
+        Price: $49",https://coursera.com/courses/sql
+course_0011,Expert Node.js Course - Codecademy,Node.js,backend,Codecademy,Expert,9,3.7,49,"Learn Node.js with this comprehensive expert course on Codecademy.
+        
+        This course covers:
+        - Node.js fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 9 hours
+        Level: Expert
+        Rating: 3.7/5.0
+        Price: $49",https://codecademy.com/courses/node.js
+course_0012,Advanced Agile Course - edX,Agile,qa,edX,Advanced,54,4.9,0,"Learn Agile with this comprehensive advanced course on edX.
+        
+        This course covers:
+        - Agile fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 54 hours
+        Level: Advanced
+        Rating: 4.9/5.0
+        Price: $0",https://edx.com/courses/agile
+course_0013,Expert AWS Course - DataCamp,AWS,devops,DataCamp,Expert,52,4.1,0,"Learn AWS with this comprehensive expert course on DataCamp.
+        
+        This course covers:
+        - AWS fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 52 hours
+        Level: Expert
+        Rating: 4.1/5.0
+        Price: $0",https://datacamp.com/courses/aws
+course_0014,Advanced AWS Course - Pluralsight,AWS,devops,Pluralsight,Advanced,55,4.0,99,"Learn AWS with this comprehensive advanced course on Pluralsight.
+        
+        This course covers:
+        - AWS fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 55 hours
+        Level: Advanced
+        Rating: 4.0/5.0
+        Price: $99",https://pluralsight.com/courses/aws
+course_0015,Intermediate Angular Course - Coursera,Angular,frontend,Coursera,Intermediate,68,4.3,299,"Learn Angular with this comprehensive intermediate course on Coursera.
+        
+        This course covers:
+        - Angular fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 68 hours
+        Level: Intermediate
+        Rating: 4.3/5.0
+        Price: $299",https://coursera.com/courses/angular
+course_0016,Advanced Go Course - Codecademy,Go,backend,Codecademy,Advanced,95,4.2,299,"Learn Go with this comprehensive advanced course on Codecademy.
+        
+        This course covers:
+        - Go fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 95 hours
+        Level: Advanced
+        Rating: 4.2/5.0
+        Price: $299",https://codecademy.com/courses/go
+course_0017,Intermediate Agile Course - LinkedIn Learning,Agile,fullstack,LinkedIn Learning,Intermediate,20,3.7,0,"Learn Agile with this comprehensive intermediate course on LinkedIn Learning.
+        
+        This course covers:
+        - Agile fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 20 hours
+        Level: Intermediate
+        Rating: 3.7/5.0
+        Price: $0",https://linkedinlearning.com/courses/agile
+course_0018,Expert PyTorch Course - DataCamp,PyTorch,ml,DataCamp,Expert,16,4.7,99,"Learn PyTorch with this comprehensive expert course on DataCamp.
+        
+        This course covers:
+        - PyTorch fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 16 hours
+        Level: Expert
+        Rating: 4.7/5.0
+        Price: $99",https://datacamp.com/courses/pytorch
+course_0019,Beginner Statistics Course - DataCamp,Statistics,data,DataCamp,Beginner,75,4.3,99,"Learn Statistics with this comprehensive beginner course on DataCamp.
+        
+        This course covers:
+        - Statistics fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 75 hours
+        Level: Beginner
+        Rating: 4.3/5.0
+        Price: $99",https://datacamp.com/courses/statistics
+course_0020,Intermediate Jest Course - DataCamp,Jest,qa,DataCamp,Intermediate,51,4.3,0,"Learn Jest with this comprehensive intermediate course on DataCamp.
+        
+        This course covers:
+        - Jest fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 51 hours
+        Level: Intermediate
+        Rating: 4.3/5.0
+        Price: $0",https://datacamp.com/courses/jest
+course_0021,Expert Vue.js Course - Udemy,Vue.js,frontend,Udemy,Expert,8,4.0,299,"Learn Vue.js with this comprehensive expert course on Udemy.
+        
+        This course covers:
+        - Vue.js fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 8 hours
+        Level: Expert
+        Rating: 4.0/5.0
+        Price: $299",https://udemy.com/courses/vue.js
+course_0022,Intermediate Docker Course - Codecademy,Docker,fullstack,Codecademy,Intermediate,83,4.8,0,"Learn Docker with this comprehensive intermediate course on Codecademy.
+        
+        This course covers:
+        - Docker fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 83 hours
+        Level: Intermediate
+        Rating: 4.8/5.0
+        Price: $0",https://codecademy.com/courses/docker
+course_0023,Expert AWS Course - DataCamp,AWS,fullstack,DataCamp,Expert,72,4.1,199,"Learn AWS with this comprehensive expert course on DataCamp.
+        
+        This course covers:
+        - AWS fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 72 hours
+        Level: Expert
+        Rating: 4.1/5.0
+        Price: $199",https://datacamp.com/courses/aws
+course_0024,Intermediate Load Testing Course - Coursera,Load Testing,qa,Coursera,Intermediate,45,4.5,199,"Learn Load Testing with this comprehensive intermediate course on Coursera.
+        
+        This course covers:
+        - Load Testing fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 45 hours
+        Level: Intermediate
+        Rating: 4.5/5.0
+        Price: $199",https://coursera.com/courses/load-testing
+course_0025,Advanced NLP Course - Pluralsight,NLP,ml,Pluralsight,Advanced,21,4.8,299,"Learn NLP with this comprehensive advanced course on Pluralsight.
+        
+        This course covers:
+        - NLP fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 21 hours
+        Level: Advanced
+        Rating: 4.8/5.0
+        Price: $299",https://pluralsight.com/courses/nlp
+course_0026,Intermediate Hadoop Course - Udemy,Hadoop,data,Udemy,Intermediate,60,4.3,0,"Learn Hadoop with this comprehensive intermediate course on Udemy.
+        
+        This course covers:
+        - Hadoop fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 60 hours
+        Level: Intermediate
+        Rating: 4.3/5.0
+        Price: $0",https://udemy.com/courses/hadoop
+course_0027,Intermediate Selenium Course - Pluralsight,Selenium,qa,Pluralsight,Intermediate,43,3.7,99,"Learn Selenium with this comprehensive intermediate course on Pluralsight.
+        
+        This course covers:
+        - Selenium fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 43 hours
+        Level: Intermediate
+        Rating: 3.7/5.0
+        Price: $99",https://pluralsight.com/courses/selenium
+course_0028,Advanced Power BI Course - edX,Power BI,data,edX,Advanced,15,3.9,299,"Learn Power BI with this comprehensive advanced course on edX.
+        
+        This course covers:
+        - Power BI fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 15 hours
+        Level: Advanced
+        Rating: 3.9/5.0
+        Price: $299",https://edx.com/courses/power-bi
+course_0029,Advanced MongoDB Course - DataCamp,MongoDB,fullstack,DataCamp,Advanced,83,4.3,299,"Learn MongoDB with this comprehensive advanced course on DataCamp.
+        
+        This course covers:
+        - MongoDB fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 83 hours
+        Level: Advanced
+        Rating: 4.3/5.0
+        Price: $299",https://datacamp.com/courses/mongodb
+course_0030,Intermediate Tableau Course - Pluralsight,Tableau,data,Pluralsight,Intermediate,26,4.5,299,"Learn Tableau with this comprehensive intermediate course on Pluralsight.
+        
+        This course covers:
+        - Tableau fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 26 hours
+        Level: Intermediate
+        Rating: 4.5/5.0
+        Price: $299",https://pluralsight.com/courses/tableau
+course_0031,Beginner REST APIs Course - Coursera,REST APIs,fullstack,Coursera,Beginner,15,3.6,299,"Learn REST APIs with this comprehensive beginner course on Coursera.
+        
+        This course covers:
+        - REST APIs fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 15 hours
+        Level: Beginner
+        Rating: 3.6/5.0
+        Price: $299",https://coursera.com/courses/rest-apis
+course_0032,Expert Git Course - Udemy,Git,fullstack,Udemy,Expert,84,4.5,199,"Learn Git with this comprehensive expert course on Udemy.
+        
+        This course covers:
+        - Git fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 84 hours
+        Level: Expert
+        Rating: 4.5/5.0
+        Price: $199",https://udemy.com/courses/git
+course_0033,Advanced Spark Course - edX,Spark,data,edX,Advanced,66,3.9,199,"Learn Spark with this comprehensive advanced course on edX.
+        
+        This course covers:
+        - Spark fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 66 hours
+        Level: Advanced
+        Rating: 3.9/5.0
+        Price: $199",https://edx.com/courses/spark
+course_0034,Beginner Docker Course - Coursera,Docker,fullstack,Coursera,Beginner,25,4.2,199,"Learn Docker with this comprehensive beginner course on Coursera.
+        
+        This course covers:
+        - Docker fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 25 hours
+        Level: Beginner
+        Rating: 4.2/5.0
+        Price: $199",https://coursera.com/courses/docker
+course_0035,Intermediate Scikit-learn Course - edX,Scikit-learn,ml,edX,Intermediate,45,4.8,99,"Learn Scikit-learn with this comprehensive intermediate course on edX.
+        
+        This course covers:
+        - Scikit-learn fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 45 hours
+        Level: Intermediate
+        Rating: 4.8/5.0
+        Price: $99",https://edx.com/courses/scikit-learn
+course_0036,Intermediate Statistics Course - LinkedIn Learning,Statistics,data,LinkedIn Learning,Intermediate,52,4.3,0,"Learn Statistics with this comprehensive intermediate course on LinkedIn Learning.
+        
+        This course covers:
+        - Statistics fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 52 hours
+        Level: Intermediate
+        Rating: 4.3/5.0
+        Price: $0",https://linkedinlearning.com/courses/statistics
+course_0037,Beginner Express.js Course - LinkedIn Learning,Express.js,fullstack,LinkedIn Learning,Beginner,39,4.2,49,"Learn Express.js with this comprehensive beginner course on LinkedIn Learning.
+        
+        This course covers:
+        - Express.js fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 39 hours
+        Level: Beginner
+        Rating: 4.2/5.0
+        Price: $49",https://linkedinlearning.com/courses/express.js
+course_0038,Expert Python Course - edX,Python,backend,edX,Expert,83,4.1,49,"Learn Python with this comprehensive expert course on edX.
+        
+        This course covers:
+        - Python fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 83 hours
+        Level: Expert
+        Rating: 4.1/5.0
+        Price: $49",https://edx.com/courses/python
+course_0039,Advanced Automation Course - Pluralsight,Automation,qa,Pluralsight,Advanced,29,4.6,199,"Learn Automation with this comprehensive advanced course on Pluralsight.
+        
+        This course covers:
+        - Automation fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 29 hours
+        Level: Advanced
+        Rating: 4.6/5.0
+        Price: $199",https://pluralsight.com/courses/automation
+course_0040,Advanced Terraform Course - LinkedIn Learning,Terraform,devops,LinkedIn Learning,Advanced,68,3.5,199,"Learn Terraform with this comprehensive advanced course on LinkedIn Learning.
+        
+        This course covers:
+        - Terraform fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 68 hours
+        Level: Advanced
+        Rating: 3.5/5.0
+        Price: $199",https://linkedinlearning.com/courses/terraform
+course_0041,Intermediate Terraform Course - Udemy,Terraform,devops,Udemy,Intermediate,79,4.0,0,"Learn Terraform with this comprehensive intermediate course on Udemy.
+        
+        This course covers:
+        - Terraform fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 79 hours
+        Level: Intermediate
+        Rating: 4.0/5.0
+        Price: $0",https://udemy.com/courses/terraform
+course_0042,Expert Docker Course - Pluralsight,Docker,fullstack,Pluralsight,Expert,41,4.3,0,"Learn Docker with this comprehensive expert course on Pluralsight.
+        
+        This course covers:
+        - Docker fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 41 hours
+        Level: Expert
+        Rating: 4.3/5.0
+        Price: $0",https://pluralsight.com/courses/docker
+course_0043,Advanced PyTorch Course - edX,PyTorch,ml,edX,Advanced,56,4.0,199,"Learn PyTorch with this comprehensive advanced course on edX.
+        
+        This course covers:
+        - PyTorch fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 56 hours
+        Level: Advanced
+        Rating: 4.0/5.0
+        Price: $199",https://edx.com/courses/pytorch
+course_0044,Intermediate Microservices Course - Pluralsight,Microservices,backend,Pluralsight,Intermediate,51,4.3,0,"Learn Microservices with this comprehensive intermediate course on Pluralsight.
+        
+        This course covers:
+        - Microservices fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 51 hours
+        Level: Intermediate
+        Rating: 4.3/5.0
+        Price: $0",https://pluralsight.com/courses/microservices
+course_0045,Advanced Statistics Course - LinkedIn Learning,Statistics,ml,LinkedIn Learning,Advanced,84,4.5,0,"Learn Statistics with this comprehensive advanced course on LinkedIn Learning.
+        
+        This course covers:
+        - Statistics fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 84 hours
+        Level: Advanced
+        Rating: 4.5/5.0
+        Price: $0",https://linkedinlearning.com/courses/statistics
+course_0046,Advanced Angular Course - LinkedIn Learning,Angular,frontend,LinkedIn Learning,Advanced,48,4.3,99,"Learn Angular with this comprehensive advanced course on LinkedIn Learning.
+        
+        This course covers:
+        - Angular fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 48 hours
+        Level: Advanced
+        Rating: 4.3/5.0
+        Price: $99",https://linkedinlearning.com/courses/angular
+course_0047,Expert Jest Course - Udemy,Jest,qa,Udemy,Expert,69,3.6,0,"Learn Jest with this comprehensive expert course on Udemy.
+        
+        This course covers:
+        - Jest fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 69 hours
+        Level: Expert
+        Rating: 3.6/5.0
+        Price: $0",https://udemy.com/courses/jest
+course_0048,Expert Responsive Design Course - edX,Responsive Design,frontend,edX,Expert,71,4.2,299,"Learn Responsive Design with this comprehensive expert course on edX.
+        
+        This course covers:
+        - Responsive Design fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 71 hours
+        Level: Expert
+        Rating: 4.2/5.0
+        Price: $299",https://edx.com/courses/responsive-design
+course_0049,Advanced AWS Course - edX,AWS,devops,edX,Advanced,25,4.1,299,"Learn AWS with this comprehensive advanced course on edX.
+        
+        This course covers:
+        - AWS fundamentals and advanced concepts
+        - Best practices and design patterns
+        - Real-world project examples
+        - Hands-on exercises and assignments
+        - Industry-standard tools and workflows
+        
+        Duration: 25 hours
+        Level: Advanced
+        Rating: 4.1/5.0
+        Price: $299",https://edx.com/courses/aws

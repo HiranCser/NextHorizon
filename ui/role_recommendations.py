@@ -213,14 +213,34 @@ def render():
         
         # Save selected items and the role for skill gaps analysis
         st.markdown("---")
-        col1, col2 = st.columns([1, 1])
+        col1, col2, col3 = st.columns([1, 1, 1])
+        
+        with col1:
+            if st.button("✅ Select All", use_container_width=True, key="select_all_jds"):
+                # Update tracking dict before rerun - do it all at once
+                st.session_state.jd_selections = {f"jd_select_{idx}": True for idx in range(1, len(items) + 1)}
+                st.rerun()
         
         with col2:
-            if st.button("🔄 Select All", use_container_width=True, key="select_all_jds"):
-                # Update tracking dict before rerun
-                for idx in range(1, len(items) + 1):
-                    st.session_state.jd_selections[f"jd_select_{idx}"] = True
+            if st.button("❌ Clear All", use_container_width=True, key="clear_all_jds"):
+                # Clear all selections
+                st.session_state.jd_selections = {f"jd_select_{idx}": False for idx in range(1, len(items) + 1)}
                 st.rerun()
+        
+        with col3:
+            if st.button("💾 Save Selected", use_container_width=True, key="save_selected_jds_button"):
+                if selected_items:
+                    st.session_state.chosen_role_title = sel
+                    st.session_state.selected_jd_items = selected_items
+                    st.session_state.selected_jd_count = len(selected_items)
+                    # Clear previous skill gaps to ensure fresh analysis for new role
+                    if "skill_gaps" in st.session_state:
+                        del st.session_state.skill_gaps
+                    if "matched_skills" in st.session_state:
+                        del st.session_state.matched_skills
+                    st.success(f"✅ Saved role '{sel}' with {len(selected_items)} selected job opening(s) for skill gap analysis.")
+                else:
+                    st.warning("⚠️ Please select at least one job opening before saving.")
         
         # Display selected job openings summary
         if selected_items:
@@ -248,18 +268,5 @@ def render():
                 st.markdown(f"**Average Match Score:** {int(avg_match)}%")
             except:
                 pass
-            
-            # Save button at the end
-            st.markdown("---")
-            if st.button("💾 Save Selected Job Openings", use_container_width=True, key="save_selected_jds"):
-                st.session_state.chosen_role_title = sel
-                st.session_state.selected_jd_items = selected_items
-                st.session_state.selected_jd_count = len(selected_items)
-                # Clear previous skill gaps to ensure fresh analysis for new role
-                if "skill_gaps" in st.session_state:
-                    del st.session_state.skill_gaps
-                if "matched_skills" in st.session_state:
-                    del st.session_state.matched_skills
-                st.success(f"✅ Saved role '{sel}' with {len(selected_items)} selected job opening(s) for skill gap analysis.")
     else:
         st.info("Click 'Find Job Openings' to explore available positions for the selected role.")
